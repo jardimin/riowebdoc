@@ -172,9 +172,9 @@
 							
 							<div class="footerlogos">
 							<a href="http://navedoconhecimento.rio/" target="_blank" style="margin-right: 20px;">
-							<img src="images/naves.png" alt="naves Logo" class="footer_img1" style="opacity: 1;" /></a>
+							<img src="images/naves.png" alt="naves Logo" class="footer_img1" style="opacity: 1; height: 70px;" /></a>
 							<a href="#" target="_blank" style="margin-right: 10px;">
-							<img src="images/rio_pref.png" alt="prefeitura Logo" class="footer_img1"/></a>
+							<img src="images/rio_pref.png" alt="prefeitura Logo" class="footer_img1" style="height: 70px; "/></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
@@ -183,7 +183,7 @@
 
 						</div>
 				        
-				        <div id="sessao4" class="sessaofooter" style="margin-left: 15px; margin-top: 20px;">
+				        <div id="sessao4" class="sessaofooter" style="margin-left: 15px; margin-top: 10px;">
 
 							<div class="footertitle">Produção:</div>
 							
@@ -197,7 +197,7 @@
 						</div>	
 
 
-						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: 0px;">
+						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: -10px;">
 
 							
 							<div class="footertitle">Parceria:</div>
@@ -217,7 +217,7 @@
 
 						
 						
-						<div id="sessao5" class="sessaofooter" style="margin-top: 17px;">
+						<div id="sessao5" class="sessaofooter" style="margin-top: 10px;">
 
 							<div class="footertitle">Gestão das Naves do Conhecimento:</div>
 							
