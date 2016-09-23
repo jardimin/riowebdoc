@@ -4,6 +4,9 @@
     position: relative;
     height: 89%;
     overflow: hidden;
+    p {
+      padding-right: 15px;
+    }
   }
 </style>
 

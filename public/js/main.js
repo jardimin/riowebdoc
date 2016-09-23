@@ -182,7 +182,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"jquery":24,"marked":25,"vue":95,"vue-hot-reload-api":94}],5:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("/* line 2, stdin */\n.pscroll {\n  width: 100%;\n  position: relative;\n  height: 89%;\n  overflow: hidden; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("/* line 2, stdin */\n.pscroll {\n  width: 100%;\n  position: relative;\n  height: 89%;\n  overflow: hidden; }\n  /* line 7, stdin */\n  .pscroll p {\n    padding-right: 15px; }\n")
 'use strict';
 
 var $$$ = require('jquery');
@@ -214,7 +214,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/media/bambuzal/Softwares/riowebdoc/app/vue/components/janela-projeto.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["/* line 2, stdin */\n.pscroll {\n  width: 100%;\n  position: relative;\n  height: 89%;\n  overflow: hidden; }\n"] = false
+    require("vueify-insert-css").cache["/* line 2, stdin */\n.pscroll {\n  width: 100%;\n  position: relative;\n  height: 89%;\n  overflow: hidden; }\n  /* line 7, stdin */\n  .pscroll p {\n    padding-right: 15px; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
