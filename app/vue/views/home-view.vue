@@ -164,17 +164,17 @@
     	
     
     
-			<div id="rodape" class="rodape">
+			<div id="rodape" class="rodape" style="background-color: rgba(5,33,47,1);">
 
 						<div id="sessao1" class="sessaofooter" style="margin-left: 95px; margin-top: 20px;">
 							
 							<div class="footertitle">Realização:</div>
 							
 							<div class="footerlogos">
+							<a href="http://navedoconhecimento.rio/" target="_blank" style="margin-right: 20px;">
+							<img src="images/naves.png" alt="naves Logo" class="footer_img1" style="opacity: 1;" /></a>
 							<a href="#" target="_blank" style="margin-right: 10px;">
 							<img src="images/rio_pref.png" alt="prefeitura Logo" class="footer_img1"/></a>
-							<a href="#" target="_blank">
-							<img src="images/naves.png" alt="naves Logo" class="footer_img1"/></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
@@ -189,7 +189,7 @@
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank">
-							<img src="images/cria.png" alt="cria Logo" class="footer_img1"/></a>
+							<img src="images/cria.png" alt="cria Logo" class="footer_img1" style="opacity: 1;" /></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
@@ -197,16 +197,16 @@
 						</div>	
 
 
-						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: 20px;">
+						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: 0px;">
 
 							
 							<div class="footertitle">Parceria:</div>
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank" style="margin-right: 10px;">
-							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1"/></a>
+							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1" style="height: 40px;" /></a>
 							<a href="#" target="_blank">
-							<img src="images/unirio.png" alt="unirio Logo" class="footer_img1"/></a>
+							<img src="images/unirio.png" alt="unirio Logo" class="footer_img1" style="height: 40px;" /></a>
 
 							&nbsp; &nbsp; &nbsp; &nbsp;
 							
@@ -217,17 +217,17 @@
 
 						
 						
-						<div id="sessao5" class="sessaofooter">
+						<div id="sessao5" class="sessaofooter" style="margin-top: 17px;">
 
 							<div class="footertitle">Gestão das Naves do Conhecimento:</div>
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank">
-							<img src="images/idaco.png" alt="idaco Logo" class="footer_img"/></a>
+							<img src="images/idaco.png" alt="idaco Logo" class="footer_img" style="height: 20px" /></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<a href="#" target="_blank">
-							<img src="images/redeh_logo.png" alt="redeh Logo" class="footer_img"/>
+							<img src="images/redeh_logo.png" alt="redeh Logo" class="footer_img" style="height: 60px" />
 							</a>
 							</div>
 
