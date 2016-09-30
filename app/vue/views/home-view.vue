@@ -20,6 +20,15 @@
 		opacity: 0;
 	}
 
+	.mdl-navigation__link {
+		padding-top: 5px !important;
+	}
+
+	.logo_superior {
+		position: abolute;
+		margin-left: 43%;
+	}
+
 	#janela2 {
 		h3 {
 			font-family: 'treta';
@@ -82,6 +91,7 @@
     <header class="rwd_header mdl-layout__header ">
     	<div class="header_cover">
 			<div class="mdl-layout__header-row">
+				<img class="logo_superior" src="images/logo_superior.png">
 
 				<!-- <a href="http://github.com/viladosite/riowebdoc" class="gitLink" target="_blank"><img class="imgGit" src="images/github512.png" alt="Fork me on GitHub"> Fork me on GitHub </a> -->
 
@@ -109,7 +119,7 @@
 
     		<div id="navegacao">
     			
-    			<div id="logo" class="logo">
+    			<div id="logo" class="logo" style="cursor: pointer;" @click="filterNave('none')">
 	    			<img src="images/logo.png" class="logoimg">
 	    		</div>
 
@@ -152,7 +162,7 @@
 	    		</div>
 
 	    		<div class="mdl-tooltip mdl-tooltip--left" for="icon1">
-	    		Enviar um webcard
+	    		Enviar um postal
 	    		</div>
 
     		</div>

@@ -77,14 +77,15 @@ body{
 /* proporção do header */
 .rwd_header{
     background-color: #111013;
-    min-height: 35px;
+    min-height: 85px;
 }
 .mdl-layout__header-row {
-    height: 35px;
+    height: 85px;
 }
 
 .header_cover{
-   background-image: url("../img/rodape_bg.jpg"); 
+   background-image: url("../img/rodape_bg.png"); 
+   height: 85px;
 }
 
 

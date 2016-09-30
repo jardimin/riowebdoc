@@ -1,32 +1,58 @@
 <style lang="scss">
   #content {
     &.card {
-      padding: 15px;
       position: relative;
       background-color: white;
       box-sizing: border-box;
-    }
-  }
-  #protect {
-    position: absolute;
-    z-index: 5;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    .menssagem {
-      position: absolute;
-      right: 0;
-      width: 40%;
-      height: 100%;
-      top: 0;
-      h2 {
-        margin-top: 50px;
-        color: white;
-        text-align: center;
+      background-image: url(img/fundo_postal.png);
+      padding: 2%;
+      .postal_topo {
+        height: 15%;
+        .logo_postal {
+          float: right;
+          width: 13%;
+        }
+        .logo_nave_postal {
+          float: left;
+          width: 10%;
+        }
+      }
+      .postal_titulo {
+        p {
+          font-family: 'treta';
+          font-size: 20px;
+          margin-top: 16px;
+          color: #06303c;
+        }
+        strong {
+          color: #00aeab;
+          font-weight: 100;
+        }
+      }
+      .postal_content {
+        .player_container {
+          width: 70%;
+          float: left;
+          margin-right: 2%;
+          height: 680px;
+        }
+        .menssagem {
+          float: left;
+          width: 23%;
+          box-sizing: border-box;
+          padding: 10% 2%;
+          background-image: url(img/fundo_menssagem.png);
+          height: 680px;
+          background-size: contain;
+          p {
+            font-size: 20px;
+            text-align: right;
+          }
+        }
       }
     }
   }
+
 </style>
 
 <template>
@@ -35,14 +61,24 @@
    
     <main class="mdl-layout__content" >
     
-    <div id="content" class="card" :style="{height: height+'px'}"> 
-      <div id="protect">
-        <div class="menssagem">
-          <h2>{{card.menssagem}}</h2>
+      <div id="content" class="card" :style="{height: height+'px'}"> 
+        <div class="postal_topo">
+          <img src="http://meuriovaleumfilme.com.br/imagens/logo_nave.png" class="logo_nave_postal">
+          <img src="images/logo.png" class="logo_postal">
         </div>
+        <div class="postal_titulo">
+          <p>{{card.email_criador}} <strong>enviou este postal de </strong>{{card.nave_nome}} <strong>para</strong> {{card.email_enviado}}</p>
+        </div>
+        <div class="postal_content">
+          <div class="player_container">
+            <div id="player"></div> 
+          </div>
+          <div class="menssagem">
+            <p>{{card.menssagem}}</p>
+          </div>
+        </div>
+
       </div>
-      <div id="player"></div> 
-    </div>
     
     </main>
 

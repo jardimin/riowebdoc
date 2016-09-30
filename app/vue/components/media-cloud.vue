@@ -555,7 +555,7 @@
       //   self.offset = self.offset + (self.interval*4)
       // }, 200);
       this.$on('filter', function(nome) {
-        if (this.filter === nome) {
+        if (this.filter === nome || nome === 'none') {
           this.filter = ''
         } else {
           this.filter = nome

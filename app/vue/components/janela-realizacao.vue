@@ -1,13 +1,33 @@
 <style lang="scss">
-  
+  .scrooll {
+    width: 90%;
+    position: relative;
+    height: 400px;
+    margin-top: 10%;
+    overflow: hidden;
+  }
+  .alunos {
+    width: 50%;
+    float: left;
+    position: relative;
+  }
+  .alunos_img {
+    width: 45%;
+    float: left;
+    position: relative;
+    img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
 </style>
 
 <template>
   <div>
     <div class="rwd_janela_conteudo">
       <h3>Alunos</h3>
-      <div class="pscroll 2">
-        <div style="width: 50%; float: left; position: relative;">
+      <div class="scrooll">
+        <div class="alunos">
           <ul>
             <li>Aluno</li>
             <li>Aluno</li>
@@ -22,10 +42,10 @@
             <li>Aluno</li>
           </ul>
         </div>
-        <div style="width: 50%; float: left; position: relative;">
-          <img style="width: 100%;" src="https://sectrj.files.wordpress.com/2012/10/sebrae3.jpg">
-          <img style="width: 100%;" src="http://www.caurj.gov.br/wp-content/uploads/2015/05/1.jpg">
-          <img style="width: 100%;" src="https://sectrj.files.wordpress.com/2013/07/naveconhecimento_parquemadureira05.jpg">
+        <div class="alunos_img">
+          <img src="https://sectrj.files.wordpress.com/2012/10/sebrae3.jpg">
+          <img src="http://www.caurj.gov.br/wp-content/uploads/2015/05/1.jpg">
+          <img src="https://sectrj.files.wordpress.com/2013/07/naveconhecimento_parquemadureira05.jpg">
         </div>
       </div>
     </div>
@@ -55,7 +75,7 @@
 
     },
     attached: function () {
-      $$$('.2').perfectScrollbar({
+      $$$('.scrooll').perfectScrollbar({
         suppressScrollX: true
       });
 

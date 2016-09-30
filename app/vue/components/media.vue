@@ -169,9 +169,6 @@
         <button v-if="playing !== null" :id="media.id+'-voto'" :class="{votado: votado}" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="votar">
           <i class="material-icons">thumb_up</i>
         </button>
-        <a v-if="!no_video" :id="media.id+'-front-map'" :href="media.mapa" target="_blank" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">room</i>
-        </a>
         <button v-if="!no_video" :id="media.id+'-desc'" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="flip(media.id)">
           <i class="material-icons">description</i>
         </button>
@@ -188,7 +185,7 @@
         	</div>
 
         	<div class="right-postal" style="color: black;">
-        			{{video_auth}}
+        			<img src="http://capacitacao.navedoconhecimento.org.br/img/logo.png" style="width: 100%; position: absolute; bottom: 0; right: -15px;">
         	</div>
        	
       </div>
@@ -457,8 +454,7 @@
           $$$.each(data.items, function(i, item) {
             // console.log(item.snippet.description.split("[")[1].split("]")[1])
             self.video_title = item.snippet.title
-            self.video_desc = item.snippet.description.split("[")[1].split("]")[1]
-            self.video_auth = item.snippet.description.split("[")[1].split("]")[0]
+            self.video_desc = item.snippet.description
           });
         })
         this.no_video = false
@@ -477,7 +473,7 @@
       }, self.interval);
 
       this.$on('filter', function(nome) {
-        if (this.filter === nome) {
+        if (this.filter === nome || nome === 'none') {
           this.filter = ''
         } else {
           this.filter = nome
