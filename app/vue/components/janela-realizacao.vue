@@ -6,8 +6,28 @@
   <div>
     <div class="rwd_janela_conteudo">
       <h3>Alunos</h3>
-      <p>Cras ac maximus risus. Donec eget congue justo. Nam quis rutrum nunc, quis finibus nunc. Ut tristique ex sed nulla dapibus, id euismod nunc ultrices. Duis vehicula tempor felis at viverra. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla non purus non turpis dictum fringilla in nec nulla. Duis at pharetra quam. Integer quis ante commodo, tristique quam non, dapibus magna. Integer urna ligula, iaculis eget nisi et, rhoncus sodales metus. Nulla rhoncus, purus id maximus convallis, odio massa volutpat nunc, in tincidunt ante turpis ut nibh.</p>
-      <p>In ut mauris nisl. Fusce interdum lobortis velit, et feugiat eros cursus ac. Praesent sit amet odio lacinia, dignissim enim eget, porta neque. In iaculis, sapien vitae placerat ultricies, neque odio vestibulum mi, venenatis sagittis sapien felis varius tellus. Fusce massa lectus, mollis ut molestie sed, posuere vitae eros. In pellentesque diam eu metus rhoncus, eu varius turpis dapibus. Donec commodo urna et erat tristique ultricies. Aliquam molestie orci sed eros lacinia, ac sagittis tellus accumsan.</p>
+      <div class="pscroll 2">
+        <div style="width: 50%; float: left; position: relative;">
+          <ul>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+            <li>Aluno</li>
+          </ul>
+        </div>
+        <div style="width: 50%; float: left; position: relative;">
+          <img style="width: 100%;" src="https://sectrj.files.wordpress.com/2012/10/sebrae3.jpg">
+          <img style="width: 100%;" src="http://www.caurj.gov.br/wp-content/uploads/2015/05/1.jpg">
+          <img style="width: 100%;" src="https://sectrj.files.wordpress.com/2013/07/naveconhecimento_parquemadureira05.jpg">
+        </div>
+      </div>
     </div>
     <div class="rwd_janela_img">
       <img src="../img/icon_realizacao.png" class="rwd_janela_icon">
@@ -18,6 +38,8 @@
 <script>
   var $$$ = require('jquery')
   var marked = require('marked')
+  var perfectScrollbar = require('perfect-scrollbar/jquery')($$$)
+
   module.exports = {
     replace: true,
     props: [],
@@ -33,6 +55,10 @@
 
     },
     attached: function () {
+      $$$('.2').perfectScrollbar({
+        suppressScrollX: true
+      });
+
       componentHandler.upgradeDom()
     },
     components: {

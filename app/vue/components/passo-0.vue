@@ -10,7 +10,7 @@
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--12-col">   
       <h3>Passo 1</h3>
-      <p>Escolha o local que estará na capa de seu webcard.</p>
+      <p>Quer enviar um postal audiovisual por e-mail? <br> Escolha o local clicando em uma das imagens abaixo. Depois clique na seta azul, no canto superior direito, e monte o vídeo do seu postal.</p>
 
       <div v-for="nave in naves" class="video-card nav" @click="escolherNave($index)" :id="nave.headers.id+'-nav'" :class="{escolhido: escolhido[$index]}" class="nav-ico"> <img :src="'img/selo_'+nave.headers.icon+'.png'"> </div>
 

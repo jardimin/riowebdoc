@@ -6,7 +6,7 @@
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--12-col">   
       <h3>Passo 3</h3>
-      <p>Escreva sua mensagem:</p>
+      <p>Seu postal audiovisual está quase pronto! <br> Agora escreva uma mensagem para a pessoa que irá recebê-lo e clique novamente na seta azul.</p>
 
       <!-- Floating Multiline Textfield -->
       <form action="#" class="rwd_p2">

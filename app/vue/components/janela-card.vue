@@ -40,6 +40,12 @@
       font-size: 30px;
       color:  $cor;
     }
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #06303c;
+      font-family: 'treta';
+    }
     .mdl-textfield--floating-label {
       &.is-focused {
         .mdl-textfield__label {

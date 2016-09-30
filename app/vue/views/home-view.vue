@@ -172,9 +172,9 @@
 							
 							<div class="footerlogos">
 							<a href="http://navedoconhecimento.rio/" target="_blank" style="margin-right: 20px;">
-							<img src="images/naves.png" alt="naves Logo" class="footer_img1" style="opacity: 1; height: 70px;" /></a>
+							<img src="images/naves.png" alt="naves Logo" class="footer_img1"/></a>
 							<a href="#" target="_blank" style="margin-right: 10px;">
-							<img src="images/rio_pref.png" alt="prefeitura Logo" class="footer_img1" style="height: 70px; "/></a>
+							<img src="images/rio_pref.png" alt="prefeitura Logo" class="footer_img1"/></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
@@ -183,13 +183,13 @@
 
 						</div>
 				        
-				        <div id="sessao4" class="sessaofooter" style="margin-left: 15px; margin-top: 10px;">
+				        <div id="sessao4" class="sessaofooter" style="margin-left: 15px; margin-top: 20px;">
 
 							<div class="footertitle">Produção:</div>
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank">
-							<img src="images/cria.png" alt="cria Logo" class="footer_img1" style="opacity: 1;" /></a>
+							<img src="images/cria.png" alt="cria Logo" class="footer_img1" /></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
@@ -197,16 +197,16 @@
 						</div>	
 
 
-						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: -10px;">
+						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: 20px;">
 
 							
 							<div class="footertitle">Parceria:</div>
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank" style="margin-right: 10px;">
-							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1" style="height: 40px;" /></a>
+							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1"/></a>
 							<a href="#" target="_blank">
-							<img src="images/unirio.png" alt="unirio Logo" class="footer_img1" style="height: 40px;" /></a>
+							<img src="images/unirio.png" alt="unirio Logo" class="footer_img1"/></a>
 
 							&nbsp; &nbsp; &nbsp; &nbsp;
 							
@@ -217,17 +217,17 @@
 
 						
 						
-						<div id="sessao5" class="sessaofooter" style="margin-top: 10px;">
+						<div id="sessao5" class="sessaofooter" style="margin-top: 20px;">
 
 							<div class="footertitle">Gestão das Naves do Conhecimento:</div>
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank">
-							<img src="images/idaco.png" alt="idaco Logo" class="footer_img" style="height: 20px" /></a>
+							<img src="images/idaco.png" alt="idaco Logo" class="footer_img1" /></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<a href="#" target="_blank">
-							<img src="images/redeh_logo.png" alt="redeh Logo" class="footer_img" style="height: 60px" />
+							<img src="images/redeh_logo.png" alt="redeh Logo" class="footer_img1" />
 							</a>
 							</div>
 
@@ -400,14 +400,6 @@
 					menssagem: this.webcard.menssagem
 				}
         socket.emit('send-card', JSON.stringify(w))
-        this.webcard = {
-					nave_nome: null,
-					nave_videos: null,
-					videos: [],
-					email_criador: '',
-					email_enviado: '',
-					menssagem: ''
-				}
       })
 
       this.$on('fechar-janela', function() {
@@ -420,7 +412,16 @@
       	if (data.idList === "5797d3393ae93636227efd5f") {
       		self.$broadcast('card-sent')
       		emailjs.send("gmail","webcard_envio",{id: data.id, to_email: desc.email_criador});
-      		emailjs.send("gmail","webcard_recebido",{id: data.id, from_email: desc.email_criador, to_email: desc.email_enviado});
+      		emailjs.send("gmail","webcard_recebido",{id: data.id, from_email: desc.email_criador, to_email: desc.email_enviado, bairro: self.webcard.nave_nome});
+
+      		self.webcard = {
+						nave_nome: null,
+						nave_videos: null,
+						videos: [],
+						email_criador: '',
+						email_enviado: '',
+						menssagem: ''
+					}
       	}
       })
 

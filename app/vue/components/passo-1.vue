@@ -65,6 +65,12 @@
       }
     }
   }
+  .numero {
+    color: red !important;
+    &.ok {
+      color: green !important;
+    }
+  }
 
 
 </style>
@@ -73,7 +79,7 @@
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--12-col">   
       <h3>Passo 2 - {{webcard.nave_nome}}</h3>
-      <p>Escolha <strong>{{videos}}</strong> vídeos que aparecerão em seu Webcard.</p>
+      <p>Agora escolha os <strong class="numero" :class="{ok: videos === 0}">{{videos}}</strong> vídeos do nosso webdoc que vão compor seu postal. <br> Clique em cada um, na ordem desejada, e depois novamente na seta azul do canto superior direito.</p>
 
       <div v-for="video in webcard.nave_videos" class="video-nav" @click="choseVideo(video)" :id="video+'-vid'" :class="{escolhido: escolhido[$index]}"> <img :src="'http://img.youtube.com/vi/'+video+'/1.jpg'"><span class="checkicon"><img src="img/check.png"/></span> </div>
 

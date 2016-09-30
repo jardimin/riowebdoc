@@ -6,10 +6,7 @@
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--12-col">   
       <h3>Passo 4</h3>
-      <p>Escolha para quem quer enviar o cartão
-      e coloque também seu email.<br>
-      Se quiser enviar para outras pessoas use
-      o link que irá receber.<br></p>
+      <p>Insira um e-mail válido em cada campo para concluir o envio! <br> Feito isso, clique no envelope no canto superior direito e seu postal será enviado para você e seu amigo(a)!<br></p>
       <br><br>
 
       <!-- Floating Multiline Textfield -->
@@ -23,7 +20,7 @@
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="email" id="friendmail" v-model="amigo_email">
-          <label class="mdl-textfield__label" for="friendmail">Recipiente:</label>
+          <label class="mdl-textfield__label" for="friendmail">Emaio do seu amigo ou amiga:</label>
         </div>
 
       </form>

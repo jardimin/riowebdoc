@@ -1,8 +1,9 @@
 <style lang="scss">
   .pscroll {
-    width: 100%;
+    width: 90%;
     position: relative;
-    height: 89%;
+    height: 75%;
+    margin-top: 10%;
     overflow: hidden;
     p {
       padding-right: 15px;

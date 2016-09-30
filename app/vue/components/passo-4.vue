@@ -5,10 +5,8 @@
 <template>
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--12-col">   
-      <h3>Seu webcard foi enviado!</h3>
-      <p>Cheque seu email para ver o link do webcard.<br>
-      Se quiser enviar para outras pessoas use
-      o link que está em seu email.<br></p>
+      <h3>Seu postal foi enviado!</h3>
+      <p style="text-align: center;">O vídeo do seu postal já deve estar chegando nos e-mails indicados. <br> Confira lá! <br> Você pode voltar quantas vezes quiser ao Meu Rio Vale um Webdoc e enviar outros postais. <br> Valeu!<br></p>
       <br><br>
 
     </div>
@@ -37,7 +35,7 @@
       var self = this
       setTimeout(function() {
         self.$dispatch('fechar-janela')
-      }, 5000)
+      }, 10000)
     },
     components: {
 
