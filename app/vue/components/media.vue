@@ -190,7 +190,7 @@
        	
       </div>
       <div class="mdl-card__menu" v-if="on" transition="fade">
-        <a :id="media.id+'-back-map'" :href="media.mapa" target="_blank" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <a :id="media.id+'-back-map'" :href="media.mapa" target="_blank" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="analyticsMaps">
           <i class="material-icons">room</i>
         </a>
         <button :id="media.id+'-photo'" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="unFlip(media.id)">
@@ -313,13 +313,18 @@
       }
     },
     methods: {
+      analyticsMaps: function() {
+        ga('send', 'event', 'Media', 'map', this.media.id)
+      },
       flip: function(id) {
         $$$('#'+id+'-front').css('transform', 'rotateY(180deg)')
         $$$('#'+id+'-back').css('transform', 'rotateY(0deg)')
+        ga('send', 'event', 'Media', 'flip', id)
       },
       unFlip: function(id) {
         $$$('#'+id+'-back').css('transform', 'rotateY(180deg)')
         $$$('#'+id+'-front').css('transform', 'rotateY(0deg)')
+        ga('send', 'event', 'Media', 'unflip', id)
       },
       changeImg: function() {
         if (this.img_now === this.media.imgs.length - 1) {
@@ -393,6 +398,7 @@
         }
       },
       playThis: function() {
+        ga('send', 'event', 'Media', 'play', this.media.id)
         this.playing = this.media.id
         this.iframe = new YT.Player(this.media.id+'-player', {
           height: '100%',
@@ -408,6 +414,7 @@
         this.assistido = true
       },
       closeMedia: function() {
+        ga('send', 'event', 'Media', 'close', this.media.id)
         this.playing = null
       },
       playVideo: function(event) {
@@ -418,6 +425,7 @@
         if (event.data == YT.PlayerState.ENDED) {
           window.location.hash = "/home"
           self.playing = null
+          ga('send', 'event', 'Media', 'end', this.media.id)
         }
       },
       votar: function(event) {
@@ -426,11 +434,13 @@
           document.cookie = "voto-"+this.media.id+"=false"
           this.votado = false
           this.votos = this.votos - 1
+          ga('send', 'event', 'Media', 'desvotado', this.media.id)
         } else {
           this.$dispatch('votado', this.media.id)
           document.cookie = "voto-"+this.media.id+"=true"
           this.votado = true
           this.votos = this.votos + 1
+          ga('send', 'event', 'Media', 'votado', this.media.id)
         }
       }
     },

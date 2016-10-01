@@ -1,5 +1,7 @@
 <style lang="scss">
-  
+  .mdl-textfield__label, .mdl-textfield__input{
+    padding-left: 7px;
+  }
 </style>
 
 <template>
@@ -11,10 +13,11 @@
       <!-- Floating Multiline Textfield -->
       <form action="#" class="rwd_p2">
         <div class="mdl-textfield mdl-js-textfield rwd_txtmsg">
-          <textarea class="mdl-textfield__input  mdl-shadow--3dp" type="text" rows="10" id="rwd_msg" v-model="text" @keyup="sendToWebcard"></textarea>
+          <textarea class="mdl-textfield__input  mdl-shadow--3dp" type="text" rows="10" id="rwd_msg" v-model="text" @keydown="sendToWebcard"></textarea>
           <label class="mdl-textfield__label" for="rwd_msg">digite aqui sua mensagem</label>
         </div>
       </form>
+      <p><strong>{{text.length}}</strong> / 230</p>
 
     </div>
   </div> 
@@ -33,7 +36,11 @@
     },
     methods: {
       sendToWebcard: function () {
-        this.webcard.menssagem = this.text
+        if (this.text.length > 229) {
+          this.text = this.text.slice(0,-1)
+        } else {
+          this.webcard.menssagem = this.text
+        }
       }
     },
     computed: {

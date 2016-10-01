@@ -65,7 +65,7 @@
           height: 0
         }
         var votos = size.width * (media.votes.length/50)
-        var labels = size.width * media.labels
+        var labels = size.width * (media.labels/1.5)
 
         size.width = parseInt(size.width + votos + labels)
         size.height = parseInt((size.width * 9)/16)

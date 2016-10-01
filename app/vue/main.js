@@ -21,14 +21,19 @@
 					var exec = function() {
 						if (id === 'card') {
 							app.$refs.view.janela = 'janela-card'
+							ga('send', 'pageview', '/create-card')
 						} else if (id === 'projeto') {
 							app.$refs.view.janela = 'janela-projeto'
+							ga('send', 'pageview', '/projeto')
 						} else if (id === 'realizacao') {
 							app.$refs.view.janela = 'janela-realizacao'
+							ga('send', 'pageview', '/alunos')
 						} else if (id === 'contato') {
 							app.$refs.view.janela = 'janela-contato'
+							ga('send', 'pageview', '/contato')
 						} else if (id ==='equipe') {
 							app.$refs.view.janela = 'janela-equipe'
+							ga('send', 'pageview', '/equipe')
 						} else {
 							router.notfound()
 						}
@@ -57,6 +62,7 @@
 							app.$refs.view.$children[0].$children[teste].hover = true
 							app.$refs.view.$children[0].$children[teste].on = true
 							app.$refs.view.$children[0].$children[teste].playThis()
+							ga('send', 'pageview', '/media/'+id)
 						}
 					}
 					if (app.$refs.view) {
@@ -115,6 +121,11 @@
 		var media = getData(medias[n].desc)
 		media.id = medias[n].id
 		media.nome = medias[n].name
+		if (headers.nome === undefined) {
+			app.$data.status = 'Carregando vídeos da Nave ' + headers.headers.nome + ': ' + (n+1) + ' de ' + medias.length + ' vídeos'
+		} else {
+			app.$data.status = 'Carregando vídeos da Nave ' + headers.nome + ': ' + (n+1) + ' de ' + medias.length + ' vídeos'
+		}
 		attachVotes(n, media, medias, headers, nn, naves)
 	}
 	var attachVotes = function (n, media, medias, headers, nn, naves) {
@@ -148,13 +159,18 @@
 				media.imgs = imgs
 			}
 			nave.media.push(media)
+			console.log(n)
 			if (n === medias.length - 1) {
 				app.$data.naves.push(nave)
+				if (nn < naves.length-1) {
+					getNaves(nn+1, naves)
+				}
 			} else if (n < medias.length-1) {
 				getMedia(n+1, medias, nave, nn, naves)
 			}
 
 			if (n === medias.length - 1 && nn === 7) {
+				app.$data.status = 'Pronto!'
 				init()
 			}
 		})
@@ -181,11 +197,10 @@
 			var medias = _.filter(hip, function(obj) {
 				return obj.name !== 'headers'
 			})
+			app.$data.status = 'Carregando vídeos da Nave ' + headers.nome + ': 0 de ' + medias.length + ' vídeos'
 
 			getMedia(0, medias, headers, n, naves)
-			if (n < naves.length-1) {
-				getNaves(n+1, naves)
-			}
+			
 		})
 	}
 	var getWebcards = function (webcards) {

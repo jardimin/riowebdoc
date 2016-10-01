@@ -114,11 +114,13 @@
         if (this.videos !== 0 && !tem) {
           this.webcard.videos.push(video)
           $$$('#'+video+'-vid').addClass('escolhido')
+          ga('send', 'event', 'Postal', 'video_escolhido', video)
         } else {
           this.webcard.videos = _.reject(this.webcard.videos, function(id) {
             return id === video
           })
           $$$('#'+video+'-vid').removeClass('escolhido')
+          ga('send', 'event', 'Postal', 'video_reject', video)
         }
       }
     },

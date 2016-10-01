@@ -35,6 +35,9 @@
           float: left;
           margin-right: 2%;
           height: 680px;
+          @media screen and (max-width: 1366px) {
+            height: 460px;
+          }
         }
         .menssagem {
           float: left;
@@ -44,6 +47,9 @@
           background-image: url(img/fundo_menssagem.png);
           height: 680px;
           background-size: contain;
+          @media screen and (max-width: 1366px) {
+            height: 460px;
+          }
           p {
             font-size: 20px;
             text-align: right;
@@ -63,8 +69,12 @@
     
       <div id="content" class="card" :style="{height: height+'px'}"> 
         <div class="postal_topo">
-          <img src="http://meuriovaleumfilme.com.br/imagens/logo_nave.png" class="logo_nave_postal">
-          <img src="images/logo.png" class="logo_postal">
+          <a href="http://navedoconhecimento.rio/" target="_blank">
+            <img src="http://meuriovaleumfilme.com.br/imagens/logo_nave.png" class="logo_nave_postal">
+          </a>
+          <a href="#/home">
+            <img src="images/logo.png" class="logo_postal">
+          </a>
         </div>
         <div class="postal_titulo">
           <p>{{card.email_criador}} <strong>enviou este postal de </strong>{{card.nave_nome}} <strong>para</strong> {{card.email_enviado}}</p>

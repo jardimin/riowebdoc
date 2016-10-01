@@ -91,8 +91,9 @@
     <header class="rwd_header mdl-layout__header ">
     	<div class="header_cover">
 			<div class="mdl-layout__header-row">
-				<img class="logo_superior" src="images/logo_superior.png">
-
+				<a class="logo_superior" target="_blank" href="http://navedoconhecimento.rio/">
+					<img src="images/logo_superior.png">
+				</a>
 				<!-- <a href="http://github.com/viladosite/riowebdoc" class="gitLink" target="_blank"><img class="imgGit" src="images/github512.png" alt="Fork me on GitHub"> Fork me on GitHub </a> -->
 
 				<!-- Class destinada a dar um espaçamento grande -->
@@ -349,6 +350,11 @@
 				}
       },
       filterNave: function(nome) {
+      	if (nome === '') {
+      		ga('send', 'event', 'Nave', 'filtrar', 'unfilter')
+      	} else {
+      		ga('send', 'event', 'Nave', 'filtrar', nome)
+      	}
       	this.$broadcast('filter', nome)
       },
       closeJanela: function() {
@@ -417,12 +423,12 @@
       })
 
       socket.on('resp', function(data) {
-      	console.log(data)
       	var desc = JSON.parse(data.desc)
       	if (data.idList === "5797d3393ae93636227efd5f") {
       		self.$broadcast('card-sent')
       		emailjs.send("gmail","webcard_envio",{id: data.id, to_email: desc.email_criador});
       		emailjs.send("gmail","webcard_recebido",{id: data.id, from_email: desc.email_criador, to_email: desc.email_enviado, bairro: self.webcard.nave_nome});
+      		ga('send', 'event', 'Postal', 'enviado', data.id)
 
       		self.webcard = {
 						nave_nome: null,
