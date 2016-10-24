@@ -159,7 +159,7 @@
 				media.imgs = imgs
 			}
 			nave.media.push(media)
-			console.log(n)
+			// console.log(n)
 			if (n === medias.length - 1) {
 				app.$data.naves.push(nave)
 				if (nn < naves.length-1) {

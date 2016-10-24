@@ -162,10 +162,6 @@
 					</a>
 	    		</div>
 
-	    		<div class="mdl-tooltip mdl-tooltip--left" for="icon1">
-	    		Enviar um postal
-	    		</div>
-
     		</div>
     		
     		<div id="cloud" class="rwd_cloud">

@@ -12,6 +12,9 @@
 		img {
 			margin-top: 15%;
     	margin-left: 43%;
+    	@media screen and (min-width: 1600px) {
+        margin-left: 45%;
+      }
 		}
 		#p3 {
 			margin: 0px auto;
