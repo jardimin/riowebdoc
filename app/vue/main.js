@@ -5,6 +5,217 @@
 	var app = new Vue(require('./app.vue'))
 	Vue.config.debug = true
 
+
+	var db = [{
+		headers: {
+			icon: "novabrasilia",
+			id: "579651e8b317db0ef8c59645",
+			nome: "Nova Brasília",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Nova Brasília",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	},{
+		headers: {
+			icon: "iraja",
+			id: "57d80ac925e96401c21f7df5",
+			nome: "Irajá",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Irajá",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	},{
+		headers: {
+			icon: "vilaalianca",
+			id: "57d80ad87c49e7f7310352f0",
+			nome: "Vila Aliança",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	},{
+		headers: {
+			icon: "santacruz",
+			id: "57d80ae89bbc5a6b5e728b52",
+			nome: "Santa Cruz",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Santa Cruz",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	},{
+		headers: {
+			icon: "triagem",
+			id: "57d80af0c40622fb9f879f62",
+			nome: "Triagem",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Triagem",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	},{
+		headers: {
+			icon: "padremiguel",
+			id: "57d80afe105fef63a6413dd0",
+			nome: "Padre Miguel",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Padre Miguel",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	},{
+		headers: {
+			icon: "penha",
+			id: "57d80b0a32668283f86410a7",
+			nome: "Penha",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Penha",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	},{
+		headers: {
+			icon: "madureira",
+			id: "57d80b1e816a10d09140029b",
+			nome: "Madureira",
+			video_cards: [
+				"ZZsrowhDpos",
+				"0vo_vsW_Uog",
+				"ugH9hGwMv4Y",
+				"nvUeo5sagkA",
+				"vrVuGiKRVDU",
+				"7fkOqXAHLKQ"
+			]
+		},
+		media: [{
+			id: "57edabd89324758eca7de656",
+			nav: "Madureira",
+			width: 163,
+			height: 91,
+			x: 1590.40728481406,
+			y: 501.152400496049,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			video: "tA6qNEEqVJ8"
+		}]
+	}]
+
 	// ROUTES
 
 	var routes = {
@@ -190,18 +401,20 @@
 		})
 	}
 	var getNaves = function (n, naves) {
-		Trello.get("/lists/"+naves[n].id+"/cards", function(hip) {
-			var headers = getHeaders(hip)
-			headers.nome = naves[n].name
-			headers.id = naves[n].id
-			var medias = _.filter(hip, function(obj) {
-				return obj.name !== 'headers'
-			})
-			app.$data.status = 'Carregando vídeos da Nave ' + headers.nome + ': 0 de ' + medias.length + ' vídeos'
+		app.$data.naves = db
+		init()
+		// Trello.get("/lists/"+naves[n].id+"/cards", function(hip) {
+		// 	var headers = getHeaders(hip)
+		// 	headers.nome = naves[n].name
+		// 	headers.id = naves[n].id
+		// 	var medias = _.filter(hip, function(obj) {
+		// 		return obj.name !== 'headers'
+		// 	})
+		// 	app.$data.status = 'Carregando vídeos da Nave ' + headers.nome + ': 0 de ' + medias.length + ' vídeos'
 
-			getMedia(0, medias, headers, n, naves)
+		// 	getMedia(0, medias, headers, n, naves)
 			
-		})
+		// })
 	}
 	var getWebcards = function (webcards) {
 		Trello.get("/lists/"+webcards[0].id+"/cards", function(hip) {
