@@ -243,10 +243,7 @@
         img_now: 0,
         button: false,
         hover: false,
-        on: false,
-        assistido: false,
-        votado: false,
-        votos: 0
+        on: false
       }
     },
     watch: {
@@ -458,13 +455,6 @@
     created: function () {
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
-      this.votos = this.media.votes.length
-      if(this.media.assistido) {
-        this.assistido = true
-      }
-      if(this.media.votado) {
-        this.votado = true
-      }
       var self = this
 
       if (this.media.video !== "__") {
