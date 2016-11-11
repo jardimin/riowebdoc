@@ -4,10 +4,10 @@
 
 <template>
 
-  <div id="media_cloud" class="mdl-grid" style="padding: 0; overflow: hidden" @wheel="onWheel" @mousemove="mouseMove">
+  <div id="media_cloud" class="mdl-grid" style="padding: 0; overflow: hidden" >
     <div class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; width: 100%; perspective: 800px;">
 
-      <in-media v-for="media in media_cloud" transition="fade" :media="media" :offset.sync="offset" :height="height" :width="width" :playing.sync="playing"></in-media>
+      <in-media v-for="media in media_cloud" transition="fade" :media="media" :height="height" :width="width" :playing.sync="playing"></in-media>
       <div v-if="playing !== null" style="width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;"></div>
 
     </div>  
@@ -28,8 +28,6 @@
         media_cloud: [],
         width: 0,
         height: 0,
-        offset: 0,
-        interval: 0,
         playing: null
       }
     },
@@ -40,26 +38,20 @@
         this.width = 500 * this.naves.length
         this.height = w-h
         $$$('#media_cloud').height(w-h)
+        setTimeout( () => {
+          this.$broadcast('media-height')
+        })
       },
       mouseMove: function (event) {
-        var self = this
         var width = $$$(window).width()
         var range = d3.scaleLinear()
                       .domain([0, width])
                       .range([0, 2])
         var interval = Math.abs(range(event.clientX) - 1)
-        this.interval = interval*50
       },
       onWheel: function (event) {
         var offset = 25
         var delta = event.wheelDelta || -event.deltaY
-        if (this.playing === null && this.filter === '') {
-          if (delta > 0) {
-            this.offset = this.offset + offset + this.interval
-          } else {
-            this.offset = this.offset - offset - this.interval
-          }
-        }
       }
     },
     computed: {

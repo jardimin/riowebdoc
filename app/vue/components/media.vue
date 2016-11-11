@@ -164,9 +164,9 @@
 
 <template>
 
-  <div :style="[{height: media.height+'px'},{'min-height': media.height+'px'},{width: media.width+'px'},{left: filter_offset + w_loop + x_offset + offset + media.x+'px'},{top: y_offset +  media.y+'px'}]" class="media_card" :id="media.id" @mouseover="mouseOver" @mouseout="mouseOut">
+  <div :style="[{height: local_height+'px'},{'min-height': local_height+'px'},{width: local_width+'px'},{left: media.x+'%'},{top: media.y+'%'}]" class="media_card" :id="media.id" @mouseover="mouseOver" @mouseout="mouseOut">
     <div v-if="assistido && !hover && !on" class="assistido" transition="fade"></div>
-    <div :id="media.id+'-front'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp front" style=""  :style="[{height: h_offset + media.height+'px'},{'min-height': h_offset + media.height+'px'},{width: w_offset + media.width+'px'}]">
+    <div :id="media.id+'-front'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp front" style=""  :style="[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]">
       <div :id="media.id+'-player'" class="mdl-card__title player"></div>
       <img v-for="img in media.imgs" class="mdl-card__title" :src="img" :style="[{'z-index': media.imgs.length - $index}]" :id="$index+'-img-'+media.id">
       </img>
@@ -188,7 +188,7 @@
         </a>
       </div>
     </div>
-    <div :id="media.id+'-back'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp back" :style="[{height: h_offset + media.height+'px'},{'min-height': h_offset + media.height+'px'},{width: w_offset + media.width+'px'}]">
+    <div :id="media.id+'-back'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp back" :style="[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]">
       <div class="mdl-supporting-text" style="color: black; height: 100%;">
       		<div class="left-postal" style="color: black;">
               <h4 style="margin: 0;">{{video_title}}</h4>
@@ -227,6 +227,8 @@
     data: function(){
       return {
         filter: '',
+        local_width: 0,
+        local_height: 0,
         x_offset: 0,
         y_offset: 0,
         w_offset: 0,
@@ -282,7 +284,7 @@
           var loc = this.media.x + this.offset + this.x_offset + this.w_loop + this.filter_offset
           var mw = ((this.height*.9)*16)/9
           $$$('#'+this.media.id).addClass('playing')
-          this.h_offset = (this.height*.9) - this.media.height
+          this.h_offset = (this.height*.9) - this.local_height
           this.w_offset = mw - this.media.width
           this.offset = this.offset + ( ( ( width - mw ) /2) - loc )
           this.y_offset = (this.height*.05) - this.media.y
@@ -351,14 +353,14 @@
           this.hover = true
           if (!self.on) {
             // self.w_offset = this.media.width * .05
-            // self.h_offset = this.media.height * .05
+            // self.h_offset = this.local_height * .05
             // self.x_offset = -self.w_offset/2
             // self.y_offset = -self.h_offset/2
             setTimeout(function() {
               if (self.hover) {
                 $$$('#'+self.media.id).addClass('hover')
                 self.w_offset = 480 - self.media.width
-                self.h_offset = 270 - self.media.height
+                self.h_offset = 270 - self.local_height
                 self.x_offset = -(self.w_offset/2)
                 if (self.media.matrix[0][1] - (self.h_offset/2) < 0) {
                   self.y_offset = 0
@@ -381,7 +383,7 @@
         if (this.playing === null) {
           this.hover = false
           if (self.on) {
-            if (this.media.matrix[0][0]+this.offset+this.x_offset >= x || this.media.matrix[1][0]+this.offset-this.x_offset <= x || this.media.matrix[0][1]+this.y_offset <= y || this.media.matrix[1][1]+this.y_offset+this.media.height >= y) {
+            if (this.media.matrix[0][0]+this.offset+this.x_offset >= x || this.media.matrix[1][0]+this.offset-this.x_offset <= x || this.media.matrix[0][1]+this.y_offset <= y || this.media.matrix[1][1]+this.y_offset+this.local_height >= y) {
               setTimeout(function() {
                 if (!self.hover) {
                   self.w_offset = 0
@@ -456,6 +458,12 @@
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
       var self = this
+
+      this.$on('media-height', function() {
+        console.log(this.height)
+        this.local_height = (this.height*this.media.height)/100
+        this.local_width = (this.local_height*16)/9
+      })
 
       if (this.media.video !== "__") {
         var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
