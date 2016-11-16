@@ -4,7 +4,7 @@
 
 <template>
 
-  <div id="media_cloud" class="mdl-grid" style="padding: 0; overflow: hidden" >
+  <div id="media_cloud" class="mdl-grid" style="padding: 0; overflow: hidden; background-image: url(../images/layout_40_janelas_3.png); background-repeat: no-repeat; background-size: 100%; background-position-y: 50px;" >
     <div class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; width: 100%; perspective: 800px;">
 
       <in-media v-for="media in media_cloud" transition="fade" :media="media" :height="height" :width="width" :playing.sync="playing"></in-media>
