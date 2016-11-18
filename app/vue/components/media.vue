@@ -348,29 +348,28 @@
         }
       },
       mouseOver: function() {
-        var self = this
         if (this.playing === null) {
           this.hover = true
-          if (!self.on) {
-            // self.w_offset = this.media.width * .05
-            // self.h_offset = this.local_height * .05
-            // self.x_offset = -self.w_offset/2
-            // self.y_offset = -self.h_offset/2
-            setTimeout(function() {
-              if (self.hover) {
-                $$$('#'+self.media.id).addClass('hover')
-                self.w_offset = 480 - self.media.width
-                self.h_offset = 270 - self.local_height
-                self.x_offset = -(self.w_offset/2)
-                if (self.media.matrix[0][1] - (self.h_offset/2) < 0) {
-                  self.y_offset = 0
-                } else if (self.media.matrix[1][1] + (self.h_offset/2) > self.height) {
-                  self.y_offset = - ((self.media.matrix[1][1] + (self.h_offset)) - self.height)
+          if (!this.on) {
+            // this.w_offset = this.media.width * .05
+            // this.h_offset = this.local_height * .05
+            // this.x_offset = -this.w_offset/2
+            // this.y_offset = -this.h_offset/2
+            setTimeout( () => {
+              if (this.hover) {
+                $$$('#'+this.media.id).addClass('hover')
+                this.w_offset = 480 - this.media.width
+                this.h_offset = 270 - this.local_height
+                this.x_offset = -(this.w_offset/2)
+                if (this.media.matrix[0][1] - (this.h_offset/2) < 0) {
+                  this.y_offset = 0
+                } else if (this.media.matrix[1][1] + (this.h_offset/2) > this.height) {
+                  this.y_offset = - ((this.media.matrix[1][1] + (this.h_offset)) - this.height)
                 } else {
-                  self.y_offset = -(self.h_offset/2) 
+                  this.y_offset = -(this.h_offset/2) 
                 }
-                self.sw = 8
-                self.on = true
+                this.sw = 8
+                this.on = true
               }
             }, 200)
           }

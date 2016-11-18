@@ -4,7 +4,7 @@
 
 <template>
 
-  <div id="media_cloud" class="mdl-grid" style="padding: 0; overflow: hidden; background-image: url(../images/layout_40_janelas_3.png); background-repeat: no-repeat; background-size: 100%; background-position-y: 50px;" >
+  <div id="media_cloud" class="mdl-grid" style="padding: 0; overflow: hidden; background-image: url(../images/layout_40_janelas_3.png); background-repeat: no-repeat; background-size: 100%;" >
     <div class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; width: 100%; perspective: 800px;">
 
       <in-media v-for="media in media_cloud" transition="fade" :media="media" :height="height" :width="width" :playing.sync="playing"></in-media>
@@ -35,6 +35,8 @@
       changeCanvasSize: function () {
         var h = $$$('#navegacao').outerHeight() + $$$('header').outerHeight() + 32
         var w = $$$(window).height()
+        var q = $$$(window).width()
+        if (w) {}
         this.width = 500 * this.naves.length
         this.height = w-h
         $$$('#media_cloud').height(w-h)
