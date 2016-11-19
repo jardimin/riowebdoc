@@ -22,26 +22,30 @@
 		},
 		media: [{
 			id: "57edabd89324758eca7de656",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 17.9,
-			y: 19.5,
+			y: 18.8,
 			imgs: [],
 			nome: "",
 			shadow: 2,
+			filter: false,
 			video: "tA6qNEEqVJ8"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "FA0sc2mN",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 19.2,
+			height: 18.8,
 			x: 0,
-			y: 29.2,
+			y: 28,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "ZZsrowhDpos"
 		}]
 	},{
 		headers: {
@@ -58,27 +62,31 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "6zQ9sGxy",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 33.1,
 			y: 0,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "VFcprFLe",
+			card: "",
 			nav: "Irajá",
 			width: 163,
-			height: 19.2,
+			height: 18.8,
 			x: 0,
-			y: 49.8,
+			y: 48,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "BfPwOiUwy_c"
 		}]
 	},{
 		headers: {
@@ -95,27 +103,200 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "bMXTI5qu",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 33.1,
-			y: 45,
+			y: 43.5,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "CKjnz3R5GVc"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "8JDQXM55",
+			card: "",
 			nav: "Vila Aliança",
 			width: 163,
-			height: 12.2,
-			x: 3.93,
-			y: 15.7,
+			height: 11.7,
+			x: 3.9,
+			y: 15.2,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "CE4jIVzF1x8"
+		},{
+			id: "7FNhCFHQ",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 15.1,
+			y: 85.9,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "0-p3qLpuDHA"
+		},{
+			id: "mnUn9lG5",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "3E7l46x8B_8"
+		},{
+			id: "ue399jDO",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 59.3,
+			y: 8.5,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "nvf3ubD14wg"
+		},{
+			id: "W4VcuZoJ",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 72,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "4KXPKom0H04"
+		},{
+			id: "Sv49hStC",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "5dZDU0VBuc"
+		},{
+			id: "tfIOhDiq",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 70.3,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "U4eREF3kt4E"
+		},{
+			id: "xaQs7gYd",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 78,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "Tz8z3_FYb8I"
+		},{
+			id: "Ng5sIJiS",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 78,
+			y: 57.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "qlgafW6q9hQ"
+		},{
+			id: "EBCLvyGl",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 70.3,
+			y: 57.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kDaS52LAW3Q"
+		},{
+			id: "YV4JwgzD",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "pJ_IKD564FA"
+		},{
+			id: "RDKiDZkd",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 89.7,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kEv84e6b3kE"
+		},{
+			id: "1uJYyz53",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "KJF94XfzUy4"
+		},{
+			id: "emQJCJMX",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 58.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "QAYmjmijdx0"
 		}]
 	},{
 		headers: {
@@ -132,27 +313,31 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "y9GZdArK",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 33.1,
-			y: 74.7,
+			y: 72,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "IoH9bqxZgmo"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "jyOJM82k",
+			card: "",
 			nav: "Santa Cruz",
 			width: 163,
-			height: 16.2,
+			height: 15.8,
 			x: 3.6,
-			y: 71,
+			y: 68.4,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -169,27 +354,31 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "MT8tTfLk",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
-			x: 55.2,
-			y: 45,
+			height: 26.8,
+			x: 55.1,
+			y: 43.7,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "LFwjIJE5EJ0"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "dq3W9PLm",
+			card: "",
 			nav: "Triagem",
 			width: 163,
-			height: 11.2,
+			height: 12.6,
 			x: 10.7,
-			y: 23.8,
+			y: 19,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -206,27 +395,57 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "dW2KpFRI",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 67.2,
-			y: 69.7,
+			y: 72,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "2STG1n9VKZE"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "F95YdlzK",
+			card: "",
 			nav: "Padre Miguel",
 			width: 163,
-			height: 11.2,
+			height: 12.6,
 			x: 10.7,
-			y: 35.97,
+			y: 33.2,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
+		},{
+			id: "LRGOcTD2",
+			card: "",
+			nav: "Padre Miguel",
+			width: 163,
+			height: 13,
+			x: 33.1,
+			y: 28.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "Sefcdo4I",
+			card: "",
+			nav: "Padre Miguel",
+			width: 163,
+			height: 13,
+			x: 40.7,
+			y: 28.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -243,27 +462,135 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "ygvo7j0H",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 70.3,
-			y: 21.1,
+			y: 15,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "df3GdByA",
+			card: "",
 			nav: "Penha",
 			width: 163,
-			height: 17.2,
+			height: 19.5,
 			x: 10.7,
-			y: 48.5,
+			y: 47.6,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
+		},{
+			id: "oZJjgtDv",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 47.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "JwBVdfA9",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 68.9,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "oZJjgtDv",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 0,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "TSQydmpg",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 22.4,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "JwBVdfA9",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 59.2,
+			y: 22.4,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "VHEaAiEx",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 17,
+			x: 85.3,
+			y: 6.8,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "w6apAHcKZBk"
+		},{
+			id: "6HerXE3f",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 17,
+			x: 85.3,
+			y: 25,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kbvVwOv0oFY"
+		},{
+			id: "J3SwAuLX",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 72,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -280,27 +607,44 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "DgDUHmnA",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 85.3,
-			y: 45.2,
+			y: 43.7,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "ecfgfA61",
+			card: "",
 			nav: "Madureira",
 			width: 163,
-			height: 14,
+			height: 15.7,
 			x: 12.7,
-			y: 66.6,
+			y: 68.4,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
+		},{
+			id: "jkqUiVdX",
+			card: "",
+			nav: "Madureira",
+			width: 163,
+			height: 16.5,
+			x: 23.7,
+			y: 0,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	}]
 
@@ -352,15 +696,29 @@
 			'/:id': {
 				on: function (id) {
 					var exec = function() {
-						var teste = _.findIndex(app.$refs.view.$children[0].$children, function(i) {
-							return i.media.id === id
-						})
+						var filter = id.split('-')[1]
+						console.log(filter)
+						if (filter === undefined) {
+							var teste = _.findIndex(app.$refs.view.$children[0].$children, function(i) {
+								return i.media.id === id
+							})
+						} else if (filter === 'filter') {
+							var teste = _.findIndex(app.$refs.view.$children[0].$children[40].$children, function(i) {
+								return i.media.id === id
+							})
+						}
+						
 						if (teste === -1) {
 							router.notfound()
-						} else {
+						} else if (filter === undefined){
 							app.$refs.view.$children[0].$children[teste].hover = true
 							app.$refs.view.$children[0].$children[teste].on = true
 							app.$refs.view.$children[0].$children[teste].playThis()
+							ga('send', 'pageview', '/media/'+id)
+						} else {
+							app.$refs.view.$children[0].$children[40].$children[teste].hover = true
+							app.$refs.view.$children[0].$children[40].$children[teste].on = true
+							app.$refs.view.$children[0].$children[40].$children[teste].playThis()
 							ga('send', 'pageview', '/media/'+id)
 						}
 					}

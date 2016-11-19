@@ -98,7 +98,121 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-bca5d24c", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./views/card-view.vue":15,"./views/home-view.vue":16,"blueimp-md5":22,"jquery":48,"perfect-scrollbar":54,"underscore":90,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],2:[function(require,module,exports){
+},{"./views/card-view.vue":16,"./views/home-view.vue":17,"blueimp-md5":23,"jquery":49,"perfect-scrollbar":55,"underscore":91,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],2:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%;\n  background-image: url(../images/filter1.png);\n  background-size: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 0;\n    -webkit-transform: translateY(50px);\n            transform: translateY(50px); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var $$$ = require('jquery')
+var marked = require('marked')
+module.exports = {
+  props: ['height', 'width', 'naves', 'playing'],
+  data: function(){
+    return {
+      medias: [],
+      sizes: [{
+        height: 47,
+        x: 36.2,
+        y: 10.4
+      },{
+        height: 21,
+        x: 24.3,
+        y: 35
+      },{
+        height: 30.8,
+        x: 44.4,
+        y: 59.8
+      },{
+        height: 25,
+        x: 62.3,
+        y: 10.4
+      }]
+    }
+  },
+  watch: {
+    
+  },
+  methods: {
+    
+  },
+  created: function () {
+    for (var i = 0; i < this.naves[5].media.length; i++) {
+      var med = {
+        id: this.naves[5].media[i].id + '-filter',
+        card: this.naves[5].media[i].id,
+        nav: this.naves[5].media[i].nav,
+        width: this.naves[5].media[i].width,
+        height: this.sizes[i].height,
+        x: this.sizes[i].x,
+        y: this.sizes[i].y,
+        imgs: [],
+        nome: "",
+        shadow: this.naves[5].media[i].nome,
+        filter: true,
+        video: this.naves[5].media[i].video
+      }
+      this.medias.push(med)
+    }
+  },
+  attached: function () {
+    
+  },
+  components: {
+    'filter-media': require('./media.vue')
+  },
+  filters: {
+    marked: function(value) {
+      return marked(value)
+    }
+  }
+}
+
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"filter\">\n  <filter-media v-for=\"m in medias\" transition=\"fade\" :media=\"m\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></filter-media>\n  <div v-if=\"playing !== null &amp;&amp; filter !== ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n</div>  \n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%;\n  background-image: url(../images/filter1.png);\n  background-size: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 0;\n    -webkit-transform: translateY(50px);\n            transform: translateY(50px); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-7303ed86", module.exports)
+  } else {
+    hotAPI.update("_v-7303ed86", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"./media.vue":9,"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],3:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 3, stdin */\n#menumodal {\n  position: absolute;\n  right: 8%;\n  top: 6%; }\n\n/* line 9, stdin */\nsvg path {\n  fill: #06303c;\n  opacity: 1;\n  -webkit-transition: opacity .2s;\n  transition: opacity .2s; }\n\n/* line 15, stdin */\nsvg:hover path {\n  opacity: .7; }\n\n/* line 21, stdin */\nbutton:disabled {\n  cursor: default; }\n  /* line 23, stdin */\n  button:disabled path {\n    fill: gray;\n    opacity: .8 !important; }\n\n/* line 28, stdin */\nbutton:focus {\n  outline: none; }\n\n/* line 34, stdin */\n.passo h3 {\n  margin-top: 0;\n  margin-bottom: 40px; }\n\n/* line 38, stdin */\n.passo strong {\n  font-family: 'treta';\n  font-size: 30px;\n  color: #06303c; }\n\n/* line 43, stdin */\n.passo p {\n  font-size: 14px;\n  font-weight: 600;\n  color: #06303c;\n  font-family: 'treta'; }\n\n/* line 51, stdin */\n.passo .mdl-textfield--floating-label.is-focused .mdl-textfield__label {\n  color: #d66843; }\n\n/* line 56, stdin */\n.passo .mdl-textfield__input {\n  border-bottom: 2px dotted rgba(0, 0, 0, 0.12); }\n\n/* line 60, stdin */\n.passo .mdl-textfield__label:after {\n  background-color: #d66843; }\n")
 
@@ -271,7 +385,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-42555fd8", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../components/passo-0.vue":9,"../components/passo-1.vue":10,"../components/passo-2.vue":11,"../components/passo-3.vue":12,"../components/passo-4.vue":13,"jquery":48,"marked":49,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],3:[function(require,module,exports){
+},{"../components/passo-0.vue":10,"../components/passo-1.vue":11,"../components/passo-2.vue":12,"../components/passo-3.vue":13,"../components/passo-4.vue":14,"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],4:[function(require,module,exports){
 
 
 
@@ -338,7 +452,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-5c2a0b92", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"perfect-scrollbar/jquery":55,"vue":93,"vue-hot-reload-api":92}],4:[function(require,module,exports){
+},{"jquery":49,"marked":50,"perfect-scrollbar/jquery":56,"vue":94,"vue-hot-reload-api":93}],5:[function(require,module,exports){
 
 
 
@@ -414,7 +528,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-41ecc706", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"perfect-scrollbar/jquery":55,"vue":93,"vue-hot-reload-api":92}],5:[function(require,module,exports){
+},{"jquery":49,"marked":50,"perfect-scrollbar/jquery":56,"vue":94,"vue-hot-reload-api":93}],6:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.pscroll {\n  width: 90%;\n  position: relative;\n  height: 75%;\n  margin-top: 10%;\n  overflow: hidden; }\n  /* line 8, stdin */\n  .pscroll p {\n    padding-right: 15px; }\n")
 
@@ -523,7 +637,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-21b50e0b", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"perfect-scrollbar/jquery":55,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],6:[function(require,module,exports){
+},{"jquery":49,"marked":50,"perfect-scrollbar/jquery":56,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],7:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.scrooll {\n  width: 90%;\n  position: relative;\n  height: 400px;\n  margin-top: 10%;\n  overflow: hidden; }\n\n/* line 9, stdin */\n.alunos {\n  width: 50%;\n  float: left;\n  position: relative; }\n\n/* line 14, stdin */\n.alunos_img {\n  width: 45%;\n  float: left;\n  position: relative; }\n  /* line 18, stdin */\n  .alunos_img img {\n    width: 100%;\n    margin-bottom: 15px; }\n")
 
@@ -633,7 +747,8 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-5d8c70e7", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"perfect-scrollbar/jquery":55,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],7:[function(require,module,exports){
+},{"jquery":49,"marked":50,"perfect-scrollbar/jquery":56,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],8:[function(require,module,exports){
+
 
 
 
@@ -669,12 +784,12 @@ module.exports = {
   },
   methods: {
     changeCanvasSize: function () {
-      var h = $$$('#navegacao').outerHeight() + $$$('header').outerHeight() + 32
+      var h = $$$('#navegacao').outerHeight() + $$$('header').outerHeight() + 32 - 15
       var w = $$$(window).height()
       var q = $$$(window).width()
       if (w) {}
-      this.width = 500 * this.naves.length
       this.height = w-h
+      this.width = this.height * 3.301912568306011
       $$$('#media_cloud').height(w-h)
       setTimeout( () => {
         this.$broadcast('media-height')
@@ -688,7 +803,6 @@ module.exports = {
       var interval = Math.abs(range(event.clientX) - 1)
     },
     onWheel: function (event) {
-      var offset = 25
       var delta = event.wheelDelta || -event.deltaY
     }
   },
@@ -697,9 +811,9 @@ module.exports = {
   },
   created: function () {
     for (var i = 0; i < this.naves.length; i++) {
-      console.log(this.naves.length)
       for (var o = 0; o < this.naves[i].media.length; o++) {
         var m = this.naves[i].media[o]
+        m.card = m.id
         this.media_cloud.push(m)
       }
     }
@@ -718,7 +832,8 @@ module.exports = {
     })
   },
   components: {
-    'in-media': require('./media.vue')
+    'in-media': require('./media.vue'),
+    'filter-madureira': require('./filter-madureira.vue')
   },
   filters: {
     marked: function(value) {
@@ -728,7 +843,7 @@ module.exports = {
 }
 
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; overflow: hidden; background-image: url(../images/layout_40_janelas_3.png); background-repeat: no-repeat; background-size: 100%;\">\n  <div class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; width: 100%; perspective: 800px;\">\n\n    <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></in-media>\n    <div v-if=\"playing !== null\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n  </div>  \n</div>  \n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; overflow: hidden;\">\n  <div class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 800px;\" :style=\"{width: width+'px'}\">\n\n    <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></in-media>\n    <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n    <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n  </div>  \n</div>  \n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -739,14 +854,9 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-7758366a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./media.vue":8,"jquery":48,"marked":49,"underscore":90,"vue":93,"vue-hot-reload-api":92}],8:[function(require,module,exports){
+},{"./filter-madureira.vue":2,"./media.vue":9,"jquery":49,"marked":50,"underscore":91,"vue":94,"vue-hot-reload-api":93}],9:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 27, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 30, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 38, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 41, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 46, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 51, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 56, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 61, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 65, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 69, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 76, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 82, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 86, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 90, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 94, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 99, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n  /* line 103, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 107, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 116, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 119, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 126, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 130, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 138, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 144, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 155, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n")
-
-
-
-
-
+var __vueify_style__ = __vueify_insert__.insert("/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.filter {\n    -webkit-transition: left .5s;\n    transition: left .5s; }\n  /* line 27, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 30, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 36, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 41, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 44, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 49, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 54, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 59, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 64, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 68, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 72, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 79, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 85, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 89, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 93, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 97, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 102, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n  /* line 106, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 110, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 119, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 122, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 129, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 133, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 141, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 147, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 158, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n")
 
 
 
@@ -967,10 +1077,11 @@ var $$$ = require('jquery')
 var marked = require('marked')
 module.exports = {
   replace: true,
-  props: ['offset', 'media', 'height', 'width', 'playing'],
+  props: ['media', 'height', 'width', 'playing'],
   data: function(){
     return {
       filter: '',
+      filtered: false,
       local_width: 0,
       local_height: 0,
       x_offset: 0,
@@ -979,7 +1090,6 @@ module.exports = {
       h_offset: 0,
       no_video: true,
       w_loop: 0,
-      filter_offset: 0,
       sw: 2,
       video_desc: '',
       video_title: '',
@@ -993,28 +1103,6 @@ module.exports = {
     }
   },
   watch: {
-    offset: function(val, oldVal) {
-      var self = this
-      if (this.playing === null) {
-        if (this.w_loop + this.offset + this.x_offset + this.media.x > this.width) {
-          $$$('#'+this.media.id).addClass('in-trans')
-          $$$('#'+this.media.id).css('opacity', 0)
-          this.w_loop = - (this.w_loop + this.width + 250)
-          setTimeout(function() {
-            $$$('#'+self.media.id).css('opacity', 1)
-            $$$('#'+self.media.id).removeClass('in-trans')
-          }, 500)
-        } else if (this.w_loop + this.offset + this.x_offset + this.media.x + this.media.width < -250) {
-          $$$('#'+this.media.id).addClass('in-trans')
-          $$$('#'+this.media.id).css('opacity', 0)
-          this.w_loop = this.w_loop + this.width + 250
-          setTimeout(function() {
-            $$$('#'+self.media.id).css('opacity', 1)
-            $$$('#'+self.media.id).removeClass('in-trans')
-          }, 400)
-        }
-      }
-    },
     on: function(val, oldVal) {
       if (oldVal === true) {
         this.unFlip(this.media.id)
@@ -1023,16 +1111,18 @@ module.exports = {
       }
     },
     playing: function(val, oldVal) {
-      if (val === this.media.id) {
+      if (val === this.media.id && !this.filtered) {
         var width = $$$(window).width()
-        var loc = this.media.x + this.offset + this.x_offset + this.w_loop + this.filter_offset
+        var loc = this.media.x + this.x_offset + this.w_loop
         var mw = ((this.height*.9)*16)/9
+        var heightPX = (this.height*this.media.y)/100
+        var leftPX = (this.width*this.media.x)/100
         $$$('#'+this.media.id).addClass('playing')
         this.h_offset = (this.height*.9) - this.local_height
-        this.w_offset = mw - this.media.width
-        this.offset = this.offset + ( ( ( width - mw ) /2) - loc )
-        this.y_offset = (this.height*.05) - this.media.y
-      } else if (oldVal === this.media.id) {
+        this.w_offset = mw - this.local_width
+        this.y_offset = (this.height*.05) - heightPX
+        this.x_offset = (this.width*.27) - leftPX
+      } else if (oldVal === this.media.id && !this.filtered) {
         $$$('#'+this.media.id).removeClass('playing')
         $$$('#'+this.media.id).removeClass('hover')
         this.h_offset = 0
@@ -1046,30 +1136,21 @@ module.exports = {
       }
     },
     filter: function(val, oldVal) {
-      if (val === this.media.nav && oldVal !== this.media.nav) {
-        $$$('#'+this.media.id).removeClass('filtered')
-        var width = $$$(window).width()
-        var loc = this.media.x + this.offset + this.x_offset + this.w_loop
-        var mw = ((this.height*.9)*16)/9
-        var range = d3.scaleLinear()
-                      .domain([0, this.width])
-                      .range([100, width-400])
-
-        var x_filter = range(this.media.x)
-        this.filter_offset = x_filter - loc
-      } else if (val === '') {
-        $$$('#'+this.media.id).removeClass('filtered')
-        this.filter_offset = 0
+      if (val !== '' && !this.media.filter) {
+        var leftPX = (this.width*this.media.x)/100
+        this.filtered = true
+        if (leftPX < this.width/2 - 50) {
+          this.x_offset = - this.width/2
+        } else {
+          this.x_offset = this.width/2 + 50
+        }
       } else {
-        $$$('#'+this.media.id).addClass('filtered')
-        this.filter_offset = 0
+        this.filtered = false
+        this.x_offset = 0
       }
     }
   },
   methods: {
-    analyticsMaps: function() {
-      ga('send', 'event', 'Media', 'map', this.media.id)
-    },
     flip: function(id) {
       $$$('#'+id+'-front').css('transform', 'rotateY(180deg)')
       $$$('#'+id+'-back').css('transform', 'rotateY(0deg)')
@@ -1092,29 +1173,39 @@ module.exports = {
       }
     },
     mouseOver: function() {
-      var self = this
       if (this.playing === null) {
         this.hover = true
-        if (!self.on) {
-          // self.w_offset = this.media.width * .05
-          // self.h_offset = this.local_height * .05
-          // self.x_offset = -self.w_offset/2
-          // self.y_offset = -self.h_offset/2
-          setTimeout(function() {
-            if (self.hover) {
-              $$$('#'+self.media.id).addClass('hover')
-              self.w_offset = 480 - self.media.width
-              self.h_offset = 270 - self.local_height
-              self.x_offset = -(self.w_offset/2)
-              if (self.media.matrix[0][1] - (self.h_offset/2) < 0) {
-                self.y_offset = 0
-              } else if (self.media.matrix[1][1] + (self.h_offset/2) > self.height) {
-                self.y_offset = - ((self.media.matrix[1][1] + (self.h_offset)) - self.height)
+        if (!this.on) {
+          // this.w_offset = this.media.width * .05
+          // this.h_offset = this.local_height * .05
+          // this.x_offset = -this.w_offset/2
+          // this.y_offset = -this.h_offset/2
+          setTimeout( () => {
+            if (this.hover) {
+              $$$('#'+this.media.id).addClass('hover')
+              this.w_offset = 480 - this.local_width
+              this.h_offset = 270 - this.local_height
+              this.x_offset = -(this.w_offset/2)
+              var heightPX = (this.height*this.media.y)/100
+              var leftPX = (this.width*this.media.x)/100
+              var matrixX = heightPX + this.local_height
+              var matrixY = leftPX + this.local_width
+              if (heightPX - (this.h_offset/2) < 0) {
+                this.y_offset = - heightPX
+              } else if (matrixX + (this.h_offset/2) > this.height) {
+                this.y_offset = - ((matrixX + (this.h_offset)) - this.height)
               } else {
-                self.y_offset = -(self.h_offset/2) 
+                this.y_offset = -(this.h_offset/2) 
               }
-              self.sw = 8
-              self.on = true
+              if (leftPX - (this.w_offset/2) < 0) {
+                this.x_offset = - leftPX
+              } else if (matrixY + (this.w_offset/2) > this.width) {
+                this.x_offset = - ((matrixY + (this.w_offset)) - this.width)
+              } else {
+                this.x_offset = -(this.w_offset/2) 
+              }
+              this.sw = 8
+              this.on = true
             }
           }, 200)
         }
@@ -1124,10 +1215,14 @@ module.exports = {
       var self = this
       var y = event.y || event.clientY
       var x = event.x || event.clientX
+      var heightPX = (this.height*this.media.y)/100
+      var leftPX = (this.width*this.media.x)/100
+      var matrixX = heightPX + this.local_height
+      var matrixY = leftPX + this.local_width
       if (this.playing === null) {
         this.hover = false
         if (self.on) {
-          if (this.media.matrix[0][0]+this.offset+this.x_offset >= x || this.media.matrix[1][0]+this.offset-this.x_offset <= x || this.media.matrix[0][1]+this.y_offset <= y || this.media.matrix[1][1]+this.y_offset+this.local_height >= y) {
+          if (leftPX +this.x_offset >= x || matrixX-this.x_offset <= x || heightPX+this.y_offset <= y || matrixY+this.y_offset+this.local_height >= y) {
             setTimeout(function() {
               if (!self.hover) {
                 self.w_offset = 0
@@ -1163,9 +1258,6 @@ module.exports = {
           'onStateChange': this.videoFim
         }
       })
-      document.cookie = "ass-"+this.media.id+"=true"
-      this.$dispatch('assistido', this.media.id)
-      this.assistido = true
     },
     closeMedia: function() {
       ga('send', 'event', 'Media', 'close', this.media.id)
@@ -1181,21 +1273,6 @@ module.exports = {
         self.playing = null
         ga('send', 'event', 'Media', 'end', this.media.id)
       }
-    },
-    votar: function(event) {
-      if (this.votado) {
-        this.$dispatch('des-votado', this.media.id)
-        document.cookie = "voto-"+this.media.id+"=false"
-        this.votado = false
-        this.votos = this.votos - 1
-        ga('send', 'event', 'Media', 'desvotado', this.media.id)
-      } else {
-        this.$dispatch('votado', this.media.id)
-        document.cookie = "voto-"+this.media.id+"=true"
-        this.votado = true
-        this.votos = this.votos + 1
-        ga('send', 'event', 'Media', 'votado', this.media.id)
-      }
     }
   },
   created: function () {
@@ -1203,11 +1280,25 @@ module.exports = {
     this.sw = this.media.shadow
     var self = this
 
+    Trello.get("/cards/"+this.media.card+"/attachments", function(attach) {
+      if (attach.length === 0) {
+        self.media.imgs = ['/img/default_img.png']
+      } else {
+        for (var i = 0; i < attach.length; i++) {
+          self.media.imgs.push(attach[i].url)
+        }
+      }
+    })
+
     this.$on('media-height', function() {
-      console.log(this.height)
       this.local_height = (this.height*this.media.height)/100
       this.local_width = (this.local_height*16)/9
     })
+
+    if (this.media.filter) {
+      this.local_height = (this.height*this.media.height)/100
+      this.local_width = (this.local_height*16)/9
+    }
 
     if (this.media.video !== "__") {
       var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
@@ -1243,7 +1334,7 @@ module.exports = {
       }
     })
     
-    if (this._uid === this.$parent.media_cloud.length + 2) {
+    if (!this.media.filter && this._uid === this.$parent.media_cloud.length + 2) {
       this.$dispatch('home-ready')
     }
   },
@@ -1258,13 +1349,13 @@ module.exports = {
 }
 
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div :style=\"[{height: local_height+'px'},{'min-height': local_height+'px'},{width: local_width+'px'},{left: media.x+'%'},{top: media.y+'%'}]\" class=\"media_card\" :id=\"media.id\" @mouseover=\"mouseOver\" @mouseout=\"mouseOut\">\n  <div v-if=\"assistido &amp;&amp; !hover &amp;&amp; !on\" class=\"assistido\" transition=\"fade\"></div>\n  <div :id=\"media.id+'-front'\" class=\"demo-card-wide mdl-card mdl-shadow--{{sw}}dp front\" style=\"\" :style=\"[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]\">\n    <div :id=\"media.id+'-player'\" class=\"mdl-card__title player\"></div>\n    <img v-for=\"img in media.imgs\" class=\"mdl-card__title\" :src=\"img\" :style=\"[{'z-index': media.imgs.length - $index}]\" :id=\"$index+'-img-'+media.id\">\n    \n    <div style=\"z-index: 3; position: absolute; width: 100%; padding-left: 42%; padding-top: 22%;\" v-if=\"on\" transition=\"fade\">\n      <a v-if=\"playing === null\" :href=\"'/#/home/'+media.id\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" style=\"overflow: visible;\" transition=\"fade3\">\n        <i v-if=\"!no_video\" class=\"material-icons\" style=\"font-size: 60px;\">play_circle_outline</i>\n      </a>\n    </div>\n    <div class=\"mdl-card__menu\" v-if=\"on\" transition=\"fade\">\n      <span v-if=\"playing !== null\">{{votos}}</span>\n      <button v-if=\"playing !== null\" :id=\"media.id+'-voto'\" :class=\"{votado: votado}\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" @click=\"votar\">\n        <i class=\"material-icons\">thumb_up</i>\n      </button>\n      <button v-if=\"!no_video\" :id=\"media.id+'-desc'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" @click=\"flip(media.id)\">\n        <i class=\"material-icons\">description</i>\n      </button>\n      <a v-if=\"playing !== null\" href=\"/#/home\" :id=\"media.id+'-close'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">clear</i>\n      </a>\n    </div>\n  </div>\n  <div :id=\"media.id+'-back'\" class=\"demo-card-wide mdl-card mdl-shadow--{{sw}}dp back\" :style=\"[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]\">\n    <div class=\"mdl-supporting-text\" style=\"color: black; height: 100%;\">\n    \t\t<div class=\"left-postal\" style=\"color: black;\">\n            <h4 style=\"margin: 0;\">{{video_title}}</h4>\n      \t\t\t{{video_desc}}\n      \t</div>\n\n      \t<div class=\"right-postal\" style=\"color: black;\">\n      \t\t\t<img src=\"http://capacitacao.navedoconhecimento.org.br/img/logo.png\" style=\"width: 100%; position: absolute; bottom: 0; right: -15px;\">\n      \t</div>\n     \t\n    </div>\n    <div class=\"mdl-card__menu\" v-if=\"on\" transition=\"fade\">\n      <!-- <a :id=\"media.id+'-back-map'\" :href=\"media.mapa\" target=\"_blank\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" @click=\"analyticsMaps\">\n        <i class=\"material-icons\">room</i>\n      </a> -->\n      <button :id=\"media.id+'-photo'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" @click=\"unFlip(media.id)\">\n        <svg style=\"width:24px;height:24px\" viewBox=\"0 0 24 24\">\n          <path fill=\"#000000\" d=\"m 18.334101,19.618585 -12.3872826,0 0,-15.4980258 12.3868306,0 0,15.4978458 4.33e-4,0 0,1.8e-4 z m 2.550122,-16.9687922 0,-0.1558962 C 20.654487,2.4020434 19.961215,1.7086388 19.86959,1.4787215 l -0.155715,0 c -0.161583,0.4028738 -0.554708,0.687946 -1.015536,0.687946 -0.460377,0 -0.853953,-0.2850722 -1.015084,-0.687946 l -1.248884,0 c -0.16068,0.4028738 -0.554709,0.687946 -1.015085,0.687946 -0.460827,0 -0.854404,-0.2850722 -1.015085,-0.687946 l -1.248883,0 c -0.16068,0.4028738 -0.554257,0.687946 -1.015084,0.687946 -0.460377,0 -0.853953,-0.2850722 -1.015085,-0.687946 l -1.2488831,0 c -0.161132,0.4028738 -0.554709,0.687946 -1.0150851,0.687946 -0.4603762,0 -0.8539529,-0.2850722 -1.0150845,-0.687946 l -1.2488837,0 c -0.1611316,0.4028738 -0.5547081,0.687946 -1.0150851,0.687946 -0.4603755,0 -0.8539526,-0.2850722 -1.0150845,-0.687946 l -0.1557152,0 C 4.3192541,1.7086388 3.6259796,2.4020469 3.3962433,2.4938966 l 0,0.1558962 C 3.7988467,2.8109247 4.0841,3.2044554 4.0841,3.6649679 c 0,0.4605113 -0.2852533,0.854223 -0.6878567,1.015175 l 0,1.2487925 C 3.7988467,6.0900673 4.0841,6.4837791 4.0841,6.9441105 c 0,0.4605113 -0.2852533,0.8540432 -0.6878567,1.014994 l 0,1.2486127 C 3.7988467,9.3688942 4.0841,9.7624262 4.0841,10.222937 c 0,0.460692 -0.2852533,0.854179 -0.6878567,1.015355 l 0,1.248433 c 0.4026034,0.16095 0.6878567,0.554663 0.6878567,1.015536 0,0.46015 -0.2852533,0.853682 -0.6878567,1.015175 l 0,1.248612 C 3.7988467,15.927044 4.0841,16.320711 4.0841,16.781223 c 0,0.460512 -0.2852533,0.854043 -0.6878567,1.015355 l 0,1.248613 C 3.7988467,19.206007 4.0841,19.599719 4.0841,20.06023 c 0,0.460513 -0.2852533,0.854043 -0.6878567,1.014995 l 0,0.170159 c 0.2292859,0.09203 0.9230097,0.785438 1.0150845,1.015175 l 0.1557152,0 c 0.1611319,-0.402694 0.554709,-0.687631 1.0150845,-0.687631 0.4608282,0 0.8544049,0.284937 1.0155365,0.687631 l 1.2484323,0 c 0.1611316,-0.402694 0.5547083,-0.687631 1.0155359,-0.687631 0.4603767,0 0.8539527,0.284937 1.0150847,0.687631 l 1.2484321,0 c 0.161132,-0.402694 0.554708,-0.687631 1.015536,-0.687631 0.460376,0 0.853953,0.284937 1.015085,0.687631 l 1.248431,0 c 0.160681,-0.402694 0.554709,-0.687631 1.015536,-0.687631 0.459925,0 0.853503,0.284937 1.014634,0.687631 l 1.249335,0 c 0.16068,-0.402694 0.554256,-0.687631 1.015085,-0.687631 0.460376,0 0.853501,0.284937 1.015084,0.687631 l 0.155715,0 c 0.09162,-0.229557 0.784897,-0.922965 1.015085,-1.015175 l 0,-0.170159 C 20.48162,20.91459 20.196819,20.520562 20.196819,20.06005 c 0,-0.460511 0.284801,-0.854043 0.687856,-1.014994 l 0,-1.248612 c -0.403055,-0.160998 -0.687856,-0.554845 -0.687856,-1.015402 0,-0.460692 0.284801,-0.853998 0.687856,-1.015355 l 0,-1.248612 C 20.48162,14.356304 20.196819,13.962231 20.196819,13.5019 c 0,-0.460693 0.284801,-0.854225 0.687856,-1.015355 l 0,-1.249155 c -0.403055,-0.160952 -0.687856,-0.554664 -0.687856,-1.015175 0,-0.4605108 0.284801,-0.8542238 0.687856,-1.0151748 l 0,-1.2487934 C 20.48162,7.797116 20.196819,7.4035842 20.196819,6.9428918 c 0,-0.4603314 0.284801,-0.8538621 0.687856,-1.0150392 l 0,-1.2487937 C 20.48162,4.518108 20.196819,4.1243963 20.196819,3.663885 20.196385,3.2040944 20.48162,2.8109247 20.884223,2.6497928\"></path> \n        </svg>\n      </button>\n      <a v-if=\"playing !== null\" href=\"/#/home\" :id=\"media.id+'-close'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">clear</i>\n      </a>\n    </div>\n  </div>\n</div>  \n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div :style=\"[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'},{left: 'calc(' + media.x+'% + ' + x_offset + 'px)'},{top: 'calc(' + media.y+'% + ' + y_offset + 'px)'}]\" class=\"media_card\" :class=\"{filter: filtered}\" :id=\"media.id\" @mouseover=\"mouseOver\" @mouseout=\"mouseOut\">\n  <div :id=\"media.id+'-front'\" class=\"demo-card-wide mdl-card mdl-shadow--{{sw}}dp front\" style=\"\" :style=\"[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]\">\n    <div :id=\"media.id+'-player'\" class=\"mdl-card__title player\"></div>\n    <img v-for=\"img in media.imgs\" class=\"mdl-card__title\" :src=\"img\" :style=\"[{'z-index': media.imgs.length - $index}]\" :id=\"$index+'-img-'+media.id\">\n    \n    <div style=\"z-index: 3; position: absolute; width: 100%; padding-left: 42%; padding-top: 22%;\" v-if=\"on\" transition=\"fade\">\n      <a v-if=\"playing === null\" :href=\"'/#/home/'+media.id\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" style=\"overflow: visible;\" transition=\"fade3\">\n        <i v-if=\"!no_video\" class=\"material-icons\" style=\"font-size: 60px;\">play_circle_outline</i>\n      </a>\n    </div>\n    <div class=\"mdl-card__menu\" v-if=\"on\" transition=\"fade\">\n      <button v-if=\"!no_video\" :id=\"media.id+'-desc'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" @click=\"flip(media.id)\">\n        <i class=\"material-icons\">description</i>\n      </button>\n      <a v-if=\"playing !== null\" href=\"/#/home\" :id=\"media.id+'-close'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">clear</i>\n      </a>\n    </div>\n  </div>\n  <div :id=\"media.id+'-back'\" class=\"demo-card-wide mdl-card mdl-shadow--{{sw}}dp back\" :style=\"[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]\">\n    <div class=\"mdl-supporting-text\" style=\"color: black; height: 100%;\">\n    \t\t<div class=\"left-postal\" style=\"color: black;\">\n            <h4 style=\"margin: 0;\">{{video_title}}</h4>\n      \t\t\t{{video_desc}}\n      \t</div>\n\n      \t<div class=\"right-postal\" style=\"color: black;\">\n      \t\t\t<img src=\"http://capacitacao.navedoconhecimento.org.br/img/logo.png\" style=\"width: 100%; position: absolute; bottom: 0; right: -15px;\">\n      \t</div>\n     \t\n    </div>\n    <div class=\"mdl-card__menu\" v-if=\"on\" transition=\"fade\">\n      <button :id=\"media.id+'-photo'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\" @click=\"unFlip(media.id)\">\n        <svg style=\"width:24px;height:24px\" viewBox=\"0 0 24 24\">\n          <path fill=\"#000000\" d=\"m 18.334101,19.618585 -12.3872826,0 0,-15.4980258 12.3868306,0 0,15.4978458 4.33e-4,0 0,1.8e-4 z m 2.550122,-16.9687922 0,-0.1558962 C 20.654487,2.4020434 19.961215,1.7086388 19.86959,1.4787215 l -0.155715,0 c -0.161583,0.4028738 -0.554708,0.687946 -1.015536,0.687946 -0.460377,0 -0.853953,-0.2850722 -1.015084,-0.687946 l -1.248884,0 c -0.16068,0.4028738 -0.554709,0.687946 -1.015085,0.687946 -0.460827,0 -0.854404,-0.2850722 -1.015085,-0.687946 l -1.248883,0 c -0.16068,0.4028738 -0.554257,0.687946 -1.015084,0.687946 -0.460377,0 -0.853953,-0.2850722 -1.015085,-0.687946 l -1.2488831,0 c -0.161132,0.4028738 -0.554709,0.687946 -1.0150851,0.687946 -0.4603762,0 -0.8539529,-0.2850722 -1.0150845,-0.687946 l -1.2488837,0 c -0.1611316,0.4028738 -0.5547081,0.687946 -1.0150851,0.687946 -0.4603755,0 -0.8539526,-0.2850722 -1.0150845,-0.687946 l -0.1557152,0 C 4.3192541,1.7086388 3.6259796,2.4020469 3.3962433,2.4938966 l 0,0.1558962 C 3.7988467,2.8109247 4.0841,3.2044554 4.0841,3.6649679 c 0,0.4605113 -0.2852533,0.854223 -0.6878567,1.015175 l 0,1.2487925 C 3.7988467,6.0900673 4.0841,6.4837791 4.0841,6.9441105 c 0,0.4605113 -0.2852533,0.8540432 -0.6878567,1.014994 l 0,1.2486127 C 3.7988467,9.3688942 4.0841,9.7624262 4.0841,10.222937 c 0,0.460692 -0.2852533,0.854179 -0.6878567,1.015355 l 0,1.248433 c 0.4026034,0.16095 0.6878567,0.554663 0.6878567,1.015536 0,0.46015 -0.2852533,0.853682 -0.6878567,1.015175 l 0,1.248612 C 3.7988467,15.927044 4.0841,16.320711 4.0841,16.781223 c 0,0.460512 -0.2852533,0.854043 -0.6878567,1.015355 l 0,1.248613 C 3.7988467,19.206007 4.0841,19.599719 4.0841,20.06023 c 0,0.460513 -0.2852533,0.854043 -0.6878567,1.014995 l 0,0.170159 c 0.2292859,0.09203 0.9230097,0.785438 1.0150845,1.015175 l 0.1557152,0 c 0.1611319,-0.402694 0.554709,-0.687631 1.0150845,-0.687631 0.4608282,0 0.8544049,0.284937 1.0155365,0.687631 l 1.2484323,0 c 0.1611316,-0.402694 0.5547083,-0.687631 1.0155359,-0.687631 0.4603767,0 0.8539527,0.284937 1.0150847,0.687631 l 1.2484321,0 c 0.161132,-0.402694 0.554708,-0.687631 1.015536,-0.687631 0.460376,0 0.853953,0.284937 1.015085,0.687631 l 1.248431,0 c 0.160681,-0.402694 0.554709,-0.687631 1.015536,-0.687631 0.459925,0 0.853503,0.284937 1.014634,0.687631 l 1.249335,0 c 0.16068,-0.402694 0.554256,-0.687631 1.015085,-0.687631 0.460376,0 0.853501,0.284937 1.015084,0.687631 l 0.155715,0 c 0.09162,-0.229557 0.784897,-0.922965 1.015085,-1.015175 l 0,-0.170159 C 20.48162,20.91459 20.196819,20.520562 20.196819,20.06005 c 0,-0.460511 0.284801,-0.854043 0.687856,-1.014994 l 0,-1.248612 c -0.403055,-0.160998 -0.687856,-0.554845 -0.687856,-1.015402 0,-0.460692 0.284801,-0.853998 0.687856,-1.015355 l 0,-1.248612 C 20.48162,14.356304 20.196819,13.962231 20.196819,13.5019 c 0,-0.460693 0.284801,-0.854225 0.687856,-1.015355 l 0,-1.249155 c -0.403055,-0.160952 -0.687856,-0.554664 -0.687856,-1.015175 0,-0.4605108 0.284801,-0.8542238 0.687856,-1.0151748 l 0,-1.2487934 C 20.48162,7.797116 20.196819,7.4035842 20.196819,6.9428918 c 0,-0.4603314 0.284801,-0.8538621 0.687856,-1.0150392 l 0,-1.2487937 C 20.48162,4.518108 20.196819,4.1243963 20.196819,3.663885 20.196385,3.2040944 20.48162,2.8109247 20.884223,2.6497928\"></path> \n        </svg>\n      </button>\n      <a v-if=\"playing !== null\" href=\"/#/home\" :id=\"media.id+'-close'\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">clear</i>\n      </a>\n    </div>\n  </div>\n</div>  \n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.dispose(function () {
-    __vueify_insert__.cache["/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 27, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 30, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 38, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 41, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 46, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 51, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 56, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 61, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 65, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 69, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 76, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 82, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 86, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 90, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 94, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 99, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n  /* line 103, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 107, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 116, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 119, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 126, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 130, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 138, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 144, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 155, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n"] = false
+    __vueify_insert__.cache["/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.filter {\n    -webkit-transition: left .5s;\n    transition: left .5s; }\n  /* line 27, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 30, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 36, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 41, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 44, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 49, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 54, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 59, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 64, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 68, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 72, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 79, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 85, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 89, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 93, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 97, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 102, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n  /* line 106, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 110, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 119, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 122, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 129, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 133, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 141, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 147, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 158, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -1273,7 +1364,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-8c44c07c", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./media.vue":8,"jquery":48,"marked":49,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],9:[function(require,module,exports){
+},{"./media.vue":9,"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],10:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 3, stdin */\n.video-card.nav {\n  width: 15%; }\n")
 
@@ -1352,7 +1443,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-44334c7f", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],10:[function(require,module,exports){
+},{"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],11:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.video-card {\n  cursor: pointer;\n  width: 21% !important; }\n  /* line 6, stdin */\n  .video-card:hover img {\n    opacity: .7; }\n  /* line 10, stdin */\n  .video-card:nth-child(3), .video-card:nth-child(4), .video-card:nth-child(5), .video-card:nth-child(6) {\n    border-bottom: 2px dotted rgba(214, 104, 67, 0.5); }\n  /* line 13, stdin */\n  .video-card:nth-child(3), .video-card:nth-child(4), .video-card:nth-child(5), .video-card:nth-child(7), .video-card:nth-child(8), .video-card:nth-child(9) {\n    border-right: 2px dotted rgba(214, 104, 67, 0.5); }\n  /* line 17, stdin */\n  .video-card.escolhido img {\n    opacity: 1; }\n  /* line 21, stdin */\n  .video-card img {\n    opacity: .4;\n    -webkit-transition: opacity .2s;\n    transition: opacity .2s;\n    width: 100%; }\n\n/* line 30, stdin */\n.video-nav {\n  width: 22% !important;\n  color: #fff;\n  margin-right: 5%;\n  display: inline-block;\n  cursor: pointer;\n  margin-top: 2%;\n  position: relative; }\n  /* line 40, stdin */\n  .video-nav span {\n    visibility: hidden;\n    position: absolute;\n    width: 50px;\n    height: 50px;\n    top: 10px;\n    right: 10px; }\n  /* line 49, stdin */\n  .video-nav.escolhido span {\n    visibility: visible; }\n  /* line 55, stdin */\n  .video-nav img {\n    width: 100%;\n    -webkit-filter: gray;\n            filter: gray;\n    filter: grayscale(1);\n    -webkit-filter: grayscale(1); }\n  /* line 62, stdin */\n  .video-nav:hover img, .video-nav.escolhido img {\n    filter: none;\n    -webkit-filter: grayscale(0); }\n\n/* line 68, stdin */\n.numero {\n  color: red !important; }\n  /* line 70, stdin */\n  .numero.ok {\n    color: green !important; }\n")
 
@@ -1517,7 +1608,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-44416400", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"underscore":90,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],11:[function(require,module,exports){
+},{"jquery":49,"marked":50,"underscore":91,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],12:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.mdl-textfield__label, .mdl-textfield__input {\n  padding-left: 7px; }\n")
 
@@ -1595,7 +1686,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-444f7b81", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],12:[function(require,module,exports){
+},{"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],13:[function(require,module,exports){
 
 
 
@@ -1692,7 +1783,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-445d9302", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"vue":93,"vue-hot-reload-api":92}],13:[function(require,module,exports){
+},{"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93}],14:[function(require,module,exports){
 
 
 
@@ -1752,7 +1843,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-446baa83", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"vue":93,"vue-hot-reload-api":92}],14:[function(require,module,exports){
+},{"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93}],15:[function(require,module,exports){
 (function(){
 	var _ = require('underscore')
 	var Vue = require('vue')
@@ -1777,26 +1868,30 @@ if (module.hot) {(function () {  module.hot.accept()
 		},
 		media: [{
 			id: "57edabd89324758eca7de656",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 17.9,
-			y: 19.5,
+			y: 18.8,
 			imgs: [],
 			nome: "",
 			shadow: 2,
+			filter: false,
 			video: "tA6qNEEqVJ8"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "FA0sc2mN",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 19.2,
+			height: 18.8,
 			x: 0,
-			y: 29.2,
+			y: 28,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "ZZsrowhDpos"
 		}]
 	},{
 		headers: {
@@ -1813,27 +1908,31 @@ if (module.hot) {(function () {  module.hot.accept()
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "6zQ9sGxy",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 33.1,
 			y: 0,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "VFcprFLe",
+			card: "",
 			nav: "Irajá",
 			width: 163,
-			height: 19.2,
+			height: 18.8,
 			x: 0,
-			y: 49.8,
+			y: 48,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "BfPwOiUwy_c"
 		}]
 	},{
 		headers: {
@@ -1850,27 +1949,200 @@ if (module.hot) {(function () {  module.hot.accept()
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "bMXTI5qu",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 33.1,
-			y: 45,
+			y: 43.5,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "CKjnz3R5GVc"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "8JDQXM55",
+			card: "",
 			nav: "Vila Aliança",
 			width: 163,
-			height: 12.2,
-			x: 3.93,
-			y: 15.7,
+			height: 11.7,
+			x: 3.9,
+			y: 15.2,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "CE4jIVzF1x8"
+		},{
+			id: "7FNhCFHQ",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 15.1,
+			y: 85.9,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "0-p3qLpuDHA"
+		},{
+			id: "mnUn9lG5",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "3E7l46x8B_8"
+		},{
+			id: "ue399jDO",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 59.3,
+			y: 8.5,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "nvf3ubD14wg"
+		},{
+			id: "W4VcuZoJ",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 72,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "4KXPKom0H04"
+		},{
+			id: "Sv49hStC",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "5dZDU0VBuc"
+		},{
+			id: "tfIOhDiq",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 70.3,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "U4eREF3kt4E"
+		},{
+			id: "xaQs7gYd",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 78,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "Tz8z3_FYb8I"
+		},{
+			id: "Ng5sIJiS",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 78,
+			y: 57.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "qlgafW6q9hQ"
+		},{
+			id: "EBCLvyGl",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 70.3,
+			y: 57.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kDaS52LAW3Q"
+		},{
+			id: "YV4JwgzD",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "pJ_IKD564FA"
+		},{
+			id: "RDKiDZkd",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 89.7,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kEv84e6b3kE"
+		},{
+			id: "1uJYyz53",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "KJF94XfzUy4"
+		},{
+			id: "emQJCJMX",
+			card: "",
+			nav: "Vila Aliança",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 58.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "QAYmjmijdx0"
 		}]
 	},{
 		headers: {
@@ -1887,27 +2159,31 @@ if (module.hot) {(function () {  module.hot.accept()
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "y9GZdArK",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 33.1,
-			y: 74.7,
+			y: 72,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "IoH9bqxZgmo"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "jyOJM82k",
+			card: "",
 			nav: "Santa Cruz",
 			width: 163,
-			height: 16.2,
+			height: 15.8,
 			x: 3.6,
-			y: 71,
+			y: 68.4,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -1924,27 +2200,31 @@ if (module.hot) {(function () {  module.hot.accept()
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "MT8tTfLk",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
-			x: 55.2,
-			y: 45,
+			height: 26.8,
+			x: 55.1,
+			y: 43.7,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "LFwjIJE5EJ0"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "dq3W9PLm",
+			card: "",
 			nav: "Triagem",
 			width: 163,
-			height: 11.2,
+			height: 12.6,
 			x: 10.7,
-			y: 23.8,
+			y: 19,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -1961,27 +2241,57 @@ if (module.hot) {(function () {  module.hot.accept()
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "dW2KpFRI",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 67.2,
-			y: 69.7,
+			y: 72,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "2STG1n9VKZE"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "F95YdlzK",
+			card: "",
 			nav: "Padre Miguel",
 			width: 163,
-			height: 11.2,
+			height: 12.6,
 			x: 10.7,
-			y: 35.97,
+			y: 33.2,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
+		},{
+			id: "LRGOcTD2",
+			card: "",
+			nav: "Padre Miguel",
+			width: 163,
+			height: 13,
+			x: 33.1,
+			y: 28.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "Sefcdo4I",
+			card: "",
+			nav: "Padre Miguel",
+			width: 163,
+			height: 13,
+			x: 40.7,
+			y: 28.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -1998,27 +2308,135 @@ if (module.hot) {(function () {  module.hot.accept()
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "ygvo7j0H",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 70.3,
-			y: 21.1,
+			y: 15,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "df3GdByA",
+			card: "",
 			nav: "Penha",
 			width: 163,
-			height: 17.2,
+			height: 19.5,
 			x: 10.7,
-			y: 48.5,
+			y: 47.6,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
+		},{
+			id: "oZJjgtDv",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 47.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "JwBVdfA9",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 68.9,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "oZJjgtDv",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 0,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "TSQydmpg",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 22.4,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "JwBVdfA9",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 59.2,
+			y: 22.4,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "VHEaAiEx",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 17,
+			x: 85.3,
+			y: 6.8,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "w6apAHcKZBk"
+		},{
+			id: "6HerXE3f",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 17,
+			x: 85.3,
+			y: 25,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kbvVwOv0oFY"
+		},{
+			id: "J3SwAuLX",
+			card: "",
+			nav: "Penha",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 72,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -2035,27 +2453,44 @@ if (module.hot) {(function () {  module.hot.accept()
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "DgDUHmnA",
+			card: "",
 			nav: "Nova Brasília",
 			width: 163,
-			height: 27.8,
+			height: 26.8,
 			x: 85.3,
-			y: 45.2,
+			y: 43.7,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
 		},{
-			id: "57edabd89324758eca7de656",
+			id: "ecfgfA61",
+			card: "",
 			nav: "Madureira",
 			width: 163,
-			height: 14,
+			height: 15.7,
 			x: 12.7,
-			y: 66.6,
+			y: 68.4,
 			imgs: [],
 			nome: "",
 			shadow: 2,
-			video: "tA6qNEEqVJ8"
+			filter: false,
+			video: "__"
+		},{
+			id: "jkqUiVdX",
+			card: "",
+			nav: "Madureira",
+			width: 163,
+			height: 16.5,
+			x: 23.7,
+			y: 0,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	}]
 
@@ -2107,15 +2542,29 @@ if (module.hot) {(function () {  module.hot.accept()
 			'/:id': {
 				on: function (id) {
 					var exec = function() {
-						var teste = _.findIndex(app.$refs.view.$children[0].$children, function(i) {
-							return i.media.id === id
-						})
+						var filter = id.split('-')[1]
+						console.log(filter)
+						if (filter === undefined) {
+							var teste = _.findIndex(app.$refs.view.$children[0].$children, function(i) {
+								return i.media.id === id
+							})
+						} else if (filter === 'filter') {
+							var teste = _.findIndex(app.$refs.view.$children[0].$children[40].$children, function(i) {
+								return i.media.id === id
+							})
+						}
+						
 						if (teste === -1) {
 							router.notfound()
-						} else {
+						} else if (filter === undefined){
 							app.$refs.view.$children[0].$children[teste].hover = true
 							app.$refs.view.$children[0].$children[teste].on = true
 							app.$refs.view.$children[0].$children[teste].playThis()
+							ga('send', 'pageview', '/media/'+id)
+						} else {
+							app.$refs.view.$children[0].$children[40].$children[teste].hover = true
+							app.$refs.view.$children[0].$children[40].$children[teste].on = true
+							app.$refs.view.$children[0].$children[40].$children[teste].playThis()
 							ga('send', 'pageview', '/media/'+id)
 						}
 					}
@@ -2290,7 +2739,7 @@ if (module.hot) {(function () {  module.hot.accept()
 
 })()
 
-},{"./app.vue":1,"director":29,"underscore":90,"vue":93}],15:[function(require,module,exports){
+},{"./app.vue":1,"director":30,"underscore":91,"vue":94}],16:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 3, stdin */\n#content.card {\n  position: relative;\n  background-color: white;\n  box-sizing: border-box;\n  background-image: url(img/fundo_postal.png);\n  padding: 2%; }\n  /* line 9, stdin */\n  #content.card .postal_topo {\n    height: 15%; }\n    /* line 11, stdin */\n    #content.card .postal_topo .logo_postal {\n      float: right;\n      width: 13%; }\n    /* line 15, stdin */\n    #content.card .postal_topo .logo_nave_postal {\n      float: left;\n      width: 10%; }\n  /* line 21, stdin */\n  #content.card .postal_titulo p {\n    font-family: 'treta';\n    font-size: 20px;\n    margin-top: 16px;\n    color: #06303c; }\n  /* line 27, stdin */\n  #content.card .postal_titulo strong {\n    color: #00aeab;\n    font-weight: 100; }\n  /* line 33, stdin */\n  #content.card .postal_content .player_container {\n    width: 70%;\n    float: left;\n    margin-right: 2%;\n    height: 680px; }\n  /* line 39, stdin */\n  #content.card .postal_content .menssagem {\n    float: left;\n    width: 23%;\n    box-sizing: border-box;\n    padding: 10% 2%;\n    background-image: url(img/fundo_menssagem.png);\n    height: 680px;\n    background-size: contain; }\n    /* line 47, stdin */\n    #content.card .postal_content .menssagem p {\n      font-size: 20px;\n      text-align: right; }\n")
 
@@ -2471,7 +2920,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-e52067cc", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"jquery":48,"marked":49,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],16:[function(require,module,exports){
+},{"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],17:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.fade-transition {\n  -webkit-transition: opacity .6s ease .4s;\n  transition: opacity .6s ease .4s;\n  opacity: 1; }\n\n/* line 6, stdin */\n.fade-enter, .fade-leave {\n  opacity: 0; }\n\n/* line 9, stdin */\n.fade-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 12, stdin */\n#navegacao {\n  padding-top: 30px; }\n\n/* line 15, stdin */\n.fade2-transition {\n  -webkit-transition: opacity .4s ease;\n  transition: opacity .4s ease;\n  opacity: 1; }\n\n/* line 19, stdin */\n.fade2-enter, .fade2-leave {\n  opacity: 0; }\n\n/* line 23, stdin */\n.mdl-navigation__link {\n  padding-top: 5px !important; }\n\n/* line 27, stdin */\n.logo_superior {\n  position: abolute;\n  margin-left: 43%; }\n\n/* line 33, stdin */\n#janela2 h3 {\n  font-family: 'treta';\n  color: #06303c; }\n\n/* line 39, stdin */\n.mdl-layout__content {\n  overflow: hidden; }\n\n/* line 43, stdin */\n.rodape {\n  -webkit-transition: bottom .3s;\n  transition: bottom .3s; }\n  /* line 45, stdin */\n  .rodape:hover {\n    bottom: 0; }\n    /* line 47, stdin */\n    .rodape:hover .footer_seta {\n      -webkit-transform: rotate(0deg);\n              transform: rotate(0deg); }\n  /* line 51, stdin */\n  .rodape .footer_seta {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n\n/* line 57, stdin */\n.rwd_pinbox {\n  cursor: pointer; }\n  /* line 60, stdin */\n  .rwd_pinbox:hover .rwd_pinicon {\n    opacity: 1; }\n  /* line 64, stdin */\n  .rwd_pinbox.filtered {\n    border-bottom: 3px solid #06303c; }\n    /* line 66, stdin */\n    .rwd_pinbox.filtered .rwd_pinicon {\n      opacity: 1; }\n  /* line 70, stdin */\n  .rwd_pinbox .rwd_pinicon {\n    opacity: 0;\n    -webkit-transition: opacity .2s;\n    transition: opacity .2s; }\n  /* line 74, stdin */\n  .rwd_pinbox .mdl-button {\n    background: transparent !important;\n    font-size: 30px;\n    height: 35px;\n    min-width: 35px;\n    width: 35px; }\n  /* line 81, stdin */\n  .rwd_pinbox .btnPin {\n    font-size: 30px; }\n")
 
@@ -2884,7 +3333,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-a4f029aa", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../components/janela-card.vue":2,"../components/janela-contato.vue":3,"../components/janela-equipe.vue":4,"../components/janela-projeto.vue":5,"../components/janela-realizacao.vue":6,"../components/media-cloud.vue":7,"jquery":48,"marked":49,"socket.io-client":78,"vue":93,"vue-hot-reload-api":92,"vueify/lib/insert-css":94}],17:[function(require,module,exports){
+},{"../components/janela-card.vue":3,"../components/janela-contato.vue":4,"../components/janela-equipe.vue":5,"../components/janela-projeto.vue":6,"../components/janela-realizacao.vue":7,"../components/media-cloud.vue":8,"jquery":49,"marked":50,"socket.io-client":79,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],18:[function(require,module,exports){
 module.exports = after
 
 function after(count, callback, err_cb) {
@@ -2914,7 +3363,7 @@ function after(count, callback, err_cb) {
 
 function noop() {}
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /**
  * An abstraction for slicing an arraybuffer even when
  * ArrayBuffer.prototype.slice is not supported
@@ -2945,7 +3394,7 @@ module.exports = function(arraybuffer, start, end) {
   return result.buffer;
 };
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 
 /**
  * Expose `Backoff`.
@@ -3032,7 +3481,7 @@ Backoff.prototype.setJitter = function(jitter){
 };
 
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /*
  * base64-arraybuffer
  * https://github.com/niklasvh/base64-arraybuffer
@@ -3093,7 +3542,7 @@ Backoff.prototype.setJitter = function(jitter){
   };
 })("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 (function (global){
 /**
  * Create a blob builder even when vendor prefixes exist
@@ -3193,7 +3642,7 @@ module.exports = (function() {
 })();
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /*
  * JavaScript MD5
  * https://github.com/blueimp/JavaScript-MD5
@@ -3474,9 +3923,9 @@ module.exports = (function() {
   }
 }(this))
 
-},{}],23:[function(require,module,exports){
-
 },{}],24:[function(require,module,exports){
+
+},{}],25:[function(require,module,exports){
 /**
  * Slice reference.
  */
@@ -3501,7 +3950,7 @@ module.exports = function(obj, fn){
   }
 };
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -3667,7 +4116,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 
 module.exports = function(a, b){
   var fn = function(){};
@@ -3675,7 +4124,7 @@ module.exports = function(a, b){
   a.prototype = new fn;
   a.prototype.constructor = a;
 };
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 
 /**
  * This is the web browser implementation of `debug()`.
@@ -3845,7 +4294,7 @@ function localstorage(){
   } catch (e) {}
 }
 
-},{"./debug":28}],28:[function(require,module,exports){
+},{"./debug":29}],29:[function(require,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -4044,7 +4493,7 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":50}],29:[function(require,module,exports){
+},{"ms":51}],30:[function(require,module,exports){
 
 
 //
@@ -4770,11 +5219,11 @@ Router.prototype.mount = function(routes, path) {
 
 
 }(typeof exports === "object" ? exports : window));
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 
 module.exports =  require('./lib/');
 
-},{"./lib/":31}],31:[function(require,module,exports){
+},{"./lib/":32}],32:[function(require,module,exports){
 
 module.exports = require('./socket');
 
@@ -4786,7 +5235,7 @@ module.exports = require('./socket');
  */
 module.exports.parser = require('engine.io-parser');
 
-},{"./socket":32,"engine.io-parser":40}],32:[function(require,module,exports){
+},{"./socket":33,"engine.io-parser":41}],33:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -5518,7 +5967,7 @@ Socket.prototype.filterUpgrades = function (upgrades) {
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./transport":33,"./transports":34,"component-emitter":25,"debug":27,"engine.io-parser":40,"indexof":47,"parsejson":51,"parseqs":52,"parseuri":53}],33:[function(require,module,exports){
+},{"./transport":34,"./transports":35,"component-emitter":26,"debug":28,"engine.io-parser":41,"indexof":48,"parsejson":52,"parseqs":53,"parseuri":54}],34:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -5675,7 +6124,7 @@ Transport.prototype.onClose = function () {
   this.emit('close');
 };
 
-},{"component-emitter":25,"engine.io-parser":40}],34:[function(require,module,exports){
+},{"component-emitter":26,"engine.io-parser":41}],35:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies
@@ -5732,7 +6181,7 @@ function polling(opts){
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./polling-jsonp":35,"./polling-xhr":36,"./websocket":38,"xmlhttprequest-ssl":39}],35:[function(require,module,exports){
+},{"./polling-jsonp":36,"./polling-xhr":37,"./websocket":39,"xmlhttprequest-ssl":40}],36:[function(require,module,exports){
 (function (global){
 
 /**
@@ -5974,7 +6423,7 @@ JSONPPolling.prototype.doWrite = function (data, fn) {
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./polling":37,"component-inherit":26}],36:[function(require,module,exports){
+},{"./polling":38,"component-inherit":27}],37:[function(require,module,exports){
 (function (global){
 /**
  * Module requirements.
@@ -6390,7 +6839,7 @@ function unloadHandler() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./polling":37,"component-emitter":25,"component-inherit":26,"debug":27,"xmlhttprequest-ssl":39}],37:[function(require,module,exports){
+},{"./polling":38,"component-emitter":26,"component-inherit":27,"debug":28,"xmlhttprequest-ssl":40}],38:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -6639,7 +7088,7 @@ Polling.prototype.uri = function(){
   return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
 };
 
-},{"../transport":33,"component-inherit":26,"debug":27,"engine.io-parser":40,"parseqs":52,"xmlhttprequest-ssl":39,"yeast":95}],38:[function(require,module,exports){
+},{"../transport":34,"component-inherit":27,"debug":28,"engine.io-parser":41,"parseqs":53,"xmlhttprequest-ssl":40,"yeast":96}],39:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -6931,7 +7380,7 @@ WS.prototype.check = function(){
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../transport":33,"component-inherit":26,"debug":27,"engine.io-parser":40,"parseqs":52,"ws":23,"yeast":95}],39:[function(require,module,exports){
+},{"../transport":34,"component-inherit":27,"debug":28,"engine.io-parser":41,"parseqs":53,"ws":24,"yeast":96}],40:[function(require,module,exports){
 // browser shim for xmlhttprequest module
 var hasCORS = require('has-cors');
 
@@ -6969,7 +7418,7 @@ module.exports = function(opts) {
   }
 }
 
-},{"has-cors":46}],40:[function(require,module,exports){
+},{"has-cors":47}],41:[function(require,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -7567,7 +8016,7 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./keys":41,"after":17,"arraybuffer.slice":18,"base64-arraybuffer":20,"blob":21,"has-binary":42,"utf8":91}],41:[function(require,module,exports){
+},{"./keys":42,"after":18,"arraybuffer.slice":19,"base64-arraybuffer":21,"blob":22,"has-binary":43,"utf8":92}],42:[function(require,module,exports){
 
 /**
  * Gets the keys for an object.
@@ -7588,7 +8037,7 @@ module.exports = Object.keys || function keys (obj){
   return arr;
 };
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 (function (global){
 
 /*
@@ -7650,12 +8099,12 @@ function hasBinary(data) {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"isarray":43}],43:[function(require,module,exports){
+},{"isarray":44}],44:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 (function (global){
 
 /*
@@ -7718,9 +8167,9 @@ function hasBinary(data) {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"isarray":45}],45:[function(require,module,exports){
-module.exports=require(43)
-},{}],46:[function(require,module,exports){
+},{"isarray":46}],46:[function(require,module,exports){
+module.exports=require(44)
+},{}],47:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -7739,7 +8188,7 @@ try {
   module.exports = false;
 }
 
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 
 var indexOf = [].indexOf;
 
@@ -7750,7 +8199,7 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}],48:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 /*eslint-disable no-unused-vars*/
 /*!
  * jQuery JavaScript Library v3.1.0
@@ -17826,7 +18275,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],49:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 (function (global){
 /**
  * marked - a markdown parser
@@ -19116,7 +19565,7 @@ if (typeof module !== 'undefined' && typeof exports === 'object') {
 }());
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -19243,7 +19692,7 @@ function plural(ms, n, name) {
   return Math.ceil(ms / n) + ' ' + name + 's';
 }
 
-},{}],51:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 (function (global){
 /**
  * JSON parse.
@@ -19278,7 +19727,7 @@ module.exports = function parsejson(data) {
   }
 };
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],52:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 /**
  * Compiles a querystring
  * Returns string representation of the object
@@ -19317,7 +19766,7 @@ exports.decode = function(qs){
   return qry;
 };
 
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 /**
  * Parses an URI
  *
@@ -19358,17 +19807,17 @@ module.exports = function parseuri(str) {
     return uri;
 };
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./src/js/main');
 
-},{"./src/js/main":62}],55:[function(require,module,exports){
+},{"./src/js/main":63}],56:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./src/js/adaptor/jquery');
 
-},{"./src/js/adaptor/jquery":56}],56:[function(require,module,exports){
+},{"./src/js/adaptor/jquery":57}],57:[function(require,module,exports){
 'use strict';
 
 var ps = require('../main');
@@ -19411,7 +19860,7 @@ if (typeof define === 'function' && define.amd) {
 
 module.exports = mountJQuery;
 
-},{"../main":62,"../plugin/instances":73}],57:[function(require,module,exports){
+},{"../main":63,"../plugin/instances":74}],58:[function(require,module,exports){
 'use strict';
 
 function oldAdd(element, className) {
@@ -19455,7 +19904,7 @@ exports.list = function (element) {
   }
 };
 
-},{}],58:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 'use strict';
 
 var DOM = {};
@@ -19541,7 +19990,7 @@ DOM.queryChildren = function (element, selector) {
 
 module.exports = DOM;
 
-},{}],59:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 'use strict';
 
 var EventElement = function (element) {
@@ -19614,7 +20063,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
 
 module.exports = EventManager;
 
-},{}],60:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 'use strict';
 
 module.exports = (function () {
@@ -19629,7 +20078,7 @@ module.exports = (function () {
   };
 })();
 
-},{}],61:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 'use strict';
 
 var cls = require('./class');
@@ -19714,7 +20163,7 @@ exports.env = {
   supportsIePointer: window.navigator.msMaxTouchPoints !== null
 };
 
-},{"./class":57,"./dom":58}],62:[function(require,module,exports){
+},{"./class":58,"./dom":59}],63:[function(require,module,exports){
 'use strict';
 
 var destroy = require('./plugin/destroy');
@@ -19727,7 +20176,7 @@ module.exports = {
   destroy: destroy
 };
 
-},{"./plugin/destroy":64,"./plugin/initialize":72,"./plugin/update":76}],63:[function(require,module,exports){
+},{"./plugin/destroy":65,"./plugin/initialize":73,"./plugin/update":77}],64:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -19746,7 +20195,7 @@ module.exports = {
   theme: 'default'
 };
 
-},{}],64:[function(require,module,exports){
+},{}],65:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -19770,7 +20219,7 @@ module.exports = function (element) {
   instances.remove(element);
 };
 
-},{"../lib/dom":58,"../lib/helper":61,"./instances":73}],65:[function(require,module,exports){
+},{"../lib/dom":59,"../lib/helper":62,"./instances":74}],66:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -19832,7 +20281,7 @@ module.exports = function (element) {
   bindClickRailHandler(element, i);
 };
 
-},{"../../lib/helper":61,"../instances":73,"../update-geometry":74,"../update-scroll":75}],66:[function(require,module,exports){
+},{"../../lib/helper":62,"../instances":74,"../update-geometry":75,"../update-scroll":76}],67:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -19937,7 +20386,7 @@ module.exports = function (element) {
   bindMouseScrollYHandler(element, i);
 };
 
-},{"../../lib/dom":58,"../../lib/helper":61,"../instances":73,"../update-geometry":74,"../update-scroll":75}],67:[function(require,module,exports){
+},{"../../lib/dom":59,"../../lib/helper":62,"../instances":74,"../update-geometry":75,"../update-scroll":76}],68:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -20069,7 +20518,7 @@ module.exports = function (element) {
   bindKeyboardHandler(element, i);
 };
 
-},{"../../lib/dom":58,"../../lib/helper":61,"../instances":73,"../update-geometry":74,"../update-scroll":75}],68:[function(require,module,exports){
+},{"../../lib/dom":59,"../../lib/helper":62,"../instances":74,"../update-geometry":75,"../update-scroll":76}],69:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -20207,7 +20656,7 @@ module.exports = function (element) {
   bindMouseWheelHandler(element, i);
 };
 
-},{"../instances":73,"../update-geometry":74,"../update-scroll":75}],69:[function(require,module,exports){
+},{"../instances":74,"../update-geometry":75,"../update-scroll":76}],70:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -20224,7 +20673,7 @@ module.exports = function (element) {
   bindNativeScrollHandler(element, i);
 };
 
-},{"../instances":73,"../update-geometry":74}],70:[function(require,module,exports){
+},{"../instances":74,"../update-geometry":75}],71:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -20335,7 +20784,7 @@ module.exports = function (element) {
   bindSelectionHandler(element, i);
 };
 
-},{"../../lib/helper":61,"../instances":73,"../update-geometry":74,"../update-scroll":75}],71:[function(require,module,exports){
+},{"../../lib/helper":62,"../instances":74,"../update-geometry":75,"../update-scroll":76}],72:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -20513,7 +20962,7 @@ module.exports = function (element) {
   bindTouchHandler(element, i, _.env.supportsTouch, _.env.supportsIePointer);
 };
 
-},{"../../lib/helper":61,"../instances":73,"../update-geometry":74,"../update-scroll":75}],72:[function(require,module,exports){
+},{"../../lib/helper":62,"../instances":74,"../update-geometry":75,"../update-scroll":76}],73:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -20552,7 +21001,7 @@ module.exports = function (element, userSettings) {
   updateGeometry(element);
 };
 
-},{"../lib/class":57,"../lib/helper":61,"./handler/click-rail":65,"./handler/drag-scrollbar":66,"./handler/keyboard":67,"./handler/mouse-wheel":68,"./handler/native-scroll":69,"./handler/selection":70,"./handler/touch":71,"./instances":73,"./update-geometry":74}],73:[function(require,module,exports){
+},{"../lib/class":58,"../lib/helper":62,"./handler/click-rail":66,"./handler/drag-scrollbar":67,"./handler/keyboard":68,"./handler/mouse-wheel":69,"./handler/native-scroll":70,"./handler/selection":71,"./handler/touch":72,"./instances":74,"./update-geometry":75}],74:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -20661,7 +21110,7 @@ exports.get = function (element) {
   return instances[getId(element)];
 };
 
-},{"../lib/class":57,"../lib/dom":58,"../lib/event-manager":59,"../lib/guid":60,"../lib/helper":61,"./default-setting":63}],74:[function(require,module,exports){
+},{"../lib/class":58,"../lib/dom":59,"../lib/event-manager":60,"../lib/guid":61,"../lib/helper":62,"./default-setting":64}],75:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -20789,7 +21238,7 @@ module.exports = function (element) {
   }
 };
 
-},{"../lib/class":57,"../lib/dom":58,"../lib/helper":61,"./instances":73,"./update-scroll":75}],75:[function(require,module,exports){
+},{"../lib/class":58,"../lib/dom":59,"../lib/helper":62,"./instances":74,"./update-scroll":76}],76:[function(require,module,exports){
 'use strict';
 
 var instances = require('./instances');
@@ -20903,7 +21352,7 @@ module.exports = function (element, axis, value) {
 
 };
 
-},{"./instances":73}],76:[function(require,module,exports){
+},{"./instances":74}],77:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -20942,7 +21391,7 @@ module.exports = function (element) {
   dom.css(i.scrollbarYRail, 'display', '');
 };
 
-},{"../lib/dom":58,"../lib/helper":61,"./instances":73,"./update-geometry":74,"./update-scroll":75}],77:[function(require,module,exports){
+},{"../lib/dom":59,"../lib/helper":62,"./instances":74,"./update-geometry":75,"./update-scroll":76}],78:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -21007,7 +21456,7 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
-},{}],78:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -21101,7 +21550,7 @@ exports.connect = lookup;
 exports.Manager = require('./manager');
 exports.Socket = require('./socket');
 
-},{"./manager":79,"./socket":81,"./url":82,"debug":27,"socket.io-parser":85}],79:[function(require,module,exports){
+},{"./manager":80,"./socket":82,"./url":83,"debug":28,"socket.io-parser":86}],80:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -21660,7 +22109,7 @@ Manager.prototype.onreconnect = function(){
   this.emitAll('reconnect', attempt);
 };
 
-},{"./on":80,"./socket":81,"backo2":19,"component-bind":24,"component-emitter":83,"debug":27,"engine.io-client":30,"indexof":47,"socket.io-parser":85}],80:[function(require,module,exports){
+},{"./on":81,"./socket":82,"backo2":20,"component-bind":25,"component-emitter":84,"debug":28,"engine.io-client":31,"indexof":48,"socket.io-parser":86}],81:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -21686,7 +22135,7 @@ function on(obj, ev, fn) {
   };
 }
 
-},{}],81:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -22100,7 +22549,7 @@ Socket.prototype.compress = function(compress){
   return this;
 };
 
-},{"./on":80,"component-bind":24,"component-emitter":83,"debug":27,"has-binary":44,"socket.io-parser":85,"to-array":89}],82:[function(require,module,exports){
+},{"./on":81,"component-bind":25,"component-emitter":84,"debug":28,"has-binary":45,"socket.io-parser":86,"to-array":90}],83:[function(require,module,exports){
 (function (global){
 
 /**
@@ -22180,7 +22629,7 @@ function url(uri, loc){
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"debug":27,"parseuri":53}],83:[function(require,module,exports){
+},{"debug":28,"parseuri":54}],84:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -22343,7 +22792,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],84:[function(require,module,exports){
+},{}],85:[function(require,module,exports){
 (function (global){
 /*global Blob,File*/
 
@@ -22488,7 +22937,7 @@ exports.removeBlobs = function(data, callback) {
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./is-buffer":86,"isarray":87}],85:[function(require,module,exports){
+},{"./is-buffer":87,"isarray":88}],86:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -22890,7 +23339,7 @@ function error(data){
   };
 }
 
-},{"./binary":84,"./is-buffer":86,"component-emitter":25,"debug":27,"isarray":87,"json3":88}],86:[function(require,module,exports){
+},{"./binary":85,"./is-buffer":87,"component-emitter":26,"debug":28,"isarray":88,"json3":89}],87:[function(require,module,exports){
 (function (global){
 
 module.exports = isBuf;
@@ -22907,9 +23356,9 @@ function isBuf(obj) {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],87:[function(require,module,exports){
-module.exports=require(43)
 },{}],88:[function(require,module,exports){
+module.exports=require(44)
+},{}],89:[function(require,module,exports){
 (function (global){
 /*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
 ;(function () {
@@ -23815,7 +24264,7 @@ module.exports=require(43)
 }).call(this);
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],89:[function(require,module,exports){
+},{}],90:[function(require,module,exports){
 module.exports = toArray
 
 function toArray(list, index) {
@@ -23830,7 +24279,7 @@ function toArray(list, index) {
     return array
 }
 
-},{}],90:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -25380,7 +25829,7 @@ function toArray(list, index) {
   }
 }.call(this));
 
-},{}],91:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/utf8js v2.0.0 by @mathias */
 ;(function(root) {
@@ -25628,7 +26077,7 @@ function toArray(list, index) {
 }(this));
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],92:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 var Vue // late bind
 var map = window.__VUE_HOT_MAP__ = Object.create(null)
 var installed = false
@@ -25760,7 +26209,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],93:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v1.0.26
@@ -35837,7 +36286,7 @@ setTimeout(function () {
 
 module.exports = Vue;
 }).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"rH1JPG":77}],94:[function(require,module,exports){
+},{"rH1JPG":78}],95:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 exports.insert = function (css) {
@@ -35857,7 +36306,7 @@ exports.insert = function (css) {
   return elem
 }
 
-},{}],95:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 'use strict';
 
 var alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split('')
@@ -35927,4 +36376,4 @@ yeast.encode = encode;
 yeast.decode = decode;
 module.exports = yeast;
 
-},{}]},{},[14])
+},{}]},{},[15])

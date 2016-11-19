@@ -21,6 +21,9 @@
     &:hover {
       z-index: 3 !important;
     }
+    &.filter {
+      transition: left .5s;
+    }
     &.in-trans {
       transition: none;
     }
@@ -164,8 +167,7 @@
 
 <template>
 
-  <div :style="[{height: local_height+'px'},{'min-height': local_height+'px'},{width: local_width+'px'},{left: media.x+'%'},{top: media.y+'%'}]" class="media_card" :id="media.id" @mouseover="mouseOver" @mouseout="mouseOut">
-    <div v-if="assistido && !hover && !on" class="assistido" transition="fade"></div>
+  <div :style="[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'},{left: 'calc(' + media.x+'% + ' + x_offset + 'px)'},{top: 'calc(' + media.y+'% + ' + y_offset + 'px)'}]" class="media_card" :class="{filter: filtered}" :id="media.id" @mouseover="mouseOver" @mouseout="mouseOut">
     <div :id="media.id+'-front'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp front" style=""  :style="[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]">
       <div :id="media.id+'-player'" class="mdl-card__title player"></div>
       <img v-for="img in media.imgs" class="mdl-card__title" :src="img" :style="[{'z-index': media.imgs.length - $index}]" :id="$index+'-img-'+media.id">
@@ -176,10 +178,6 @@
         </a>
       </div>
       <div class="mdl-card__menu" v-if="on" transition="fade">
-        <span v-if="playing !== null">{{votos}}</span>
-        <button v-if="playing !== null" :id="media.id+'-voto'" :class="{votado: votado}" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="votar">
-          <i class="material-icons">thumb_up</i>
-        </button>
         <button v-if="!no_video" :id="media.id+'-desc'" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="flip(media.id)">
           <i class="material-icons">description</i>
         </button>
@@ -201,9 +199,6 @@
        	
       </div>
       <div class="mdl-card__menu" v-if="on" transition="fade">
-        <!-- <a :id="media.id+'-back-map'" :href="media.mapa" target="_blank" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="analyticsMaps">
-          <i class="material-icons">room</i>
-        </a> -->
         <button :id="media.id+'-photo'" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="unFlip(media.id)">
           <svg style="width:24px;height:24px" viewBox="0 0 24 24">
             <path fill="#000000" d="m 18.334101,19.618585 -12.3872826,0 0,-15.4980258 12.3868306,0 0,15.4978458 4.33e-4,0 0,1.8e-4 z m 2.550122,-16.9687922 0,-0.1558962 C 20.654487,2.4020434 19.961215,1.7086388 19.86959,1.4787215 l -0.155715,0 c -0.161583,0.4028738 -0.554708,0.687946 -1.015536,0.687946 -0.460377,0 -0.853953,-0.2850722 -1.015084,-0.687946 l -1.248884,0 c -0.16068,0.4028738 -0.554709,0.687946 -1.015085,0.687946 -0.460827,0 -0.854404,-0.2850722 -1.015085,-0.687946 l -1.248883,0 c -0.16068,0.4028738 -0.554257,0.687946 -1.015084,0.687946 -0.460377,0 -0.853953,-0.2850722 -1.015085,-0.687946 l -1.2488831,0 c -0.161132,0.4028738 -0.554709,0.687946 -1.0150851,0.687946 -0.4603762,0 -0.8539529,-0.2850722 -1.0150845,-0.687946 l -1.2488837,0 c -0.1611316,0.4028738 -0.5547081,0.687946 -1.0150851,0.687946 -0.4603755,0 -0.8539526,-0.2850722 -1.0150845,-0.687946 l -0.1557152,0 C 4.3192541,1.7086388 3.6259796,2.4020469 3.3962433,2.4938966 l 0,0.1558962 C 3.7988467,2.8109247 4.0841,3.2044554 4.0841,3.6649679 c 0,0.4605113 -0.2852533,0.854223 -0.6878567,1.015175 l 0,1.2487925 C 3.7988467,6.0900673 4.0841,6.4837791 4.0841,6.9441105 c 0,0.4605113 -0.2852533,0.8540432 -0.6878567,1.014994 l 0,1.2486127 C 3.7988467,9.3688942 4.0841,9.7624262 4.0841,10.222937 c 0,0.460692 -0.2852533,0.854179 -0.6878567,1.015355 l 0,1.248433 c 0.4026034,0.16095 0.6878567,0.554663 0.6878567,1.015536 0,0.46015 -0.2852533,0.853682 -0.6878567,1.015175 l 0,1.248612 C 3.7988467,15.927044 4.0841,16.320711 4.0841,16.781223 c 0,0.460512 -0.2852533,0.854043 -0.6878567,1.015355 l 0,1.248613 C 3.7988467,19.206007 4.0841,19.599719 4.0841,20.06023 c 0,0.460513 -0.2852533,0.854043 -0.6878567,1.014995 l 0,0.170159 c 0.2292859,0.09203 0.9230097,0.785438 1.0150845,1.015175 l 0.1557152,0 c 0.1611319,-0.402694 0.554709,-0.687631 1.0150845,-0.687631 0.4608282,0 0.8544049,0.284937 1.0155365,0.687631 l 1.2484323,0 c 0.1611316,-0.402694 0.5547083,-0.687631 1.0155359,-0.687631 0.4603767,0 0.8539527,0.284937 1.0150847,0.687631 l 1.2484321,0 c 0.161132,-0.402694 0.554708,-0.687631 1.015536,-0.687631 0.460376,0 0.853953,0.284937 1.015085,0.687631 l 1.248431,0 c 0.160681,-0.402694 0.554709,-0.687631 1.015536,-0.687631 0.459925,0 0.853503,0.284937 1.014634,0.687631 l 1.249335,0 c 0.16068,-0.402694 0.554256,-0.687631 1.015085,-0.687631 0.460376,0 0.853501,0.284937 1.015084,0.687631 l 0.155715,0 c 0.09162,-0.229557 0.784897,-0.922965 1.015085,-1.015175 l 0,-0.170159 C 20.48162,20.91459 20.196819,20.520562 20.196819,20.06005 c 0,-0.460511 0.284801,-0.854043 0.687856,-1.014994 l 0,-1.248612 c -0.403055,-0.160998 -0.687856,-0.554845 -0.687856,-1.015402 0,-0.460692 0.284801,-0.853998 0.687856,-1.015355 l 0,-1.248612 C 20.48162,14.356304 20.196819,13.962231 20.196819,13.5019 c 0,-0.460693 0.284801,-0.854225 0.687856,-1.015355 l 0,-1.249155 c -0.403055,-0.160952 -0.687856,-0.554664 -0.687856,-1.015175 0,-0.4605108 0.284801,-0.8542238 0.687856,-1.0151748 l 0,-1.2487934 C 20.48162,7.797116 20.196819,7.4035842 20.196819,6.9428918 c 0,-0.4603314 0.284801,-0.8538621 0.687856,-1.0150392 l 0,-1.2487937 C 20.48162,4.518108 20.196819,4.1243963 20.196819,3.663885 20.196385,3.2040944 20.48162,2.8109247 20.884223,2.6497928" /> 
@@ -223,10 +218,11 @@
   var marked = require('marked')
   module.exports = {
     replace: true,
-    props: ['offset', 'media', 'height', 'width', 'playing'],
+    props: ['media', 'height', 'width', 'playing'],
     data: function(){
       return {
         filter: '',
+        filtered: false,
         local_width: 0,
         local_height: 0,
         x_offset: 0,
@@ -235,7 +231,6 @@
         h_offset: 0,
         no_video: true,
         w_loop: 0,
-        filter_offset: 0,
         sw: 2,
         video_desc: '',
         video_title: '',
@@ -249,28 +244,6 @@
       }
     },
     watch: {
-      offset: function(val, oldVal) {
-        var self = this
-        if (this.playing === null) {
-          if (this.w_loop + this.offset + this.x_offset + this.media.x > this.width) {
-            $$$('#'+this.media.id).addClass('in-trans')
-            $$$('#'+this.media.id).css('opacity', 0)
-            this.w_loop = - (this.w_loop + this.width + 250)
-            setTimeout(function() {
-              $$$('#'+self.media.id).css('opacity', 1)
-              $$$('#'+self.media.id).removeClass('in-trans')
-            }, 500)
-          } else if (this.w_loop + this.offset + this.x_offset + this.media.x + this.media.width < -250) {
-            $$$('#'+this.media.id).addClass('in-trans')
-            $$$('#'+this.media.id).css('opacity', 0)
-            this.w_loop = this.w_loop + this.width + 250
-            setTimeout(function() {
-              $$$('#'+self.media.id).css('opacity', 1)
-              $$$('#'+self.media.id).removeClass('in-trans')
-            }, 400)
-          }
-        }
-      },
       on: function(val, oldVal) {
         if (oldVal === true) {
           this.unFlip(this.media.id)
@@ -279,16 +252,18 @@
         }
       },
       playing: function(val, oldVal) {
-        if (val === this.media.id) {
+        if (val === this.media.id && !this.filtered) {
           var width = $$$(window).width()
-          var loc = this.media.x + this.offset + this.x_offset + this.w_loop + this.filter_offset
+          var loc = this.media.x + this.x_offset + this.w_loop
           var mw = ((this.height*.9)*16)/9
+          var heightPX = (this.height*this.media.y)/100
+          var leftPX = (this.width*this.media.x)/100
           $$$('#'+this.media.id).addClass('playing')
           this.h_offset = (this.height*.9) - this.local_height
-          this.w_offset = mw - this.media.width
-          this.offset = this.offset + ( ( ( width - mw ) /2) - loc )
-          this.y_offset = (this.height*.05) - this.media.y
-        } else if (oldVal === this.media.id) {
+          this.w_offset = mw - this.local_width
+          this.y_offset = (this.height*.05) - heightPX
+          this.x_offset = (this.width*.27) - leftPX
+        } else if (oldVal === this.media.id && !this.filtered) {
           $$$('#'+this.media.id).removeClass('playing')
           $$$('#'+this.media.id).removeClass('hover')
           this.h_offset = 0
@@ -302,30 +277,21 @@
         }
       },
       filter: function(val, oldVal) {
-        if (val === this.media.nav && oldVal !== this.media.nav) {
-          $$$('#'+this.media.id).removeClass('filtered')
-          var width = $$$(window).width()
-          var loc = this.media.x + this.offset + this.x_offset + this.w_loop
-          var mw = ((this.height*.9)*16)/9
-          var range = d3.scaleLinear()
-                        .domain([0, this.width])
-                        .range([100, width-400])
-
-          var x_filter = range(this.media.x)
-          this.filter_offset = x_filter - loc
-        } else if (val === '') {
-          $$$('#'+this.media.id).removeClass('filtered')
-          this.filter_offset = 0
+        if (val !== '' && !this.media.filter) {
+          var leftPX = (this.width*this.media.x)/100
+          this.filtered = true
+          if (leftPX < this.width/2 - 50) {
+            this.x_offset = - this.width/2
+          } else {
+            this.x_offset = this.width/2 + 50
+          }
         } else {
-          $$$('#'+this.media.id).addClass('filtered')
-          this.filter_offset = 0
+          this.filtered = false
+          this.x_offset = 0
         }
       }
     },
     methods: {
-      analyticsMaps: function() {
-        ga('send', 'event', 'Media', 'map', this.media.id)
-      },
       flip: function(id) {
         $$$('#'+id+'-front').css('transform', 'rotateY(180deg)')
         $$$('#'+id+'-back').css('transform', 'rotateY(0deg)')
@@ -358,15 +324,26 @@
             setTimeout( () => {
               if (this.hover) {
                 $$$('#'+this.media.id).addClass('hover')
-                this.w_offset = 480 - this.media.width
+                this.w_offset = 480 - this.local_width
                 this.h_offset = 270 - this.local_height
                 this.x_offset = -(this.w_offset/2)
-                if (this.media.matrix[0][1] - (this.h_offset/2) < 0) {
-                  this.y_offset = 0
-                } else if (this.media.matrix[1][1] + (this.h_offset/2) > this.height) {
-                  this.y_offset = - ((this.media.matrix[1][1] + (this.h_offset)) - this.height)
+                var heightPX = (this.height*this.media.y)/100
+                var leftPX = (this.width*this.media.x)/100
+                var matrixX = heightPX + this.local_height
+                var matrixY = leftPX + this.local_width
+                if (heightPX - (this.h_offset/2) < 0) {
+                  this.y_offset = - heightPX
+                } else if (matrixX + (this.h_offset/2) > this.height) {
+                  this.y_offset = - ((matrixX + (this.h_offset)) - this.height)
                 } else {
                   this.y_offset = -(this.h_offset/2) 
+                }
+                if (leftPX - (this.w_offset/2) < 0) {
+                  this.x_offset = - leftPX
+                } else if (matrixY + (this.w_offset/2) > this.width) {
+                  this.x_offset = - ((matrixY + (this.w_offset)) - this.width)
+                } else {
+                  this.x_offset = -(this.w_offset/2) 
                 }
                 this.sw = 8
                 this.on = true
@@ -379,10 +356,14 @@
         var self = this
         var y = event.y || event.clientY
         var x = event.x || event.clientX
+        var heightPX = (this.height*this.media.y)/100
+        var leftPX = (this.width*this.media.x)/100
+        var matrixX = heightPX + this.local_height
+        var matrixY = leftPX + this.local_width
         if (this.playing === null) {
           this.hover = false
           if (self.on) {
-            if (this.media.matrix[0][0]+this.offset+this.x_offset >= x || this.media.matrix[1][0]+this.offset-this.x_offset <= x || this.media.matrix[0][1]+this.y_offset <= y || this.media.matrix[1][1]+this.y_offset+this.local_height >= y) {
+            if (leftPX +this.x_offset >= x || matrixX-this.x_offset <= x || heightPX+this.y_offset <= y || matrixY+this.y_offset+this.local_height >= y) {
               setTimeout(function() {
                 if (!self.hover) {
                   self.w_offset = 0
@@ -418,9 +399,6 @@
             'onStateChange': this.videoFim
           }
         })
-        document.cookie = "ass-"+this.media.id+"=true"
-        this.$dispatch('assistido', this.media.id)
-        this.assistido = true
       },
       closeMedia: function() {
         ga('send', 'event', 'Media', 'close', this.media.id)
@@ -436,21 +414,6 @@
           self.playing = null
           ga('send', 'event', 'Media', 'end', this.media.id)
         }
-      },
-      votar: function(event) {
-        if (this.votado) {
-          this.$dispatch('des-votado', this.media.id)
-          document.cookie = "voto-"+this.media.id+"=false"
-          this.votado = false
-          this.votos = this.votos - 1
-          ga('send', 'event', 'Media', 'desvotado', this.media.id)
-        } else {
-          this.$dispatch('votado', this.media.id)
-          document.cookie = "voto-"+this.media.id+"=true"
-          this.votado = true
-          this.votos = this.votos + 1
-          ga('send', 'event', 'Media', 'votado', this.media.id)
-        }
       }
     },
     created: function () {
@@ -458,11 +421,25 @@
       this.sw = this.media.shadow
       var self = this
 
+      Trello.get("/cards/"+this.media.card+"/attachments", function(attach) {
+        if (attach.length === 0) {
+          self.media.imgs = ['/img/default_img.png']
+        } else {
+          for (var i = 0; i < attach.length; i++) {
+            self.media.imgs.push(attach[i].url)
+          }
+        }
+      })
+
       this.$on('media-height', function() {
-        console.log(this.height)
         this.local_height = (this.height*this.media.height)/100
         this.local_width = (this.local_height*16)/9
       })
+
+      if (this.media.filter) {
+        this.local_height = (this.height*this.media.height)/100
+        this.local_width = (this.local_height*16)/9
+      }
 
       if (this.media.video !== "__") {
         var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
@@ -498,7 +475,7 @@
         }
       })
       
-      if (this._uid === this.$parent.media_cloud.length + 2) {
+      if (!this.media.filter && this._uid === this.$parent.media_cloud.length + 2) {
         this.$dispatch('home-ready')
       }
     },

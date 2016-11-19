@@ -103,7 +103,7 @@ body{
     padding-bottom: 20px;
     padding-top: 30px;
     position: absolute;
-    bottom: -115px;
+    bottom: -130px;
     display: flex;
     align-items: center;
     color: #bdbdbd;
@@ -321,7 +321,7 @@ body{
 
 /* ajustes da seta */
 .seta_footer{
-    margin-top: -125px;
+    margin-top: -140px;
 }
 
 .footer_seta{
