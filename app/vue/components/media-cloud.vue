@@ -5,7 +5,7 @@
 <template>
 
   <div id="media_cloud" class="mdl-grid" style="padding: 0; position: relative; overflow: hidden;" :style="{height: height+'px'}" @wheel="onWheel">
-    <div id="cloud_wraper" class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; perspective: 800px; height: 100%; position: absolute; overflow: hidden;" :style="{width: width+'px'}">
+    <div id="cloud_wraper" class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;" :style="{width: width+'px'}">
 
       <in-media v-for="media in media_cloud" transition="fade" :media="media" :height="height" :width="width" :playing.sync="playing"></in-media>
       <div v-if="filter !== ''" is="filter-madureira" transition="filter-group" :naves="naves" :width="width" :height="height" :playing.sync="playing"></div>

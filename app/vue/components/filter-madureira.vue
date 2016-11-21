@@ -6,12 +6,12 @@
     // background-size: 100%;
     &.filter-group-transition {
       transition: opacity .3s ease .4s, transform .3s ease .4s;
-      transform: translateY(0px);
+      transform: translateY(0%);
       opacity: 1;
     }
     &.filter-group-enter, &.filter-group-leave {
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 1;
+      transform: translateY(100%);
     }
     &.filter-group-leave {
       transition: opacity .1s linear, transform .1s linear ;
