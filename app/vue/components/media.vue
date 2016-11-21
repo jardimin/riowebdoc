@@ -187,7 +187,7 @@
       </div>
     </div>
     <div :id="media.id+'-back'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp back" :style="[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]">
-      <div class="mdl-supporting-text" style="color: black; height: 100%;">
+      <div class="mdl-supporting-text" style="color: black; height: 100%; background-size: 100%; background-repeat: no-repeat; background-position-y: 50px;" :style="{'background-image': 'url(images/mapa_'+backgroundMap+'.png)'}">
       		<div class="left-postal" style="color: black;">
               <h4 style="margin: 0;">{{video_title}}</h4>
         			{{video_desc}}
@@ -241,6 +241,27 @@
         button: false,
         hover: false,
         on: false
+      }
+    },
+    computed: {
+      backgroundMap: function () {
+        if (this.media.nav === 'Penha') {
+          return 'penha'
+        } else if (this.media.nav === 'Triagem') {
+          return 'triagem'
+        } else if (this.media.nav === 'Nova Brasília') {
+          return 'nova_brasilia'
+        } else if (this.media.nav === 'Irajá') {
+          return 'iraja'
+        } else if (this.media.nav === 'Vila Aliança') {
+          return 'vila_alianca'
+        } else if (this.media.nav === 'Santa Cruz') {
+          return 'santa_cruz'
+        } else if (this.media.nav === 'Padre Miguel') {
+          return 'padre_miguel'
+        } else if (this.media.nav === 'Madureira') {
+          return 'madureira'
+        }  
       }
     },
     watch: {
