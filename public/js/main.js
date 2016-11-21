@@ -74,6 +74,10 @@ module.exports = {
         height: 25,
         x: 62.3,
         y: 10.4
+      }, {
+        height: 25,
+        x: 62.3,
+        y: 10.4
       }]
     };
   },
@@ -501,7 +505,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./filter-madureira.vue":2,"./media.vue":9,"jquery":25,"marked":26,"perfect-scrollbar":27,"underscore":94,"vue":96,"vue-hot-reload-api":95}],9:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.filter {\n    -webkit-transition: left .5s;\n    transition: left .5s; }\n  /* line 27, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 30, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 36, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 41, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 44, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 49, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 54, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 59, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 64, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 68, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 72, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 79, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 85, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 89, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 93, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 97, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 102, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n  /* line 106, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 110, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 119, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 122, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 129, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 133, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 141, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 147, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 158, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.filter {\n    -webkit-transition: left .5s;\n    transition: left .5s; }\n  /* line 27, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 30, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 36, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 41, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 44, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 49, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 54, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 59, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 64, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 68, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 72, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 79, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 85, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 89, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 93, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 97, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 102, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n    /* line 106, stdin */\n    .media_card .front .mdl-card__menu .material-icons {\n      color: #05212f; }\n    /* line 109, stdin */\n    .media_card .front .mdl-card__menu .mdl-button--icon {\n      background: white; }\n  /* line 114, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 118, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 127, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 130, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 137, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 141, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 149, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 155, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 166, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n")
 'use strict';
 
 var $$$ = require('jquery');
@@ -637,26 +641,28 @@ module.exports = {
           setTimeout(function () {
             if (_this.hover) {
               $$$('#' + _this.media.id).addClass('hover');
-              _this.w_offset = 480 - _this.local_width;
-              _this.h_offset = 270 - _this.local_height;
-              _this.x_offset = -(_this.w_offset / 2);
-              var heightPX = _this.height * _this.media.y / 100;
-              var leftPX = _this.width * _this.media.x / 100;
-              var matrixX = heightPX + _this.local_height;
-              var matrixY = leftPX + _this.local_width;
-              if (heightPX - _this.h_offset / 2 < 0) {
-                _this.y_offset = -heightPX;
-              } else if (matrixX + _this.h_offset / 2 > _this.height) {
-                _this.y_offset = -(matrixX + _this.h_offset - _this.height);
-              } else {
-                _this.y_offset = -(_this.h_offset / 2);
-              }
-              if (leftPX - _this.w_offset / 2 < 0) {
-                _this.x_offset = -leftPX;
-              } else if (matrixY + _this.w_offset / 2 > _this.width) {
-                _this.x_offset = -(matrixY + _this.w_offset - _this.width);
-              } else {
+              if (_this.local_width < 480) {
+                _this.w_offset = 480 - _this.local_width;
+                _this.h_offset = 270 - _this.local_height;
                 _this.x_offset = -(_this.w_offset / 2);
+                var heightPX = _this.height * _this.media.y / 100;
+                var leftPX = _this.width * _this.media.x / 100;
+                var matrixX = heightPX + _this.local_height;
+                var matrixY = leftPX + _this.local_width;
+                if (heightPX - _this.h_offset / 2 < 0) {
+                  _this.y_offset = -heightPX;
+                } else if (matrixX + _this.h_offset / 2 > _this.height) {
+                  _this.y_offset = -(matrixX + _this.h_offset - _this.height);
+                } else {
+                  _this.y_offset = -(_this.h_offset / 2);
+                }
+                if (leftPX - _this.w_offset / 2 < 0) {
+                  _this.x_offset = -leftPX;
+                } else if (matrixY + _this.w_offset / 2 > _this.width) {
+                  _this.x_offset = -(matrixY + _this.w_offset - _this.width);
+                } else {
+                  _this.x_offset = -(_this.w_offset / 2);
+                }
               }
               _this.sw = 8;
               _this.on = true;
@@ -806,7 +812,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/media/bambuzal/Softwares/riowebdoc/app/vue/components/media.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.filter {\n    -webkit-transition: left .5s;\n    transition: left .5s; }\n  /* line 27, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 30, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 36, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 41, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 44, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 49, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 54, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 59, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 64, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 68, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 72, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 79, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 85, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 89, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 93, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 97, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 102, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n  /* line 106, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 110, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 119, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 122, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 129, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 133, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 141, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 147, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 158, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n"] = false
+    require("vueify-insert-css").cache["/* line 4, stdin */\n.fade3-transition {\n  -webkit-transition: opacity .3s ease;\n  transition: opacity .3s ease;\n  opacity: 1; }\n\n/* line 8, stdin */\n.fade3-enter, .fade3-leave {\n  opacity: 0; }\n\n/* line 11, stdin */\n.fade3-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 15, stdin */\n.media_card {\n  position: absolute;\n  -webkit-transform-style: preserve-3d;\n          transform-style: preserve-3d;\n  -webkit-transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s;\n  transition: transform .3s, left .2s, top .2s, opacity .4s, -webkit-transform .3s;\n  -webkit-perspective: 800px;\n          perspective: 800px;\n  cursor: pointer; }\n  /* line 21, stdin */\n  .media_card:hover {\n    z-index: 3 !important; }\n  /* line 24, stdin */\n  .media_card.filter {\n    -webkit-transition: left .5s;\n    transition: left .5s; }\n  /* line 27, stdin */\n  .media_card.in-trans {\n    -webkit-transition: none;\n    transition: none; }\n  /* line 30, stdin */\n  .media_card.hover {\n    z-index: 2;\n    -webkit-transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear;\n    transition: transform 0.3s, left 0.2s linear, top 0.2s linear, -webkit-transform 0.3s; }\n    /* line 33, stdin */\n    .media_card.hover .mdl-card {\n      -webkit-transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, padding 0.2s linear, -webkit-transform 0.5s;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear;\n      transition: box-shadow 0.2s linear, height 0.2s linear, min-height 0.2s linear, width 0.2s linear, transform 0.5s, padding 0.2s linear, -webkit-transform 0.5s; }\n    /* line 36, stdin */\n    .media_card.hover .mdl-card__title {\n      height: 95%;\n      width: 97%;\n      -webkit-transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear;\n      transition: opacity 0.6s, height 0.2s linear, min-height 0.2s linear, width 0.2s linear; }\n    /* line 41, stdin */\n    .media_card.hover .front {\n      padding: 6px; }\n    /* line 44, stdin */\n    .media_card.hover .right-postal {\n      height: 57.5%;\n      margin-top: 15%;\n      font-size: 60% !important; }\n    /* line 49, stdin */\n    .media_card.hover .left-postal {\n      font-size: 60% !important;\n      line-height: 12px; }\n  /* line 54, stdin */\n  .media_card.playing {\n    z-index: 6 !important;\n    -webkit-transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    transition: transform 0.3s, left 0.4s, top 0.4s;\n    transition: transform 0.3s, left 0.4s, top 0.4s, -webkit-transform 0.3s;\n    -webkit-perspective: 500px;\n            perspective: 500px;\n    cursor: default; }\n    /* line 59, stdin */\n    .media_card.playing .right-postal {\n      height: 75%;\n      margin-top: 5%;\n      font-size: 80% !important; }\n    /* line 64, stdin */\n    .media_card.playing .left-postal {\n      font-size: 80% !important;\n      line-height: auto; }\n    /* line 68, stdin */\n    .media_card.playing .mdl-card__title {\n      height: 98%;\n      width: 98.8%;\n      -webkit-transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s;\n      transition: opacity 0.6s, height 0.4s, min-height 0.4s linear, width 0.4s; }\n      /* line 72, stdin */\n      .media_card.playing .mdl-card__title.player {\n        z-index: 5;\n        padding: 30px;\n        background: white; }\n    /* line 79, stdin */\n    .media_card.playing .mdl-card__menu {\n      z-index: 6;\n      right: 10px;\n      top: 4px; }\n    /* line 85, stdin */\n    .media_card.playing .front .material-icons {\n      color: black; }\n    /* line 89, stdin */\n    .media_card.playing .mdl-card {\n      -webkit-transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, padding 0.4s, -webkit-transform 1s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s;\n      transition: box-shadow 0.4s, height 0.4s, min-height 0.4s linear, width 0.4s, transform 1s, padding 0.4s, -webkit-transform 1s; }\n  /* line 93, stdin */\n  .media_card.filtered {\n    opacity: 0 !important;\n    z-index: -1; }\n  /* line 97, stdin */\n  .media_card .front {\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d;\n    padding: 2%; }\n    /* line 102, stdin */\n    .media_card .front .material-icons {\n      color: white; }\n    /* line 106, stdin */\n    .media_card .front .mdl-card__menu .material-icons {\n      color: #05212f; }\n    /* line 109, stdin */\n    .media_card .front .mdl-card__menu .mdl-button--icon {\n      background: white; }\n  /* line 114, stdin */\n  .media_card .mdl-card {\n    border-radius: 1px;\n    -webkit-transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, padding .2s, -webkit-transform 1s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s;\n    transition: box-shadow .2s, height .2s, width .2s, transform 1s, padding .2s, -webkit-transform 1s; }\n  /* line 118, stdin */\n  .media_card .mdl-card__title {\n    height: 93%;\n    width: 96%;\n    color: white;\n    position: absolute;\n    -webkit-transition: opacity .6s, height .2s, width .2s;\n    transition: opacity .6s, height .2s, width .2s;\n    opacity: 1;\n    padding: 0; }\n  /* line 127, stdin */\n  .media_card .mdl-card__menu {\n    z-index: 3; }\n  /* line 130, stdin */\n  .media_card .back {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg);\n    position: absolute;\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-transform-style: preserve-3d;\n            transform-style: preserve-3d; }\n  /* line 137, stdin */\n  .media_card .mdl-button:hover, .media_card .mdl-button:focus {\n    background: transparent; }\n  /* line 141, stdin */\n  .media_card .assistido {\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    z-index: 5; }\n  /* line 149, stdin */\n  .media_card .votado .material-icons {\n    color: red !important; }\n\n/* line 155, stdin */\n.left-postal {\n  width: 60% !important;\n  height: 75% !important;\n  border-right: 3px solid;\n  margin-left: 5%;\n  margin-top: 5%;\n  padding: 2%;\n  position: relative;\n  float: left; }\n\n/* line 166, stdin */\n.right-postal {\n  width: 21%;\n  text-align: center;\n  padding: 2%;\n  position: relative;\n  float: left; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -1128,6 +1134,45 @@ if (module.hot) {(function () {  module.hot.accept()
 			shadow: 2,
 			filter: false,
 			video: "ZZsrowhDpos"
+		},{
+			id: "8JDQXM55",
+			card: "",
+			nav: "Nova Brasília",
+			width: 163,
+			height: 11.7,
+			x: 3.9,
+			y: 15.2,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "CE4jIVzF1x8"
+		},{
+			id: "7FNhCFHQ",
+			card: "",
+			nav: "Nova Brasília",
+			width: 163,
+			height: 11.7,
+			x: 15.1,
+			y: 85.9,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "0-p3qLpuDHA"
+		},{
+			id: "mnUn9lG5",
+			card: "",
+			nav: "Nova Brasília",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "3E7l46x8B_8"
 		}]
 	},{
 		headers: {
@@ -1146,7 +1191,7 @@ if (module.hot) {(function () {  module.hot.accept()
 		media: [{
 			id: "6zQ9sGxy",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Irajá",
 			width: 163,
 			height: 26.8,
 			x: 33.1,
@@ -1169,6 +1214,45 @@ if (module.hot) {(function () {  module.hot.accept()
 			shadow: 2,
 			filter: false,
 			video: "BfPwOiUwy_c"
+		},{
+			id: "ue399jDO",
+			card: "",
+			nav: "Irajá",
+			width: 163,
+			height: 11.7,
+			x: 59.3,
+			y: 8.5,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "nvf3ubD14wg"
+		},{
+			id: "W4VcuZoJ",
+			card: "",
+			nav: "Irajá",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 72,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "4KXPKom0H04"
+		},{
+			id: "Sv49hStC",
+			card: "",
+			nav: "Irajá",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "5dZDU0VBuc"
 		}]
 	},{
 		headers: {
@@ -1187,7 +1271,7 @@ if (module.hot) {(function () {  module.hot.accept()
 		media: [{
 			id: "bMXTI5qu",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Vila Aliança",
 			width: 163,
 			height: 26.8,
 			x: 33.1,
@@ -1197,84 +1281,6 @@ if (module.hot) {(function () {  module.hot.accept()
 			shadow: 2,
 			filter: false,
 			video: "CKjnz3R5GVc"
-		},{
-			id: "8JDQXM55",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 3.9,
-			y: 15.2,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "CE4jIVzF1x8"
-		},{
-			id: "7FNhCFHQ",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 15.1,
-			y: 85.9,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "0-p3qLpuDHA"
-		},{
-			id: "mnUn9lG5",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 48.2,
-			y: 43.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "3E7l46x8B_8"
-		},{
-			id: "ue399jDO",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 59.3,
-			y: 8.5,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "nvf3ubD14wg"
-		},{
-			id: "W4VcuZoJ",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 59.7,
-			y: 72,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "4KXPKom0H04"
-		},{
-			id: "Sv49hStC",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 59.7,
-			y: 85.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "5dZDU0VBuc"
 		},{
 			id: "tfIOhDiq",
 			card: "",
@@ -1327,58 +1333,6 @@ if (module.hot) {(function () {  module.hot.accept()
 			shadow: 2,
 			filter: false,
 			video: "kDaS52LAW3Q"
-		},{
-			id: "YV4JwgzD",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 82.3,
-			y: 71.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "pJ_IKD564FA"
-		},{
-			id: "RDKiDZkd",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 89.7,
-			y: 71.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "kEv84e6b3kE"
-		},{
-			id: "1uJYyz53",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 82.3,
-			y: 85.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "KJF94XfzUy4"
-		},{
-			id: "emQJCJMX",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 48.2,
-			y: 58.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "QAYmjmijdx0"
 		}]
 	},{
 		headers: {
@@ -1397,7 +1351,7 @@ if (module.hot) {(function () {  module.hot.accept()
 		media: [{
 			id: "y9GZdArK",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Santa Cruz",
 			width: 163,
 			height: 26.8,
 			x: 33.1,
@@ -1420,6 +1374,45 @@ if (module.hot) {(function () {  module.hot.accept()
 			shadow: 2,
 			filter: false,
 			video: "__"
+		},{
+			id: "RDKiDZkd",
+			card: "",
+			nav: "Santa Cruz",
+			width: 163,
+			height: 12.6,
+			x: 89.7,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kEv84e6b3kE"
+		},{
+			id: "1uJYyz53",
+			card: "",
+			nav: "Santa Cruz",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "KJF94XfzUy4"
+		},{
+			id: "emQJCJMX",
+			card: "",
+			nav: "Santa Cruz",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 58.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "QAYmjmijdx0"
 		}]
 	},{
 		headers: {
@@ -1438,7 +1431,7 @@ if (module.hot) {(function () {  module.hot.accept()
 		media: [{
 			id: "MT8tTfLk",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Triagem",
 			width: 163,
 			height: 26.8,
 			x: 55.1,
@@ -1456,6 +1449,45 @@ if (module.hot) {(function () {  module.hot.accept()
 			height: 12.6,
 			x: 10.7,
 			y: 19,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "YV4JwgzD",
+			card: "",
+			nav: "Triagem",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "pJ_IKD564FA"
+		},{
+			id: "oZJjgtDv",
+			card: "",
+			nav: "Triagem",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 47.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "JwBVdfA9",
+			card: "",
+			nav: "Triagem",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 68.9,
 			imgs: [],
 			nome: "",
 			shadow: 2,
@@ -1479,7 +1511,7 @@ if (module.hot) {(function () {  module.hot.accept()
 		media: [{
 			id: "dW2KpFRI",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Padre Miguel",
 			width: 163,
 			height: 26.8,
 			x: 67.2,
@@ -1528,6 +1560,19 @@ if (module.hot) {(function () {  module.hot.accept()
 			shadow: 2,
 			filter: false,
 			video: "__"
+		},{
+			id: "df3GdByA",
+			card: "",
+			nav: "Padre Miguel",
+			width: 163,
+			height: 19.5,
+			x: 10.7,
+			y: 47.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -1546,50 +1591,11 @@ if (module.hot) {(function () {  module.hot.accept()
 		media: [{
 			id: "ygvo7j0H",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Penha",
 			width: 163,
 			height: 26.8,
 			x: 70.3,
 			y: 15,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
-		},{
-			id: "df3GdByA",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 10.7,
-			y: 47.6,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
-		},{
-			id: "oZJjgtDv",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 21.9,
-			y: 47.6,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
-		},{
-			id: "JwBVdfA9",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 21.9,
-			y: 68.9,
 			imgs: [],
 			nome: "",
 			shadow: 2,
@@ -1647,32 +1653,6 @@ if (module.hot) {(function () {  module.hot.accept()
 			shadow: 2,
 			filter: false,
 			video: "w6apAHcKZBk"
-		},{
-			id: "6HerXE3f",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 17,
-			x: 85.3,
-			y: 25,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "kbvVwOv0oFY"
-		},{
-			id: "J3SwAuLX",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 48.3,
-			y: 72,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
 		}]
 	},{
 		headers: {
@@ -1691,7 +1671,7 @@ if (module.hot) {(function () {  module.hot.accept()
 		media: [{
 			id: "DgDUHmnA",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Madureira",
 			width: 163,
 			height: 26.8,
 			x: 85.3,
@@ -1722,6 +1702,32 @@ if (module.hot) {(function () {  module.hot.accept()
 			height: 16.5,
 			x: 23.7,
 			y: 0,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "6HerXE3f",
+			card: "",
+			nav: "Madureira",
+			width: 163,
+			height: 17,
+			x: 85.3,
+			y: 25,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kbvVwOv0oFY"
+		},{
+			id: "J3SwAuLX",
+			card: "",
+			nav: "Madureira",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 72,
 			imgs: [],
 			nome: "",
 			shadow: 2,

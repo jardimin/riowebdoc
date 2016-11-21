@@ -102,6 +102,14 @@
       .material-icons {
         color: white;
       }
+      .mdl-card__menu {
+        .material-icons {
+          color: rgba(5,33,47,1);
+        }
+        .mdl-button--icon {
+          background: white;
+        }
+      }
     }
     .mdl-card {
       border-radius: 1px;
@@ -345,27 +353,29 @@
             setTimeout( () => {
               if (this.hover) {
                 $$$('#'+this.media.id).addClass('hover')
-                this.w_offset = 480 - this.local_width
-                this.h_offset = 270 - this.local_height
-                this.x_offset = -(this.w_offset/2)
-                var heightPX = (this.height*this.media.y)/100
-                var leftPX = (this.width*this.media.x)/100
-                var matrixX = heightPX + this.local_height
-                var matrixY = leftPX + this.local_width
-                if (heightPX - (this.h_offset/2) < 0) {
-                  this.y_offset = - heightPX
-                } else if (matrixX + (this.h_offset/2) > this.height) {
-                  this.y_offset = - ((matrixX + (this.h_offset)) - this.height)
-                } else {
-                  this.y_offset = -(this.h_offset/2) 
-                }
-                if (leftPX - (this.w_offset/2) < 0) {
-                  this.x_offset = - leftPX
-                } else if (matrixY + (this.w_offset/2) > this.width) {
-                  this.x_offset = - ((matrixY + (this.w_offset)) - this.width)
-                } else {
-                  this.x_offset = -(this.w_offset/2) 
-                }
+                if (this.local_width < 480) {
+                  this.w_offset = 480 - this.local_width
+                  this.h_offset = 270 - this.local_height
+                  this.x_offset = -(this.w_offset/2)
+                  var heightPX = (this.height*this.media.y)/100
+                  var leftPX = (this.width*this.media.x)/100
+                  var matrixX = heightPX + this.local_height
+                  var matrixY = leftPX + this.local_width
+                  if (heightPX - (this.h_offset/2) < 0) {
+                    this.y_offset = - heightPX
+                  } else if (matrixX + (this.h_offset/2) > this.height) {
+                    this.y_offset = - ((matrixX + (this.h_offset)) - this.height)
+                  } else {
+                    this.y_offset = -(this.h_offset/2) 
+                  }
+                  if (leftPX - (this.w_offset/2) < 0) {
+                    this.x_offset = - leftPX
+                  } else if (matrixY + (this.w_offset/2) > this.width) {
+                    this.x_offset = - ((matrixY + (this.w_offset)) - this.width)
+                  } else {
+                    this.x_offset = -(this.w_offset/2) 
+                  }
+                }                
                 this.sw = 8
                 this.on = true
               }

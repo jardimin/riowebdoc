@@ -46,6 +46,45 @@
 			shadow: 2,
 			filter: false,
 			video: "ZZsrowhDpos"
+		},{
+			id: "8JDQXM55",
+			card: "",
+			nav: "Nova Brasília",
+			width: 163,
+			height: 11.7,
+			x: 3.9,
+			y: 15.2,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "CE4jIVzF1x8"
+		},{
+			id: "7FNhCFHQ",
+			card: "",
+			nav: "Nova Brasília",
+			width: 163,
+			height: 11.7,
+			x: 15.1,
+			y: 85.9,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "0-p3qLpuDHA"
+		},{
+			id: "mnUn9lG5",
+			card: "",
+			nav: "Nova Brasília",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 43.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "3E7l46x8B_8"
 		}]
 	},{
 		headers: {
@@ -64,7 +103,7 @@
 		media: [{
 			id: "6zQ9sGxy",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Irajá",
 			width: 163,
 			height: 26.8,
 			x: 33.1,
@@ -87,6 +126,45 @@
 			shadow: 2,
 			filter: false,
 			video: "BfPwOiUwy_c"
+		},{
+			id: "ue399jDO",
+			card: "",
+			nav: "Irajá",
+			width: 163,
+			height: 11.7,
+			x: 59.3,
+			y: 8.5,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "nvf3ubD14wg"
+		},{
+			id: "W4VcuZoJ",
+			card: "",
+			nav: "Irajá",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 72,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "4KXPKom0H04"
+		},{
+			id: "Sv49hStC",
+			card: "",
+			nav: "Irajá",
+			width: 163,
+			height: 12.6,
+			x: 59.7,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "5dZDU0VBuc"
 		}]
 	},{
 		headers: {
@@ -105,7 +183,7 @@
 		media: [{
 			id: "bMXTI5qu",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Vila Aliança",
 			width: 163,
 			height: 26.8,
 			x: 33.1,
@@ -115,84 +193,6 @@
 			shadow: 2,
 			filter: false,
 			video: "CKjnz3R5GVc"
-		},{
-			id: "8JDQXM55",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 3.9,
-			y: 15.2,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "CE4jIVzF1x8"
-		},{
-			id: "7FNhCFHQ",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 15.1,
-			y: 85.9,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "0-p3qLpuDHA"
-		},{
-			id: "mnUn9lG5",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 48.2,
-			y: 43.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "3E7l46x8B_8"
-		},{
-			id: "ue399jDO",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 59.3,
-			y: 8.5,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "nvf3ubD14wg"
-		},{
-			id: "W4VcuZoJ",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 59.7,
-			y: 72,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "4KXPKom0H04"
-		},{
-			id: "Sv49hStC",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 59.7,
-			y: 85.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "5dZDU0VBuc"
 		},{
 			id: "tfIOhDiq",
 			card: "",
@@ -245,58 +245,6 @@
 			shadow: 2,
 			filter: false,
 			video: "kDaS52LAW3Q"
-		},{
-			id: "YV4JwgzD",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 82.3,
-			y: 71.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "pJ_IKD564FA"
-		},{
-			id: "RDKiDZkd",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 89.7,
-			y: 71.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "kEv84e6b3kE"
-		},{
-			id: "1uJYyz53",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 12.6,
-			x: 82.3,
-			y: 85.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "KJF94XfzUy4"
-		},{
-			id: "emQJCJMX",
-			card: "",
-			nav: "Vila Aliança",
-			width: 163,
-			height: 11.7,
-			x: 48.2,
-			y: 58.7,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "QAYmjmijdx0"
 		}]
 	},{
 		headers: {
@@ -315,7 +263,7 @@
 		media: [{
 			id: "y9GZdArK",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Santa Cruz",
 			width: 163,
 			height: 26.8,
 			x: 33.1,
@@ -338,6 +286,45 @@
 			shadow: 2,
 			filter: false,
 			video: "__"
+		},{
+			id: "RDKiDZkd",
+			card: "",
+			nav: "Santa Cruz",
+			width: 163,
+			height: 12.6,
+			x: 89.7,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kEv84e6b3kE"
+		},{
+			id: "1uJYyz53",
+			card: "",
+			nav: "Santa Cruz",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 85.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "KJF94XfzUy4"
+		},{
+			id: "emQJCJMX",
+			card: "",
+			nav: "Santa Cruz",
+			width: 163,
+			height: 11.7,
+			x: 48.2,
+			y: 58.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "QAYmjmijdx0"
 		}]
 	},{
 		headers: {
@@ -356,7 +343,7 @@
 		media: [{
 			id: "MT8tTfLk",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Triagem",
 			width: 163,
 			height: 26.8,
 			x: 55.1,
@@ -374,6 +361,45 @@
 			height: 12.6,
 			x: 10.7,
 			y: 19,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "YV4JwgzD",
+			card: "",
+			nav: "Triagem",
+			width: 163,
+			height: 12.6,
+			x: 82.3,
+			y: 71.7,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "pJ_IKD564FA"
+		},{
+			id: "oZJjgtDv",
+			card: "",
+			nav: "Triagem",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 47.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "JwBVdfA9",
+			card: "",
+			nav: "Triagem",
+			width: 163,
+			height: 19.5,
+			x: 21.9,
+			y: 68.9,
 			imgs: [],
 			nome: "",
 			shadow: 2,
@@ -397,7 +423,7 @@
 		media: [{
 			id: "dW2KpFRI",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Padre Miguel",
 			width: 163,
 			height: 26.8,
 			x: 67.2,
@@ -446,6 +472,19 @@
 			shadow: 2,
 			filter: false,
 			video: "__"
+		},{
+			id: "df3GdByA",
+			card: "",
+			nav: "Padre Miguel",
+			width: 163,
+			height: 19.5,
+			x: 10.7,
+			y: 47.6,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
 		}]
 	},{
 		headers: {
@@ -464,50 +503,11 @@
 		media: [{
 			id: "ygvo7j0H",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Penha",
 			width: 163,
 			height: 26.8,
 			x: 70.3,
 			y: 15,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
-		},{
-			id: "df3GdByA",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 10.7,
-			y: 47.6,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
-		},{
-			id: "oZJjgtDv",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 21.9,
-			y: 47.6,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
-		},{
-			id: "JwBVdfA9",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 21.9,
-			y: 68.9,
 			imgs: [],
 			nome: "",
 			shadow: 2,
@@ -565,32 +565,6 @@
 			shadow: 2,
 			filter: false,
 			video: "w6apAHcKZBk"
-		},{
-			id: "6HerXE3f",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 17,
-			x: 85.3,
-			y: 25,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "kbvVwOv0oFY"
-		},{
-			id: "J3SwAuLX",
-			card: "",
-			nav: "Penha",
-			width: 163,
-			height: 19.5,
-			x: 48.3,
-			y: 72,
-			imgs: [],
-			nome: "",
-			shadow: 2,
-			filter: false,
-			video: "__"
 		}]
 	},{
 		headers: {
@@ -609,7 +583,7 @@
 		media: [{
 			id: "DgDUHmnA",
 			card: "",
-			nav: "Nova Brasília",
+			nav: "Madureira",
 			width: 163,
 			height: 26.8,
 			x: 85.3,
@@ -640,6 +614,32 @@
 			height: 16.5,
 			x: 23.7,
 			y: 0,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "__"
+		},{
+			id: "6HerXE3f",
+			card: "",
+			nav: "Madureira",
+			width: 163,
+			height: 17,
+			x: 85.3,
+			y: 25,
+			imgs: [],
+			nome: "",
+			shadow: 2,
+			filter: false,
+			video: "kbvVwOv0oFY"
+		},{
+			id: "J3SwAuLX",
+			card: "",
+			nav: "Madureira",
+			width: 163,
+			height: 19.5,
+			x: 48.3,
+			y: 72,
 			imgs: [],
 			nome: "",
 			shadow: 2,
