@@ -48,7 +48,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./views/card-view.vue":16,"./views/home-view.vue":17,"blueimp-md5":18,"jquery":25,"perfect-scrollbar":27,"underscore":94,"vue":96,"vue-hot-reload-api":95,"vueify-insert-css":97}],2:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%;\n  background-image: url(../images/filter1.png);\n  background-size: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 0;\n    -webkit-transform: translateY(50px);\n            transform: translateY(50px); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 0;\n    -webkit-transform: translateY(50px);\n            transform: translateY(50px); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n")
 'use strict';
 
 var $$$ = require('jquery');
@@ -91,7 +91,7 @@ module.exports = {
         y: this.sizes[i].y,
         imgs: [],
         nome: "",
-        shadow: this.naves[5].media[i].nome,
+        shadow: this.naves[5].media[i].shadow,
         filter: true,
         video: this.naves[5].media[i].video
       };
@@ -115,7 +115,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/media/bambuzal/Softwares/riowebdoc/app/vue/components/filter-madureira.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%;\n  background-image: url(../images/filter1.png);\n  background-size: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 0;\n    -webkit-transform: translateY(50px);\n            transform: translateY(50px); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n"] = false
+    require("vueify-insert-css").cache["/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 0;\n    -webkit-transform: translateY(50px);\n            transform: translateY(50px); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -380,7 +380,8 @@ module.exports = {
       media_cloud: [],
       width: 0,
       height: 0,
-      playing: null
+      playing: null,
+      scroll: true
     };
   },
   methods: {
@@ -403,10 +404,16 @@ module.exports = {
       var interval = Math.abs(range(event.clientX) - 1);
     },
     onWheel: function onWheel(event) {
-      var delta = event.wheelDelta || -event.deltaY;
-      document.getElementById('media_cloud').scrollLeft = 5;
-      Ps.update(document.getElementById('media_cloud'));
-      console.log(delta);
+      if (this.scroll) {
+        var delta = event.wheelDelta || -event.deltaY;
+        var container = document.getElementById('media_cloud');
+        if (delta > 0) {
+          container.scrollLeft = container.scrollLeft + 60;
+        } else if (delta < 0 && container.scrollLeft > 0) {
+          container.scrollLeft = container.scrollLeft - 60;
+        }
+        Ps.update(container);
+      }
     }
   },
   computed: {},
@@ -421,22 +428,53 @@ module.exports = {
   },
   attached: function attached() {
     var self = this;
+    var q = $$$(window).width();
+    var container = document.getElementById('media_cloud');
     componentHandler.upgradeDom();
     this.changeCanvasSize();
     this.$on('filter', function (nome) {
+      var _this2 = this;
+
       if (this.filter === nome || nome === 'none') {
         this.filter = '';
+        this.scroll = true;
+        Ps.initialize(document.getElementById('media_cloud', {
+          suppressScrollY: true,
+          suppressScrollX: false,
+          useBothWheelAxes: true
+        }));
+        setTimeout(function () {
+          var n = parseInt((_this2.width - q) / 2);
+          container.scrollLeft = n;
+        }, 100);
       } else {
+        var n = parseInt((this.width - q) / 2);
         this.filter = nome;
+        this.scroll = false;
+        setTimeout(function () {
+          var n = parseInt((_this2.width - q) / 2);
+          container.scrollLeft = n;
+          Ps.update(container);
+          Ps.destroy(container);
+        }, 100);
       }
       return true;
     });
     Ps.initialize(document.getElementById('media_cloud', {
       suppressScrollY: true,
+      suppressScrollX: false,
       useBothWheelAxes: true
     }));
     this.$on('home-ready', function () {
-      Ps.update(document.getElementById('media_cloud'));
+      var _this3 = this;
+
+      Ps.update(container);
+      if (this.width > q) {
+        setTimeout(function () {
+          var n = parseInt((_this3.width - q) / 2);
+          container.scrollLeft = n;
+        }, 500);
+      }
       return true;
     });
   },
@@ -450,7 +488,7 @@ module.exports = {
     }
   }
 };
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n  <div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative;\" :style=\"{height: height+'px'}\" @onwheel=\"onWheel\">\n    <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 800px; height: 100%; position: absolute;\" :style=\"{width: width+'px'}\">\n\n      <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></in-media>\n      <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n      <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n    </div>  \n  </div>  \n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n  <div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative; overflow: hidden;\" :style=\"{height: height+'px'}\" @wheel=\"onWheel\">\n    <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 800px; height: 100%; position: absolute; overflow: hidden;\" :style=\"{width: width+'px'}\">\n\n      <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></in-media>\n      <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n      <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n    </div>  \n  </div>  \n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

@@ -4,8 +4,8 @@
 
 <template>
 
-  <div id="media_cloud" class="mdl-grid" style="padding: 0; position: relative;" :style="{height: height+'px'}" @onwheel="onWheel">
-    <div id="cloud_wraper" class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; perspective: 800px; height: 100%; position: absolute;" :style="{width: width+'px'}">
+  <div id="media_cloud" class="mdl-grid" style="padding: 0; position: relative; overflow: hidden;" :style="{height: height+'px'}" @wheel="onWheel">
+    <div id="cloud_wraper" class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; perspective: 800px; height: 100%; position: absolute; overflow: hidden;" :style="{width: width+'px'}">
 
       <in-media v-for="media in media_cloud" transition="fade" :media="media" :height="height" :width="width" :playing.sync="playing"></in-media>
       <div v-if="filter !== ''" is="filter-madureira" transition="filter-group" :naves="naves" :width="width" :height="height" :playing.sync="playing"></div>
@@ -30,7 +30,8 @@
         media_cloud: [],
         width: 0,
         height: 0,
-        playing: null
+        playing: null,
+        scroll: true
       }
     },
     methods: {
@@ -53,10 +54,16 @@
         var interval = Math.abs(range(event.clientX) - 1)
       },
       onWheel: function (event) {
-        var delta = event.wheelDelta || -event.deltaY
-        document.getElementById('media_cloud').scrollLeft = 5
-        Ps.update(document.getElementById('media_cloud'))
-        console.log(delta)
+        if (this.scroll) {
+          var delta = event.wheelDelta || -event.deltaY
+          var container = document.getElementById('media_cloud')
+          if (delta > 0) {
+            container.scrollLeft = container.scrollLeft + 60
+          } else if (delta < 0 && container.scrollLeft > 0) {
+            container.scrollLeft = container.scrollLeft - 60
+          }
+          Ps.update(container)
+        }
       }
     },
     computed: {
@@ -73,22 +80,49 @@
     },
     attached: function () {
       var self = this
+      var q = $$$(window).width()
+      var container = document.getElementById('media_cloud')
       componentHandler.upgradeDom()
       this.changeCanvasSize()
       this.$on('filter', function(nome) {
         if (this.filter === nome || nome === 'none') {
           this.filter = ''
+          this.scroll = true
+          Ps.initialize(document.getElementById('media_cloud', {
+            suppressScrollY: true,
+            suppressScrollX: false,
+            useBothWheelAxes: true
+          }))
+          setTimeout( () => {
+            var n = parseInt((this.width - q)/2)
+            container.scrollLeft = n
+          }, 100)
         } else {
+          var n = parseInt((this.width - q)/2)
           this.filter = nome
+          this.scroll = false
+          setTimeout( () => {
+            var n = parseInt((this.width - q)/2)
+            container.scrollLeft = n
+            Ps.update(container)
+            Ps.destroy(container)
+          }, 100)
         }
         return true
       })
       Ps.initialize(document.getElementById('media_cloud', {
         suppressScrollY: true,
+        suppressScrollX: false,
         useBothWheelAxes: true
       }))
       this.$on('home-ready', function() {
-        Ps.update(document.getElementById('media_cloud'))
+        Ps.update(container)
+        if (this.width > q) {
+          setTimeout( () => {
+            var n = parseInt((this.width - q)/2)
+            container.scrollLeft = n
+          }, 500)
+        }
         return true
       })
     },

@@ -2,8 +2,8 @@
   .filter {
     width: 100%;
     height: 100%;
-    background-image: url(../images/filter1.png);
-    background-size: 100%;
+    // background-image: url(../images/filter1.png);
+    // background-size: 100%;
     &.filter-group-transition {
       transition: opacity .3s ease .4s, transform .3s ease .4s;
       transform: translateY(0px);
@@ -73,7 +73,7 @@
           y: this.sizes[i].y,
           imgs: [],
           nome: "",
-          shadow: this.naves[5].media[i].nome,
+          shadow: this.naves[5].media[i].shadow,
           filter: true,
           video: this.naves[5].media[i].video
         }
