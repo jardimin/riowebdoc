@@ -3026,7 +3026,70 @@ if (module.hot) {(function () {  module.hot.accept()
 })()}
 },{"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],17:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.fade-transition {\n  -webkit-transition: opacity .6s ease .4s;\n  transition: opacity .6s ease .4s;\n  opacity: 1; }\n\n/* line 6, stdin */\n.fade-enter, .fade-leave {\n  opacity: 0; }\n\n/* line 9, stdin */\n.fade-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 12, stdin */\n#navegacao {\n  padding-top: 30px; }\n\n/* line 15, stdin */\n.fade2-transition {\n  -webkit-transition: opacity .4s ease;\n  transition: opacity .4s ease;\n  opacity: 1; }\n\n/* line 19, stdin */\n.fade2-enter, .fade2-leave {\n  opacity: 0; }\n\n/* line 23, stdin */\n.mdl-navigation__link {\n  padding-top: 5px !important; }\n\n/* line 27, stdin */\n.logo_superior {\n  position: abolute;\n  margin-left: 43%; }\n\n/* line 33, stdin */\n#janela2 h3 {\n  font-family: 'treta';\n  color: #06303c; }\n\n/* line 39, stdin */\n.mdl-layout__content {\n  overflow: hidden; }\n\n/* line 43, stdin */\n.rodape {\n  -webkit-transition: bottom .3s;\n  transition: bottom .3s; }\n  /* line 45, stdin */\n  .rodape:hover {\n    bottom: 0; }\n    /* line 47, stdin */\n    .rodape:hover .footer_seta {\n      -webkit-transform: rotate(0deg);\n              transform: rotate(0deg); }\n  /* line 51, stdin */\n  .rodape .footer_seta {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n\n/* line 57, stdin */\n.rwd_pinbox {\n  cursor: pointer; }\n  /* line 60, stdin */\n  .rwd_pinbox:hover .rwd_pinicon {\n    opacity: 1; }\n  /* line 64, stdin */\n  .rwd_pinbox.filtered {\n    border-bottom: 3px solid #06303c; }\n    /* line 66, stdin */\n    .rwd_pinbox.filtered .rwd_pinicon {\n      opacity: 1; }\n  /* line 70, stdin */\n  .rwd_pinbox .rwd_pinicon {\n    opacity: 0;\n    -webkit-transition: opacity .2s;\n    transition: opacity .2s; }\n  /* line 74, stdin */\n  .rwd_pinbox .mdl-button {\n    background: transparent !important;\n    font-size: 30px;\n    height: 35px;\n    min-width: 35px;\n    width: 35px; }\n  /* line 81, stdin */\n  .rwd_pinbox .btnPin {\n    font-size: 30px; }\n")
+var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.fade-transition {\n  -webkit-transition: opacity .6s ease .4s;\n  transition: opacity .6s ease .4s;\n  opacity: 1; }\n\n/* line 6, stdin */\n.fade-enter, .fade-leave {\n  opacity: 0; }\n\n/* line 9, stdin */\n.fade-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 12, stdin */\n#navegacao {\n  padding-top: 30px; }\n\n/* line 15, stdin */\n.fade2-transition {\n  -webkit-transition: opacity .4s ease;\n  transition: opacity .4s ease;\n  opacity: 1; }\n\n/* line 19, stdin */\n.fade2-enter, .fade2-leave {\n  opacity: 0; }\n\n/* line 23, stdin */\n.mdl-navigation__link {\n  padding-top: 5px !important; }\n\n/* line 27, stdin */\n.logo_superior {\n  position: abolute;\n  margin-left: 43%; }\n\n/* line 33, stdin */\n#janela2 h3 {\n  font-family: 'treta';\n  color: #06303c; }\n\n/* line 39, stdin */\n.mdl-layout__content {\n  overflow: hidden; }\n\n/* line 43, stdin */\n.rodape {\n  -webkit-transition: bottom .3s;\n  transition: bottom .3s; }\n  /* line 45, stdin */\n  .rodape:hover {\n    bottom: 0; }\n    /* line 47, stdin */\n    .rodape:hover .footer_seta {\n      -webkit-transform: rotate(0deg);\n              transform: rotate(0deg); }\n  /* line 51, stdin */\n  .rodape .footer_seta {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n\n/* line 57, stdin */\n.rwd_pinbox {\n  cursor: pointer; }\n  /* line 60, stdin */\n  .rwd_pinbox:hover .rwd_pinicon {\n    opacity: 1; }\n  /* line 64, stdin */\n  .rwd_pinbox.filtered {\n    border-bottom: 3px solid #06303c; }\n    /* line 66, stdin */\n    .rwd_pinbox.filtered .rwd_pinicon {\n      opacity: 1; }\n  /* line 70, stdin */\n  .rwd_pinbox .rwd_pinicon {\n    opacity: 0;\n    -webkit-transition: opacity .2s;\n    transition: opacity .2s; }\n  /* line 74, stdin */\n  .rwd_pinbox .mdl-button {\n    background: transparent !important;\n    font-size: 30px;\n    height: 35px;\n    min-width: 35px;\n    width: 35px; }\n  /* line 81, stdin */\n  .rwd_pinbox .btnPin {\n    font-size: 30px; }\n\n@media screen and (max-width: 900px) {\n  /* line 86, stdin */\n  .header_cover {\n    height: 50px; }\n  /* line 89, stdin */\n  .rwd_header {\n    min-height: 50px; }\n  /* line 92, stdin */\n  .logo_superior {\n    margin-left: 5%; }\n    /* line 94, stdin */\n    .logo_superior img {\n      width: 100px; }\n  /* line 98, stdin */\n  .mdl-layout__header-row {\n    height: 50px; }\n  /* line 101, stdin */\n  #navegacao {\n    padding-top: 15px; }\n  /* line 105, stdin */\n  .footerlogos .footer_img1 {\n    height: 60px; }\n  /* line 109, stdin */\n  #janela2 {\n    width: 97%; }\n  /* line 112, stdin */\n  .rwd_janela_img {\n    width: 35%;\n    height: 70%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    float: left;\n    margin-top: 19%;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  /* line 121, stdin */\n  .rwd_janela_conteudo {\n    width: 65%; }\n  /* line 124, stdin */\n  #sessao1 {\n    margin-left: 70px !important; }\n    /* line 127, stdin */\n    #sessao1 .footerlogos a {\n      margin-right: 0 !important; }\n  /* line 132, stdin */\n  #sessao4 {\n    margin-top: -20px !important; }\n  /* line 135, stdin */\n  #sessao2 {\n    margin-top: -19px !important; }\n  /* line 138, stdin */\n  #sessao5 {\n    margin-top: -19px !important; }\n  /* line 141, stdin */\n  .window {\n    margin-left: -38%; }\n  /* line 144, stdin */\n  .rodape {\n    bottom: -160px; } }\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3428,7 +3491,7 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.dispose(function () {
-    __vueify_insert__.cache["/* line 2, stdin */\n.fade-transition {\n  -webkit-transition: opacity .6s ease .4s;\n  transition: opacity .6s ease .4s;\n  opacity: 1; }\n\n/* line 6, stdin */\n.fade-enter, .fade-leave {\n  opacity: 0; }\n\n/* line 9, stdin */\n.fade-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 12, stdin */\n#navegacao {\n  padding-top: 30px; }\n\n/* line 15, stdin */\n.fade2-transition {\n  -webkit-transition: opacity .4s ease;\n  transition: opacity .4s ease;\n  opacity: 1; }\n\n/* line 19, stdin */\n.fade2-enter, .fade2-leave {\n  opacity: 0; }\n\n/* line 23, stdin */\n.mdl-navigation__link {\n  padding-top: 5px !important; }\n\n/* line 27, stdin */\n.logo_superior {\n  position: abolute;\n  margin-left: 43%; }\n\n/* line 33, stdin */\n#janela2 h3 {\n  font-family: 'treta';\n  color: #06303c; }\n\n/* line 39, stdin */\n.mdl-layout__content {\n  overflow: hidden; }\n\n/* line 43, stdin */\n.rodape {\n  -webkit-transition: bottom .3s;\n  transition: bottom .3s; }\n  /* line 45, stdin */\n  .rodape:hover {\n    bottom: 0; }\n    /* line 47, stdin */\n    .rodape:hover .footer_seta {\n      -webkit-transform: rotate(0deg);\n              transform: rotate(0deg); }\n  /* line 51, stdin */\n  .rodape .footer_seta {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n\n/* line 57, stdin */\n.rwd_pinbox {\n  cursor: pointer; }\n  /* line 60, stdin */\n  .rwd_pinbox:hover .rwd_pinicon {\n    opacity: 1; }\n  /* line 64, stdin */\n  .rwd_pinbox.filtered {\n    border-bottom: 3px solid #06303c; }\n    /* line 66, stdin */\n    .rwd_pinbox.filtered .rwd_pinicon {\n      opacity: 1; }\n  /* line 70, stdin */\n  .rwd_pinbox .rwd_pinicon {\n    opacity: 0;\n    -webkit-transition: opacity .2s;\n    transition: opacity .2s; }\n  /* line 74, stdin */\n  .rwd_pinbox .mdl-button {\n    background: transparent !important;\n    font-size: 30px;\n    height: 35px;\n    min-width: 35px;\n    width: 35px; }\n  /* line 81, stdin */\n  .rwd_pinbox .btnPin {\n    font-size: 30px; }\n"] = false
+    __vueify_insert__.cache["/* line 2, stdin */\n.fade-transition {\n  -webkit-transition: opacity .6s ease .4s;\n  transition: opacity .6s ease .4s;\n  opacity: 1; }\n\n/* line 6, stdin */\n.fade-enter, .fade-leave {\n  opacity: 0; }\n\n/* line 9, stdin */\n.fade-leave {\n  -webkit-transition: opacity .1s linear;\n  transition: opacity .1s linear; }\n\n/* line 12, stdin */\n#navegacao {\n  padding-top: 30px; }\n\n/* line 15, stdin */\n.fade2-transition {\n  -webkit-transition: opacity .4s ease;\n  transition: opacity .4s ease;\n  opacity: 1; }\n\n/* line 19, stdin */\n.fade2-enter, .fade2-leave {\n  opacity: 0; }\n\n/* line 23, stdin */\n.mdl-navigation__link {\n  padding-top: 5px !important; }\n\n/* line 27, stdin */\n.logo_superior {\n  position: abolute;\n  margin-left: 43%; }\n\n/* line 33, stdin */\n#janela2 h3 {\n  font-family: 'treta';\n  color: #06303c; }\n\n/* line 39, stdin */\n.mdl-layout__content {\n  overflow: hidden; }\n\n/* line 43, stdin */\n.rodape {\n  -webkit-transition: bottom .3s;\n  transition: bottom .3s; }\n  /* line 45, stdin */\n  .rodape:hover {\n    bottom: 0; }\n    /* line 47, stdin */\n    .rodape:hover .footer_seta {\n      -webkit-transform: rotate(0deg);\n              transform: rotate(0deg); }\n  /* line 51, stdin */\n  .rodape .footer_seta {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n\n/* line 57, stdin */\n.rwd_pinbox {\n  cursor: pointer; }\n  /* line 60, stdin */\n  .rwd_pinbox:hover .rwd_pinicon {\n    opacity: 1; }\n  /* line 64, stdin */\n  .rwd_pinbox.filtered {\n    border-bottom: 3px solid #06303c; }\n    /* line 66, stdin */\n    .rwd_pinbox.filtered .rwd_pinicon {\n      opacity: 1; }\n  /* line 70, stdin */\n  .rwd_pinbox .rwd_pinicon {\n    opacity: 0;\n    -webkit-transition: opacity .2s;\n    transition: opacity .2s; }\n  /* line 74, stdin */\n  .rwd_pinbox .mdl-button {\n    background: transparent !important;\n    font-size: 30px;\n    height: 35px;\n    min-width: 35px;\n    width: 35px; }\n  /* line 81, stdin */\n  .rwd_pinbox .btnPin {\n    font-size: 30px; }\n\n@media screen and (max-width: 900px) {\n  /* line 86, stdin */\n  .header_cover {\n    height: 50px; }\n  /* line 89, stdin */\n  .rwd_header {\n    min-height: 50px; }\n  /* line 92, stdin */\n  .logo_superior {\n    margin-left: 5%; }\n    /* line 94, stdin */\n    .logo_superior img {\n      width: 100px; }\n  /* line 98, stdin */\n  .mdl-layout__header-row {\n    height: 50px; }\n  /* line 101, stdin */\n  #navegacao {\n    padding-top: 15px; }\n  /* line 105, stdin */\n  .footerlogos .footer_img1 {\n    height: 60px; }\n  /* line 109, stdin */\n  #janela2 {\n    width: 97%; }\n  /* line 112, stdin */\n  .rwd_janela_img {\n    width: 35%;\n    height: 70%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    float: left;\n    margin-top: 19%;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  /* line 121, stdin */\n  .rwd_janela_conteudo {\n    width: 65%; }\n  /* line 124, stdin */\n  #sessao1 {\n    margin-left: 70px !important; }\n    /* line 127, stdin */\n    #sessao1 .footerlogos a {\n      margin-right: 0 !important; }\n  /* line 132, stdin */\n  #sessao4 {\n    margin-top: -20px !important; }\n  /* line 135, stdin */\n  #sessao2 {\n    margin-top: -19px !important; }\n  /* line 138, stdin */\n  #sessao5 {\n    margin-top: -19px !important; }\n  /* line 141, stdin */\n  .window {\n    margin-left: -38%; }\n  /* line 144, stdin */\n  .rodape {\n    bottom: -160px; } }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {

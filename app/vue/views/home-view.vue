@@ -82,6 +82,69 @@
 			font-size: 30px;
 		}
 	}
+	@media screen and (max-width: 900px) {
+		.header_cover {
+			height: 50px;
+		}
+		.rwd_header {
+			min-height: 50px;
+		}
+		.logo_superior {
+			margin-left: 5%;
+			img {
+				width: 100px;
+			}
+		}
+		.mdl-layout__header-row {
+			height: 50px;
+		}
+		#navegacao {
+			padding-top: 15px;
+		}
+		.footerlogos {
+			.footer_img1 {
+				height: 60px;
+			}
+		}
+		#janela2 {
+			width: 97%;
+		}
+		.rwd_janela_img {
+			width: 35%;
+	    height: 70%;
+	    display: flex;
+	    float: left;
+	    margin-top: 19%;
+	    justify-content: center;
+	    align-items: center;
+		}
+		.rwd_janela_conteudo {
+			width: 65%;
+		}
+		#sessao1 {
+			margin-left: 70px !important;
+			.footerlogos {
+				a {
+					margin-right: 0 !important;
+				}
+			}
+		}
+		#sessao4 {
+			margin-top: -20px !important;
+		}
+		#sessao2 {
+			margin-top: -19px !important;
+		}
+		#sessao5 {
+			margin-top: -19px !important;
+		}
+		.window {
+			margin-left: -38%;
+		}
+		.rodape {
+			bottom: -160px;
+		}
+	}
 
 </style>
 
