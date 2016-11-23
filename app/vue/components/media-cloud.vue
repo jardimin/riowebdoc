@@ -8,7 +8,7 @@
     <div id="cloud_wraper" class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;" :style="{width: width+'px'}">
 
       <in-media v-for="media in media_cloud" transition="fade" :media="media" :height="height" :width="width" :playing.sync="playing"></in-media>
-      <div v-if="filter !== ''" is="filter-madureira" transition="filter-group" :naves="naves" :width="width" :height="height" :playing.sync="playing"></div>
+      <div v-if="filter !== '' && !filter_trans" is="filter-madureira" transition="filter-group" :naves="naves" :width="width" :height="height" :playing.sync="playing" :filter="filter"></div>
       <div v-if="playing !== null && filter === ''" style="width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;"></div>
 
     </div>  
@@ -27,6 +27,7 @@
     data: function(){
       return {
         filter: '',
+        filter_trans: false,
         media_cloud: [],
         width: 0,
         height: 0,
@@ -108,6 +109,12 @@
           setTimeout( () => {
             this.container.scrollLeft = this.default_offset
           }, 100)
+        } else if (this.filter !== '' && this.filter !== nome) {
+          this.filter_trans = true
+          setTimeout( () => {
+            this.filter = nome
+            this.filter_trans = false
+          }, 200)
         } else {
           this.filter = nome
           this.scroll = false

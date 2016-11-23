@@ -100,7 +100,7 @@ if (module.hot) {(function () {  module.hot.accept()
 })()}
 },{"./views/card-view.vue":16,"./views/home-view.vue":17,"blueimp-md5":23,"jquery":49,"perfect-scrollbar":55,"underscore":91,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],2:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 1;\n    -webkit-transform: translateY(100%);\n            transform: translateY(100%); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n")
+var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%;\n  /*background-image: url(../images/filter1.png);\n  background-size: 100%;*/ }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 1;\n    -webkit-transform: translateY(100%);\n            transform: translateY(100%); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n")
 
 
 
@@ -134,31 +134,33 @@ var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.filter {\
 
 var $$$ = require('jquery')
 var marked = require('marked')
+var _ = require('underscore')
+
 module.exports = {
-  props: ['height', 'width', 'naves', 'playing'],
+  props: ['height', 'width', 'naves', 'playing', 'filter'],
   data: function(){
     return {
       medias: [],
       sizes: [{
-        height: 47,
-        x: 36.2,
-        y: 10.4
+        height: 39.8,
+        x: 37.5,
+        y: 31.2
       },{
-        height: 21,
-        x: 24.3,
-        y: 35
+        height: 26.4,
+        x: 22.3,
+        y: 31.5
       },{
-        height: 30.8,
-        x: 44.4,
-        y: 59.8
+        height: 21.2,
+        x: 48.4,
+        y: 72.7
       },{
-        height: 25,
-        x: 62.3,
-        y: 10.4
+        height: 26.7,
+        x: 59.6,
+        y: 44.4
       },{
-        height: 25,
-        x: 62.3,
-        y: 10.4
+        height: 22.5,
+        x: 37.4,
+        y: 7.3
       }]
     }
   },
@@ -169,23 +171,28 @@ module.exports = {
     
   },
   created: function () {
-    for (var i = 0; i < this.naves[5].media.length; i++) {
-      var med = {
-        id: this.naves[5].media[i].id + '-filter',
-        card: this.naves[5].media[i].id,
-        nav: this.naves[5].media[i].nav,
-        width: this.naves[5].media[i].width,
-        height: this.sizes[i].height,
-        x: this.sizes[i].x,
-        y: this.sizes[i].y,
-        imgs: [],
-        nome: "",
-        shadow: this.naves[5].media[i].shadow,
-        filter: true,
-        video: this.naves[5].media[i].video
+    for (var i = 0; i < this.naves.length; i++) {
+      if (this.naves[i].headers.nome === this.filter) {
+        for (var o = 0; o < this.naves[i].media.length; o++) {
+          var med = {
+            id: this.naves[i].media[o].id + '-filter',
+            card: this.naves[i].media[o].id,
+            nav: this.naves[i].media[o].nav,
+            width: this.naves[i].media[o].width,
+            height: this.sizes[o].height,
+            x: this.sizes[o].x,
+            y: this.sizes[o].y,
+            imgs: [],
+            nome: "",
+            shadow: this.naves[i].media[o].shadow,
+            filter: true,
+            video: this.naves[i].media[o].video
+          }
+          this.medias.push(med)
+        }
       }
-      this.medias.push(med)
     }
+    
   },
   attached: function () {
     
@@ -207,7 +214,7 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.dispose(function () {
-    __vueify_insert__.cache["/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%; }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 1;\n    -webkit-transform: translateY(100%);\n            transform: translateY(100%); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n"] = false
+    __vueify_insert__.cache["/* line 2, stdin */\n.filter {\n  width: 100%;\n  height: 100%;\n  /*background-image: url(../images/filter1.png);\n  background-size: 100%;*/ }\n  /* line 7, stdin */\n  .filter.filter-group-transition {\n    -webkit-transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, -webkit-transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s;\n    transition: opacity .3s ease .4s, transform .3s ease .4s, -webkit-transform .3s ease .4s;\n    -webkit-transform: translateY(0%);\n            transform: translateY(0%);\n    opacity: 1; }\n  /* line 12, stdin */\n  .filter.filter-group-enter, .filter.filter-group-leave {\n    opacity: 1;\n    -webkit-transform: translateY(100%);\n            transform: translateY(100%); }\n  /* line 16, stdin */\n  .filter.filter-group-leave {\n    -webkit-transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, -webkit-transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear;\n    transition: opacity .1s linear, transform .1s linear, -webkit-transform .1s linear; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -216,7 +223,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-7303ed86", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"./media.vue":9,"jquery":49,"marked":50,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],3:[function(require,module,exports){
+},{"./media.vue":9,"jquery":49,"marked":50,"underscore":91,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],3:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("/* line 3, stdin */\n#menumodal {\n  position: absolute;\n  right: 8%;\n  top: 6%; }\n\n/* line 9, stdin */\nsvg path {\n  fill: #06303c;\n  opacity: 1;\n  -webkit-transition: opacity .2s;\n  transition: opacity .2s; }\n\n/* line 15, stdin */\nsvg:hover path {\n  opacity: .7; }\n\n/* line 21, stdin */\nbutton:disabled {\n  cursor: default; }\n  /* line 23, stdin */\n  button:disabled path {\n    fill: gray;\n    opacity: .8 !important; }\n\n/* line 28, stdin */\nbutton:focus {\n  outline: none; }\n\n/* line 34, stdin */\n.passo h3 {\n  margin-top: 0;\n  margin-bottom: 40px; }\n\n/* line 38, stdin */\n.passo strong {\n  font-family: 'treta';\n  font-size: 30px;\n  color: #06303c; }\n\n/* line 43, stdin */\n.passo p {\n  font-size: 14px;\n  font-weight: 600;\n  color: #06303c;\n  font-family: 'treta'; }\n\n/* line 51, stdin */\n.passo .mdl-textfield--floating-label.is-focused .mdl-textfield__label {\n  color: #d66843; }\n\n/* line 56, stdin */\n.passo .mdl-textfield__input {\n  border-bottom: 2px dotted rgba(0, 0, 0, 0.12); }\n\n/* line 60, stdin */\n.passo .mdl-textfield__label:after {\n  background-color: #d66843; }\n")
 
@@ -781,6 +788,7 @@ module.exports = {
   data: function(){
     return {
       filter: '',
+      filter_trans: false,
       media_cloud: [],
       width: 0,
       height: 0,
@@ -862,6 +870,12 @@ module.exports = {
         setTimeout( () => {
           this.container.scrollLeft = this.default_offset
         }, 100)
+      } else if (this.filter !== '' && this.filter !== nome) {
+        this.filter_trans = true
+        setTimeout( () => {
+          this.filter = nome
+          this.filter_trans = false
+        }, 200)
       } else {
         this.filter = nome
         this.scroll = false
@@ -901,7 +915,7 @@ module.exports = {
 }
 
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative; overflow: hidden;\" :style=\"{height: height+'px'}\" @wheel=\"onWheel\">\n  <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;\" :style=\"{width: width+'px'}\">\n\n    <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></in-media>\n    <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n    <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n  </div>  \n</div>  \n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative; overflow: hidden;\" :style=\"{height: height+'px'}\" @wheel=\"onWheel\">\n  <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;\" :style=\"{width: width+'px'}\">\n\n    <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></in-media>\n    <div v-if=\"filter !== '' &amp;&amp; !filter_trans\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\" :filter=\"filter\"></div>\n    <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n  </div>  \n</div>  \n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
