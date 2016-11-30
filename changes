@@ -1,0 +1,120 @@
+MEDIA//
+
+data: function(){
+  return {
+    ...
+    votado: false,
+    votos: 0
+  }
+}
+
+<span v-if="playing !== null">{{votos}}</span>
+<button v-if="playing !== null" :id="media.id+'-voto'" :class="{votado: votado}" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="votar">
+  <i class="material-icons">thumb_up</i>
+</button>
+
+methods: {
+  ...
+  votar: function(event) {
+    if (this.votado) {
+      this.$dispatch('des-votado', this.media.id)
+      document.cookie = "voto-"+this.media.id+"=false"
+      this.votado = false
+      this.votos = this.votos - 1
+    } else {
+      this.$dispatch('votado', this.media.id)
+      document.cookie = "voto-"+this.media.id+"=true"
+      this.votado = true
+      this.votos = this.votos + 1
+    }
+  }
+},
+
+
+created: function () {
+  ...
+  if(this.media.votado) {
+    this.votado = true
+  }
+  ...
+},
+
+HOME//
+
+data: function(){
+  return {
+    ...
+    user: {
+      votos: [],
+      assistidos: []
+    },
+    ...
+  }
+},
+
+methods: {
+  getCookie: function(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';')
+    for(var i=0; i<ca.length; i++) {
+      var c = ca[i]
+      while (c.charAt(0)==' ') c = c.substring(1)
+      if (c.indexOf(name) == 0) return c.substring(name.length,c.length)
+    }
+    return ""
+  },
+  cookieVotos: function(n) {
+    switch(this.getCookie('voto-'+n)) {
+      case '':
+        document.cookie = "voto-"+n+"=false"
+        break
+      case 'true':
+        this.user.votos.push(n)
+        break
+      case 'false':
+        break
+    }
+  },
+  ...
+},
+
+created: function () {
+  for (var i = 0; i < this.naves.length; i++) {
+    for (var o = 0; o < this.naves[i].media.length; o++) {
+      this.cookieVotos(this.naves[i].media[o].id)
+    }
+  }
+},
+
+attached: function () {
+  componentHandler.upgradeDom()
+
+  var socket = io.connect('http://aovivonaweb.tv:1620')
+
+  this.$on('votado', function(id) {
+    this.user.votos.push(id)
+    socket.emit('voto', id)
+  })
+
+  this.$on('des-votado', function(id) {
+    this.user.votos.push(id)
+    socket.emit('des-voto', id)
+  })
+
+  ...
+
+},
+
+MAIN//
+
+var attachVotes = function (n, media, medias, headers, nn, naves) {
+  Trello.get("/cards/"+media.id+"/actions", function(comment) {
+    var votes = []
+    for (var i = 0; i < comment.length; i++) {
+      votes.push(comment[i].data.text)
+    }
+    media.votes = votes
+    media.labels = medias[n].labels.length
+    attachImages(n, media, medias, headers, nn, naves)
+  })
+}

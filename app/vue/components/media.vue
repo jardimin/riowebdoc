@@ -186,6 +186,10 @@
         </a>
       </div>
       <div class="mdl-card__menu" v-if="on" transition="fade">
+        <span v-if="playing !== null">{{votos}}</span>
+        <button v-if="playing !== null" :id="media.id+'-voto'" :class="{votado: votado}" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="votar">
+          <i class="material-icons">thumb_up</i>
+        </button>
         <button v-if="!no_video" :id="media.id+'-desc'" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="flip(media.id)">
           <i class="material-icons">description</i>
         </button>
@@ -248,7 +252,9 @@
         img_now: 0,
         button: false,
         hover: false,
-        on: false
+        on: false,
+        votado: false,
+        votos: 0
       }
     },
     computed: {
@@ -321,6 +327,30 @@
       }
     },
     methods: {
+      attachVotes: function (n, media, medias, headers, nn, naves) {
+        Trello.get("/cards/"+media.id+"/actions", function(comment) {
+          var votes = []
+          for (var i = 0; i < comment.length; i++) {
+            if (comment[i].data.text = "voto") {
+              votes.push(comment[i].data.text)
+            }
+          }
+          this.votos = votes.length
+        })
+      },
+      votar: function(event) {
+        if (this.votado) {
+          this.$dispatch('des-votado', this.media.id)
+          document.cookie = "voto-"+this.media.id+"=false"
+          this.votado = false
+          this.votos = this.votos - 1
+        } else {
+          this.$dispatch('votado', this.media.id)
+          document.cookie = "voto-"+this.media.id+"=true"
+          this.votado = true
+          this.votos = this.votos + 1
+        }
+      },
       flip: function(id) {
         $$$('#'+id+'-front').css('transform', 'rotateY(180deg)')
         $$$('#'+id+'-back').css('transform', 'rotateY(0deg)')
@@ -450,6 +480,11 @@
     created: function () {
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
+
+      if(this.media.votado) {
+        this.votado = true
+      }
+
       var self = this
 
       Trello.get("/cards/"+this.media.card+"/attachments", function(attach) {
