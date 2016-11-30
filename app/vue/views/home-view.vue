@@ -303,10 +303,7 @@
 					email_enviado: '',
 					menssagem: ''
 				},
-				user: {
-		      votos: [],
-		      assistidos: []
-		    },
+				user: [],
 				janela: null
 			}
 		},
@@ -327,7 +324,7 @@
 		        document.cookie = "voto-"+n+"=false"
 		        break
 		      case 'true':
-		        this.user.votos.push(n)
+		        this.user.push(n)
 		        break
 		      case 'false':
 		        break

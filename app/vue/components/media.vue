@@ -228,9 +228,10 @@
 <script>
   var $$$ = require('jquery')
   var marked = require('marked')
+  var _ = require('underscore')
   module.exports = {
     replace: true,
-    props: ['media', 'height', 'width', 'playing'],
+    props: ['media', 'height', 'width', 'playing', 'user'],
     data: function(){
       return {
         filter: '',
