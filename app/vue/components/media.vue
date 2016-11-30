@@ -327,8 +327,8 @@
       }
     },
     methods: {
-      attachVotes: function (n, media, medias, headers, nn, naves) {
-        Trello.get("/cards/"+media.id+"/actions", function(comment) {
+      attachVotes: function () {
+        Trello.get("/cards/"+this.media.id+"/actions", function(comment) {
           var votes = []
           for (var i = 0; i < comment.length; i++) {
             if (comment[i].data.text = "voto") {
@@ -480,6 +480,7 @@
     created: function () {
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
+      this.attachVotes()
 
       if(this.media.votado) {
         this.votado = true

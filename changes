@@ -102,7 +102,58 @@ attached: function () {
   })
 
   ...
+componentHandler.upgradeDom()
 
+      var socket = io.connect('http://aovivonaweb.tv:1620')
+      var self = this
+
+      this.$on('assistido', function(id) {
+        this.user.assistidos.push(id)
+      })
+
+      this.$on('votado', function(id) {
+        this.user.votos.push(id)
+        socket.emit('voto', id)
+      })
+
+      this.$on('des-votado', function(id) {
+        this.user.votos.push(id)
+        socket.emit('des-voto', id)
+      })
+
+      this.$on('send-card', function() {
+        var w = {
+          nave_nome: this.webcard.nave_nome,
+          nave_videos: this.webcard.nave_videos,
+          videos: this.webcard.videos,
+          email_criador: this.webcard.email_criador,
+          email_enviado: this.webcard.email_enviado,
+          menssagem: this.webcard.menssagem
+        }
+        socket.emit('send-card', JSON.stringify(w))
+        this.webcard = {
+          nave_nome: null,
+          nave_videos: null,
+          videos: [],
+          email_criador: '',
+          email_enviado: '',
+          menssagem: ''
+        }
+      })
+
+      this.$on('fechar-janela', function() {
+        this.closeJanela()
+      })
+
+      socket.on('resp', function(data) {
+        console.log(data)
+        var desc = JSON.parse(data.desc)
+        if (data.idList === "5797d3393ae93636227efd5f") {
+          self.$broadcast('card-sent')
+          emailjs.send("gmail","webcard_envio",{id: data.id, to_email: desc.email_criador});
+          emailjs.send("gmail","webcard_recebido",{id: data.id, from_email: desc.email_criador, to_email: desc.email_enviado});
+        }
+      })
 },
 
 MAIN//
