@@ -5,6 +5,7 @@ node_modules/
 *.mp4
 *.webm
 .DS_Store
+changes
 
 #################
 ## Eclipse
