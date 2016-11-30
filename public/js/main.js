@@ -492,7 +492,7 @@ module.exports = {
     }
   }
 };
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n  <div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative; overflow: hidden;\" :style=\"{height: height+'px'}\" @wheel=\"onWheel\">\n    <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;\" :style=\"{width: width+'px'}\">\n\n      <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></in-media>\n      <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n      <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n    </div>  \n  </div>  \n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n  <div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative; overflow: hidden;\" :style=\"{height: height+'px'}\" @wheel=\"onWheel\">\n    <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;\" :style=\"{width: width+'px'}\">\n\n      <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\" :user.sync=\"user\"></in-media>\n      <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n      <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n    </div>  \n  </div>  \n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -510,9 +510,10 @@ var __vueify_style__ = require("vueify-insert-css").insert("/* line 4, stdin */\
 
 var $$$ = require('jquery');
 var _marked = require('marked');
+var _ = require('underscore');
 module.exports = {
   replace: true,
-  props: ['media', 'height', 'width', 'playing'],
+  props: ['media', 'height', 'width', 'playing', 'user'],
   data: function data() {
     return {
       filter: '',
@@ -609,13 +610,11 @@ module.exports = {
     }
   },
   methods: {
-    attachVotes: function attachVotes(n, media, medias, headers, nn, naves) {
-      Trello.get("/cards/" + media.id + "/actions", function (comment) {
+    attachVotes: function attachVotes() {
+      Trello.get("/cards/" + this.media.id + "/actions", function (comment) {
         var votes = [];
         for (var i = 0; i < comment.length; i++) {
-          if (comment[i].data.text = "voto") {
-            votes.push(comment[i].data.text);
-          }
+          votes.push(comment[i].data.text);
         }
         this.votos = votes.length;
       });
@@ -764,10 +763,9 @@ module.exports = {
   created: function created() {
     this.interval = parseInt(Math.random() * 10000 + 3000);
     this.sw = this.media.shadow;
+    this.attachVotes();
 
-    if (this.media.votado) {
-      this.votado = true;
-    }
+    this.votado = _.contains(this.user, this.media.id);
 
     var self = this;
 
@@ -852,7 +850,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"./media.vue":9,"jquery":25,"marked":26,"vue":96,"vue-hot-reload-api":95,"vueify-insert-css":97}],10:[function(require,module,exports){
+},{"./media.vue":9,"jquery":25,"marked":26,"underscore":94,"vue":96,"vue-hot-reload-api":95,"vueify-insert-css":97}],10:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("/* line 3, stdin */\n.video-card.nav {\n  width: 15%; }\n")
 'use strict';
 
@@ -2119,10 +2117,7 @@ module.exports = {
 				email_enviado: '',
 				menssagem: ''
 			},
-			user: {
-				votos: [],
-				assistidos: []
-			},
+			user: [],
 			janela: null
 		};
 	},
@@ -2143,7 +2138,7 @@ module.exports = {
 					document.cookie = "voto-" + n + "=false";
 					break;
 				case 'true':
-					this.user.votos.push(n);
+					this.user.push(n);
 					break;
 				case 'false':
 					break;

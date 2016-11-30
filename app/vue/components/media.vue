@@ -332,9 +332,7 @@
         Trello.get("/cards/"+this.media.id+"/actions", function(comment) {
           var votes = []
           for (var i = 0; i < comment.length; i++) {
-            if (comment[i].data.text = "voto") {
-              votes.push(comment[i].data.text)
-            }
+            votes.push(comment[i].data.text)
           }
           this.votos = votes.length
         })
@@ -483,9 +481,7 @@
       this.sw = this.media.shadow
       this.attachVotes()
 
-      if(this.media.votado) {
-        this.votado = true
-      }
+      this.votado = _.contains(this.user, this.media.id)
 
       var self = this
 
