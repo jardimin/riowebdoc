@@ -259,7 +259,7 @@
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank">
-							<img src="images/cria.png" alt="cria Logo" class="footer_img1" /></a>
+							<img src="images/cria.png" alt="cria Logo" class="footer_img1" style="height: 60px; margin-top: 15px;" /></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
@@ -267,16 +267,16 @@
 						</div>	
 
 
-						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: 20px;">
+						<div id="sessao2" class="sessaofooter" style="margin-left: 14px; margin-top: 20px;">
 
 							
 							<div class="footertitle">Parceria:</div>
 							
 							<div class="footerlogos">
-							<a href="#" target="_blank" style="margin-right: 10px;">
-							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1"/></a>
 							<a href="#" target="_blank">
 							<img src="images/unirio.png" alt="unirio Logo" class="footer_img1"/></a>
+							<a href="#" target="_blank" style="margin-right: 10px;">
+							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1"/></a>
 
 							&nbsp; &nbsp; &nbsp; &nbsp;
 							
@@ -287,7 +287,7 @@
 
 						
 						
-						<div id="sessao5" class="sessaofooter" style="margin-top: 20px;">
+						<div id="sessao5" class="sessaofooter" style="margin-top: 20px; margin-right: 80px;">
 
 							<div class="footertitle">Gestão das Naves do Conhecimento:</div>
 							
@@ -299,6 +299,17 @@
 							<a href="#" target="_blank">
 							<img src="images/redeh_logo.png" alt="redeh Logo" class="footer_img1" />
 							</a>
+							</div>
+
+						</div>
+
+						<div id="sessao6" class="sessaofooter" style="margin-top: 20px;">
+
+							<div class="footertitle">Desenvolvimento:</div>
+							
+							<div class="footerlogos">
+							<a href="http://jardimdigital.com.br" target="_blank">
+							<img src="images/jardim.png" alt="jardim digital Logo" class="footer_img1" style="height: 45px; margin-top: 25px; opacity: .7;" /></a>
 							</div>
 
 						</div>
@@ -431,7 +442,6 @@
 		},
 		attached: function () {
 			componentHandler.upgradeDom()
-			console.log(this.user)
 
 			var socket = io.connect('http://aovivonaweb.tv:1620')
 			var self = this

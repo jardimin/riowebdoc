@@ -697,7 +697,6 @@
 				on: function (id) {
 					var exec = function() {
 						var filter = id.split('-')[1]
-						console.log(filter)
 						if (filter === undefined) {
 							var teste = _.findIndex(app.$refs.view.$children[0].$children, function(i) {
 								return i.media.id === id

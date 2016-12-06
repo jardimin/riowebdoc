@@ -334,11 +334,9 @@
           var votes = []
           for (var i = 0; i < comment.length; i++) {
             if (comment[i].data.text === 'voto') {
-              console.log(votes.length)
               votes.push(comment[i].data.text)
             }
           }
-          console.log(votes.length)
           this.votos = votes.length
         })
       },
@@ -488,7 +486,6 @@
       this.sw = this.media.shadow
 
       this.votado = _.contains(this.user, this.media.id)
-      console.log(this.user)
 
       var self = this
 
@@ -502,6 +499,25 @@
         }
       })
 
+      Trello.get("/cards/"+this.media.card, (card) => {
+        this.media.video = card.desc
+        if (this.media.video !== "__") {
+          var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
+          var videoURL= 'http://www.youtube.com/embed/'
+          $$$.getJSON(playlistUrl, function(data) {
+            // console.log(data)
+            $$$.each(data.items, function(i, item) {
+              // console.log(item.snippet.description.split("[")[1].split("]")[1])
+              self.video_title = item.snippet.title
+              self.video_desc = item.snippet.description
+            });
+          })
+          this.no_video = false
+        } else {
+          this.no_video = true
+        }
+      })
+
       this.$on('media-height', function() {
         this.local_height = (this.height*this.media.height)/100
         this.local_width = (this.local_height*16)/9
@@ -511,23 +527,6 @@
         this.local_height = (this.height*this.media.height)/100
         this.local_width = (this.local_height*16)/9
       }
-
-      if (this.media.video !== "__") {
-        var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
-        var videoURL= 'http://www.youtube.com/embed/'
-        $$$.getJSON(playlistUrl, function(data) {
-          // console.log(data)
-          $$$.each(data.items, function(i, item) {
-            // console.log(item.snippet.description.split("[")[1].split("]")[1])
-            self.video_title = item.snippet.title
-            self.video_desc = item.snippet.description
-          });
-        })
-        this.no_video = false
-      } else {
-        this.no_video = true
-      }
-
       
     },
     attached: function () {

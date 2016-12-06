@@ -22,7 +22,7 @@
 <template>
 
   <div class="filter">
-    <filter-media v-for="m in medias" transition="fade" :media="m" :height="height" :width="width" :playing.sync="playing"></filter-media>
+    <filter-media v-for="m in medias" transition="fade" :media.sync="m" :height="height" :width="width" :playing.sync="playing"></filter-media>
     <div v-if="playing !== null && filter !== ''" style="width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;"></div>
   </div>  
 
@@ -39,25 +39,25 @@
       return {
         medias: [],
         sizes: [{
-          height: 39.8,
-          x: 37.5,
-          y: 31.2
+          height: 47,
+          x: 36.2,
+          y: 10.4
         },{
-          height: 26.4,
-          x: 22.3,
-          y: 31.5
+          height: 21,
+          x: 24.3,
+          y: 35
         },{
-          height: 21.2,
-          x: 48.4,
-          y: 72.7
+          height: 30.8,
+          x: 44.4,
+          y: 59.8
         },{
-          height: 26.7,
-          x: 59.6,
-          y: 44.4
+          height: 25,
+          x: 62.3,
+          y: 10.4
         },{
-          height: 22.5,
-          x: 37.4,
-          y: 7.3
+          height: 0,
+          x: 0,
+          y: 0
         }]
       }
     },
