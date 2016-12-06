@@ -373,12 +373,14 @@
 			var self = this
 
 			this.$on('votado', function(id) {
-		    this.user.votos.push(id)
+		  	console.log(this.user)
+		    this.user.push(id)
 		    socket.emit('voto', id)
 		  })
 
 		  this.$on('des-votado', function(id) {
-		    this.user.votos.push(id)
+		  	console.log(this.user)
+		    this.user.push(id)
 		    socket.emit('des-voto', id)
 		  })
 

@@ -492,7 +492,7 @@ module.exports = {
     }
   }
 };
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n  <div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative; overflow: hidden;\" :style=\"{height: height+'px'}\" @wheel=\"onWheel\">\n    <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;\" :style=\"{width: width+'px'}\">\n\n      <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\" :user.sync=\"user\"></in-media>\n      <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n      <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n    </div>  \n  </div>  \n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n  <div id=\"media_cloud\" class=\"mdl-grid\" style=\"padding: 0; position: relative; overflow: hidden;\" :style=\"{height: height+'px'}\" @wheel=\"onWheel\">\n    <div id=\"cloud_wraper\" class=\"rwd_content mdl-cell mdl-cell--12-col\" style=\"margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;\" :style=\"{width: width+'px'}\">\n\n      <in-media v-for=\"media in media_cloud\" transition=\"fade\" :media.sync=\"media\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\" :user.sync=\"user\"></in-media>\n      <div v-if=\"filter !== ''\" is=\"filter-madureira\" transition=\"filter-group\" :naves=\"naves\" :width=\"width\" :height=\"height\" :playing.sync=\"playing\"></div>\n      <div v-if=\"playing !== null &amp;&amp; filter === ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n\n    </div>  \n  </div>  \n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -611,12 +611,16 @@ module.exports = {
   },
   methods: {
     attachVotes: function attachVotes() {
+      var _this = this;
+
       Trello.get("/cards/" + this.media.id + "/actions", function (comment) {
         var votes = [];
         for (var i = 0; i < comment.length; i++) {
-          votes.push(comment[i].data.text);
+          if (comment[i].data.text === 'voto') {
+            votes.push();
+          }
         }
-        this.votos = votes.length;
+        _this.votos = votes.length;
       });
     },
     votar: function votar(event) {
@@ -654,7 +658,7 @@ module.exports = {
       }
     },
     mouseOver: function mouseOver() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.playing === null) {
         this.hover = true;
@@ -664,33 +668,33 @@ module.exports = {
           // this.x_offset = -this.w_offset/2
           // this.y_offset = -this.h_offset/2
           setTimeout(function () {
-            if (_this.hover) {
-              $$$('#' + _this.media.id).addClass('hover');
-              if (_this.local_width < 480) {
-                _this.w_offset = 480 - _this.local_width;
-                _this.h_offset = 270 - _this.local_height;
-                _this.x_offset = -(_this.w_offset / 2);
-                var heightPX = _this.height * _this.media.y / 100;
-                var leftPX = _this.width * _this.media.x / 100;
-                var matrixX = heightPX + _this.local_height;
-                var matrixY = leftPX + _this.local_width;
-                if (heightPX - _this.h_offset / 2 < 0) {
-                  _this.y_offset = -heightPX;
-                } else if (matrixX + _this.h_offset / 2 > _this.height) {
-                  _this.y_offset = -(matrixX + _this.h_offset - _this.height);
+            if (_this2.hover) {
+              $$$('#' + _this2.media.id).addClass('hover');
+              if (_this2.local_width < 480) {
+                _this2.w_offset = 480 - _this2.local_width;
+                _this2.h_offset = 270 - _this2.local_height;
+                _this2.x_offset = -(_this2.w_offset / 2);
+                var heightPX = _this2.height * _this2.media.y / 100;
+                var leftPX = _this2.width * _this2.media.x / 100;
+                var matrixX = heightPX + _this2.local_height;
+                var matrixY = leftPX + _this2.local_width;
+                if (heightPX - _this2.h_offset / 2 < 0) {
+                  _this2.y_offset = -heightPX;
+                } else if (matrixX + _this2.h_offset / 2 > _this2.height) {
+                  _this2.y_offset = -(matrixX + _this2.h_offset - _this2.height);
                 } else {
-                  _this.y_offset = -(_this.h_offset / 2);
+                  _this2.y_offset = -(_this2.h_offset / 2);
                 }
-                if (leftPX - _this.w_offset / 2 < 0) {
-                  _this.x_offset = -leftPX;
-                } else if (matrixY + _this.w_offset / 2 > _this.width) {
-                  _this.x_offset = -(matrixY + _this.w_offset - _this.width);
+                if (leftPX - _this2.w_offset / 2 < 0) {
+                  _this2.x_offset = -leftPX;
+                } else if (matrixY + _this2.w_offset / 2 > _this2.width) {
+                  _this2.x_offset = -(matrixY + _this2.w_offset - _this2.width);
                 } else {
-                  _this.x_offset = -(_this.w_offset / 2);
+                  _this2.x_offset = -(_this2.w_offset / 2);
                 }
               }
-              _this.sw = 8;
-              _this.on = true;
+              _this2.sw = 8;
+              _this2.on = true;
             }
           }, 200);
         }
@@ -732,16 +736,20 @@ module.exports = {
       }
     },
     playThis: function playThis() {
+      var _this3 = this;
+
       ga('send', 'event', 'Media', 'play', this.media.id);
       this.playing = this.media.id;
-      this.iframe = new YT.Player(this.media.id + '-player', {
-        height: '100%',
-        width: '100%',
-        videoId: this.media.video,
-        events: {
-          'onReady': this.playVideo,
-          'onStateChange': this.videoFim
-        }
+      Trello.get("/cards/" + this.media.card, function (card) {
+        _this3.iframe = new YT.Player(_this3.media.id + '-player', {
+          height: '100%',
+          width: '100%',
+          videoId: card.desc,
+          events: {
+            'onReady': _this3.playVideo,
+            'onStateChange': _this3.videoFim
+          }
+        });
       });
     },
     closeMedia: function closeMedia() {
@@ -763,7 +771,6 @@ module.exports = {
   created: function created() {
     this.interval = parseInt(Math.random() * 10000 + 3000);
     this.sw = this.media.shadow;
-    this.attachVotes();
 
     this.votado = _.contains(this.user, this.media.id);
 
@@ -807,6 +814,7 @@ module.exports = {
   },
   attached: function attached() {
     var self = this;
+    this.attachVotes();
     componentHandler.upgradeDom();
 
     window.setInterval(function () {
@@ -2187,12 +2195,14 @@ module.exports = {
 		var self = this;
 
 		this.$on('votado', function (id) {
-			this.user.votos.push(id);
+			console.log(this.user);
+			this.user.push(id);
 			socket.emit('voto', id);
 		});
 
 		this.$on('des-votado', function (id) {
-			this.user.votos.push(id);
+			console.log(this.user);
+			this.user.push(id);
 			socket.emit('des-voto', id);
 		});
 

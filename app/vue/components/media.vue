@@ -329,10 +329,12 @@
     },
     methods: {
       attachVotes: function () {
-        Trello.get("/cards/"+this.media.id+"/actions", function(comment) {
+        Trello.get("/cards/"+this.media.id+"/actions", (comment) => {
           var votes = []
           for (var i = 0; i < comment.length; i++) {
-            votes.push(comment[i].data.text)
+            if (comment[i].data.text === 'voto') {
+              votes.push()
+            }
           }
           this.votos = votes.length
         })
@@ -450,14 +452,16 @@
       playThis: function() {
         ga('send', 'event', 'Media', 'play', this.media.id)
         this.playing = this.media.id
-        this.iframe = new YT.Player(this.media.id+'-player', {
-          height: '100%',
-          width: '100%',
-          videoId: this.media.video,
-          events: {
-            'onReady': this.playVideo,
-            'onStateChange': this.videoFim
-          }
+        Trello.get("/cards/"+this.media.card, (card) => {
+          this.iframe = new YT.Player(this.media.id+'-player', {
+            height: '100%',
+            width: '100%',
+            videoId: card.desc,
+            events: {
+              'onReady': this.playVideo,
+              'onStateChange': this.videoFim
+            }
+          })
         })
       },
       closeMedia: function() {
@@ -479,7 +483,6 @@
     created: function () {
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
-      this.attachVotes()
 
       this.votado = _.contains(this.user, this.media.id)
 
@@ -525,6 +528,7 @@
     },
     attached: function () {
       var self = this
+      this.attachVotes()
       componentHandler.upgradeDom()
 
       window.setInterval(function(){
