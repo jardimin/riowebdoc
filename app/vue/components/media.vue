@@ -42,9 +42,10 @@
         padding: 6px;
       }
       .right-postal {
-        height: 57.5%;
-        margin-top: 15%;
+        height: 75%;
+        margin-top: 10%;
         font-size: 60%!important;
+        background: white;
       }
       .left-postal {
         font-size: 60%!important;
@@ -164,7 +165,7 @@
     }
 
   .right-postal{
-      width: 21%;
+      width: 25%;
       text-align: center;
       padding: 2%;
       position: relative;
@@ -198,8 +199,8 @@
         </a>
       </div>
     </div>
-    <div :id="media.id+'-back'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp back" :style="[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]">
-      <div class="mdl-supporting-text" style="color: black; height: 100%; background-size: 100%; background-repeat: no-repeat; background-position-y: 50px;" :style="{'background-image': 'url(images/mapa_'+backgroundMap+'.png)'}">
+    <div :id="media.id+'-back'" class="demo-card-wide mdl-card mdl-shadow--{{sw}}dp back" :style="[{height: h_offset + local_height+'px'},{'min-height': h_offset + local_height+'px'},{width: w_offset + local_width+'px'}]" style="padding: 2%;">
+      <div class="mdl-supporting-text" style="color: black; height: 100%; background-size: 94%; background-repeat: no-repeat; background-position-y: 50px;" :style="{'background-image': 'url(images/mapa_'+backgroundMap+'.png)'}">
       		<div class="left-postal" style="color: black;">
               <h4 style="margin: 0;">{{video_title}}</h4>
         			{{video_desc}}

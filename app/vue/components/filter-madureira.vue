@@ -2,8 +2,8 @@
   .filter {
     width: 100%;
     height: 100%;
-    // background-image: url(../images/filter1.png);
-    // background-size: 100%;
+    /*background-image: url(../images/filter1.png);
+    background-size: 100%;*/
     &.filter-group-transition {
       transition: opacity .3s ease .4s, transform .3s ease .4s;
       transform: translateY(0%);
@@ -31,31 +31,33 @@
 <script>
   var $$$ = require('jquery')
   var marked = require('marked')
+  var _ = require('underscore')
+
   module.exports = {
-    props: ['height', 'width', 'naves', 'playing'],
+    props: ['height', 'width', 'naves', 'playing', 'filter'],
     data: function(){
       return {
         medias: [],
         sizes: [{
-          height: 47,
-          x: 36.2,
-          y: 10.4
+          height: 39.8,
+          x: 37.5,
+          y: 31.2
         },{
-          height: 21,
-          x: 24.3,
-          y: 35
+          height: 26.4,
+          x: 22.3,
+          y: 31.5
         },{
-          height: 30.8,
-          x: 44.4,
-          y: 59.8
+          height: 21.2,
+          x: 48.4,
+          y: 72.7
         },{
-          height: 25,
-          x: 62.3,
-          y: 10.4
+          height: 26.7,
+          x: 59.6,
+          y: 44.4
         },{
-          height: 25,
-          x: 62.3,
-          y: 10.4
+          height: 22.5,
+          x: 37.4,
+          y: 7.3
         }]
       }
     },
@@ -66,23 +68,28 @@
       
     },
     created: function () {
-      for (var i = 0; i < this.naves[5].media.length; i++) {
-        var med = {
-          id: this.naves[5].media[i].id + '-filter',
-          card: this.naves[5].media[i].id,
-          nav: this.naves[5].media[i].nav,
-          width: this.naves[5].media[i].width,
-          height: this.sizes[i].height,
-          x: this.sizes[i].x,
-          y: this.sizes[i].y,
-          imgs: [],
-          nome: "",
-          shadow: this.naves[5].media[i].shadow,
-          filter: true,
-          video: this.naves[5].media[i].video
+      for (var i = 0; i < this.naves.length; i++) {
+        if (this.naves[i].headers.nome === this.filter) {
+          for (var o = 0; o < this.naves[i].media.length; o++) {
+            var med = {
+              id: this.naves[i].media[o].id + '-filter',
+              card: this.naves[i].media[o].id,
+              nav: this.naves[i].media[o].nav,
+              width: this.naves[i].media[o].width,
+              height: this.sizes[o].height,
+              x: this.sizes[o].x,
+              y: this.sizes[o].y,
+              imgs: [],
+              nome: "",
+              shadow: this.naves[i].media[o].shadow,
+              filter: true,
+              video: this.naves[i].media[o].video
+            }
+            this.medias.push(med)
+          }
         }
-        this.medias.push(med)
       }
+      
     },
     attached: function () {
       

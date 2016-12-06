@@ -7,8 +7,8 @@
   <div id="media_cloud" class="mdl-grid" style="padding: 0; position: relative; overflow: hidden;" :style="{height: height+'px'}" @wheel="onWheel">
     <div id="cloud_wraper" class="rwd_content mdl-cell mdl-cell--12-col" style="margin: 0; perspective: 1600px; height: 100%; position: absolute; overflow: hidden;" :style="{width: width+'px'}">
 
-      <in-media v-for="media in media_cloud" transition="fade" :media.sync="media" :height="height" :width="width" :playing.sync="playing" :user.sync="user"></in-media>
-      <div v-if="filter !== ''" is="filter-madureira" transition="filter-group" :naves="naves" :width="width" :height="height" :playing.sync="playing"></div>
+      <in-media v-for="media in media_cloud" transition="fade" :media="media" :height="height" :width="width" :playing.sync="playing"></in-media>
+      <div v-if="filter !== '' && !filter_trans" is="filter-madureira" transition="filter-group" :naves="naves" :width="width" :height="height" :playing.sync="playing" :filter="filter"></div>
       <div v-if="playing !== null && filter === ''" style="width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;"></div>
 
     </div>  
@@ -27,11 +27,25 @@
     data: function(){
       return {
         filter: '',
+        filter_trans: false,
         media_cloud: [],
         width: 0,
         height: 0,
         playing: null,
-        scroll: true
+        container: null,
+        scroll: true,
+        default_offset: 0
+      }
+    },
+    watch: {
+      playing: function (val, oldVal) {
+        if (val !== null) {
+          this.scroll = false
+          this.container.scrollLeft = this.default_offset
+          Ps.update(this.container)
+        } else {
+          this.scroll = true
+        }
       }
     },
     methods: {
@@ -56,13 +70,12 @@
       onWheel: function (event) {
         if (this.scroll) {
           var delta = event.wheelDelta || -event.deltaY
-          var container = document.getElementById('media_cloud')
           if (delta > 0) {
-            container.scrollLeft = container.scrollLeft + 60
-          } else if (delta < 0 && container.scrollLeft > 0) {
-            container.scrollLeft = container.scrollLeft - 60
+            this.container.scrollLeft = this.container.scrollLeft + 60
+          } else if (delta < 0 && this.container.scrollLeft > 0) {
+            this.container.scrollLeft = this.container.scrollLeft - 60
           }
-          Ps.update(container)
+          Ps.update(this.container)
         }
       }
     },
@@ -81,7 +94,7 @@
     attached: function () {
       var self = this
       var q = $$$(window).width()
-      var container = document.getElementById('media_cloud')
+      this.container = document.getElementById('media_cloud')
       componentHandler.upgradeDom()
       this.changeCanvasSize()
       this.$on('filter', function(nome) {
@@ -94,18 +107,21 @@
             useBothWheelAxes: true
           }))
           setTimeout( () => {
-            var n = parseInt((this.width - q)/2)
-            container.scrollLeft = n
+            this.container.scrollLeft = this.default_offset
           }, 100)
+        } else if (this.filter !== '' && this.filter !== nome) {
+          this.filter_trans = true
+          setTimeout( () => {
+            this.filter = nome
+            this.filter_trans = false
+          }, 200)
         } else {
-          var n = parseInt((this.width - q)/2)
           this.filter = nome
           this.scroll = false
           setTimeout( () => {
-            var n = parseInt((this.width - q)/2)
-            container.scrollLeft = n
-            Ps.update(container)
-            Ps.destroy(container)
+            this.container.scrollLeft = this.default_offset
+            Ps.update(this.container)
+            Ps.destroy(this.container)
           }, 100)
         }
         return true
@@ -116,11 +132,11 @@
         useBothWheelAxes: true
       }))
       this.$on('home-ready', function() {
-        Ps.update(container)
+        Ps.update(this.container)
         if (this.width > q) {
           setTimeout( () => {
-            var n = parseInt((this.width - q)/2)
-            container.scrollLeft = n
+            this.default_offset = parseInt((this.width - q)/2)
+            this.container.scrollLeft = this.default_offset
           }, 500)
         }
         return true
