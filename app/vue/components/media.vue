@@ -334,9 +334,11 @@
           var votes = []
           for (var i = 0; i < comment.length; i++) {
             if (comment[i].data.text === 'voto') {
-              votes.push()
+              console.log(votes.length)
+              votes.push(comment[i].data.text)
             }
           }
+          console.log(votes.length)
           this.votos = votes.length
         })
       },
@@ -486,6 +488,7 @@
       this.sw = this.media.shadow
 
       this.votado = _.contains(this.user, this.media.id)
+      console.log(this.user)
 
       var self = this
 

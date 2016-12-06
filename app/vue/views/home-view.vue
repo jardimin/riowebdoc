@@ -431,18 +431,17 @@
 		},
 		attached: function () {
 			componentHandler.upgradeDom()
+			console.log(this.user)
 
 			var socket = io.connect('http://aovivonaweb.tv:1620')
 			var self = this
 
 			this.$on('votado', function(id) {
-		  	console.log(this.user)
 		    this.user.push(id)
 		    socket.emit('voto', id)
 		  })
 
 		  this.$on('des-votado', function(id) {
-		  	console.log(this.user)
 		    this.user.push(id)
 		    socket.emit('des-voto', id)
 		  })
