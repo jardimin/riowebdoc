@@ -61,25 +61,25 @@ module.exports = {
     return {
       medias: [],
       sizes: [{
-        height: 47,
-        x: 36.2,
-        y: 10.4
+        height: 39.8,
+        x: 37.5,
+        y: 31.2
       }, {
-        height: 21,
-        x: 24.3,
-        y: 35
+        height: 26.4,
+        x: 22.3,
+        y: 31.5
       }, {
-        height: 30.8,
-        x: 44.4,
-        y: 59.8
+        height: 21.2,
+        x: 48.4,
+        y: 72.7
       }, {
-        height: 25,
-        x: 62.3,
-        y: 10.4
+        height: 26.7,
+        x: 59.6,
+        y: 44.4
       }, {
-        height: 0,
-        x: 0,
-        y: 0
+        height: 22.5,
+        x: 37.4,
+        y: 7.3
       }]
     };
   },
