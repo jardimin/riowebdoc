@@ -187,6 +187,10 @@
         </a>
       </div>
       <div class="mdl-card__menu" v-if="on" transition="fade">
+        <span v-if="playing !== null">{{votos}}</span>
+        <button v-if="playing !== null" :id="media.id+'-voto'" :class="{votado: votado}" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="votar">
+          <i class="material-icons">thumb_up</i>
+        </button>
         <button v-if="!no_video" :id="media.id+'-desc'" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" @click="flip(media.id)">
           <i class="material-icons">description</i>
         </button>
@@ -225,9 +229,10 @@
 <script>
   var $$$ = require('jquery')
   var marked = require('marked')
+  var _ = require('underscore')
   module.exports = {
     replace: true,
-    props: ['media', 'height', 'width', 'playing'],
+    props: ['media', 'height', 'width', 'playing', 'user'],
     data: function(){
       return {
         filter: '',
@@ -249,7 +254,9 @@
         img_now: 0,
         button: false,
         hover: false,
-        on: false
+        on: false,
+        votado: false,
+        votos: 0
       }
     },
     computed: {
@@ -322,6 +329,30 @@
       }
     },
     methods: {
+      attachVotes: function () {
+        Trello.get("/cards/"+this.media.id+"/actions", (comment) => {
+          var votes = []
+          for (var i = 0; i < comment.length; i++) {
+            if (comment[i].data.text === 'voto') {
+              votes.push(comment[i].data.text)
+            }
+          }
+          this.votos = votes.length
+        })
+      },
+      votar: function(event) {
+        if (this.votado) {
+          this.$dispatch('des-votado', this.media.id)
+          document.cookie = "voto-"+this.media.id+"=false"
+          this.votado = false
+          this.votos = this.votos - 1
+        } else {
+          this.$dispatch('votado', this.media.id)
+          document.cookie = "voto-"+this.media.id+"=true"
+          this.votado = true
+          this.votos = this.votos + 1
+        }
+      },
       flip: function(id) {
         $$$('#'+id+'-front').css('transform', 'rotateY(180deg)')
         $$$('#'+id+'-back').css('transform', 'rotateY(0deg)')
@@ -422,14 +453,16 @@
       playThis: function() {
         ga('send', 'event', 'Media', 'play', this.media.id)
         this.playing = this.media.id
-        this.iframe = new YT.Player(this.media.id+'-player', {
-          height: '100%',
-          width: '100%',
-          videoId: this.media.video,
-          events: {
-            'onReady': this.playVideo,
-            'onStateChange': this.videoFim
-          }
+        Trello.get("/cards/"+this.media.card, (card) => {
+          this.iframe = new YT.Player(this.media.id+'-player', {
+            height: '100%',
+            width: '100%',
+            videoId: card.desc,
+            events: {
+              'onReady': this.playVideo,
+              'onStateChange': this.videoFim
+            }
+          })
         })
       },
       closeMedia: function() {
@@ -451,6 +484,9 @@
     created: function () {
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
+
+      this.votado = _.contains(this.user, this.media.id)
+
       var self = this
 
       Trello.get("/cards/"+this.media.card+"/attachments", function(attach) {
@@ -463,6 +499,25 @@
         }
       })
 
+      Trello.get("/cards/"+this.media.card, (card) => {
+        this.media.video = card.desc
+        if (this.media.video !== "__") {
+          var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
+          var videoURL= 'http://www.youtube.com/embed/'
+          $$$.getJSON(playlistUrl, function(data) {
+            // console.log(data)
+            $$$.each(data.items, function(i, item) {
+              // console.log(item.snippet.description.split("[")[1].split("]")[1])
+              self.video_title = item.snippet.title
+              self.video_desc = item.snippet.description
+            });
+          })
+          this.no_video = false
+        } else {
+          this.no_video = true
+        }
+      })
+
       this.$on('media-height', function() {
         this.local_height = (this.height*this.media.height)/100
         this.local_width = (this.local_height*16)/9
@@ -472,27 +527,11 @@
         this.local_height = (this.height*this.media.height)/100
         this.local_width = (this.local_height*16)/9
       }
-
-      if (this.media.video !== "__") {
-        var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
-        var videoURL= 'http://www.youtube.com/embed/'
-        $$$.getJSON(playlistUrl, function(data) {
-          // console.log(data)
-          $$$.each(data.items, function(i, item) {
-            // console.log(item.snippet.description.split("[")[1].split("]")[1])
-            self.video_title = item.snippet.title
-            self.video_desc = item.snippet.description
-          });
-        })
-        this.no_video = false
-      } else {
-        this.no_video = true
-      }
-
       
     },
     attached: function () {
       var self = this
+      this.attachVotes()
       componentHandler.upgradeDom()
 
       window.setInterval(function(){

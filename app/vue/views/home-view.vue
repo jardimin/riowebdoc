@@ -259,7 +259,7 @@
 							
 							<div class="footerlogos">
 							<a href="#" target="_blank">
-							<img src="images/cria.png" alt="cria Logo" class="footer_img1" /></a>
+							<img src="images/cria.png" alt="cria Logo" class="footer_img1" style="height: 60px; margin-top: 15px;" /></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
@@ -267,16 +267,16 @@
 						</div>	
 
 
-						<div id="sessao2" class="sessaofooter" style="margin-left: 15px; margin-top: 20px;">
+						<div id="sessao2" class="sessaofooter" style="margin-left: 14px; margin-top: 20px;">
 
 							
 							<div class="footertitle">Parceria:</div>
 							
 							<div class="footerlogos">
-							<a href="#" target="_blank" style="margin-right: 10px;">
-							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1"/></a>
 							<a href="#" target="_blank">
 							<img src="images/unirio.png" alt="unirio Logo" class="footer_img1"/></a>
+							<a href="#" target="_blank" style="margin-right: 10px;">
+							<img src="images/bug_404.png" alt="bug 404 Logo" class="footer_img1"/></a>
 
 							&nbsp; &nbsp; &nbsp; &nbsp;
 							
@@ -287,7 +287,7 @@
 
 						
 						
-						<div id="sessao5" class="sessaofooter" style="margin-top: 20px;">
+						<div id="sessao5" class="sessaofooter" style="margin-top: 20px; margin-right: 80px;">
 
 							<div class="footertitle">Gestão das Naves do Conhecimento:</div>
 							
@@ -299,6 +299,17 @@
 							<a href="#" target="_blank">
 							<img src="images/redeh_logo.png" alt="redeh Logo" class="footer_img1" />
 							</a>
+							</div>
+
+						</div>
+
+						<div id="sessao6" class="sessaofooter" style="margin-top: 20px;">
+
+							<div class="footertitle">Desenvolvimento:</div>
+							
+							<div class="footerlogos">
+							<a href="http://jardimdigital.com.br" target="_blank">
+							<img src="images/jardim.png" alt="jardim digital Logo" class="footer_img1" style="height: 45px; margin-top: 25px; opacity: .7;" /></a>
 							</div>
 
 						</div>
@@ -366,10 +377,33 @@
 					email_enviado: '',
 					menssagem: ''
 				},
+				user: [],
 				janela: null
 			}
 		},
 		methods: {
+			getCookie: function(cname) {
+		    var name = cname + "=";
+		    var ca = document.cookie.split(';')
+		    for(var i=0; i<ca.length; i++) {
+		      var c = ca[i]
+		      while (c.charAt(0)==' ') c = c.substring(1)
+		      if (c.indexOf(name) == 0) return c.substring(name.length,c.length)
+		    }
+		    return ""
+		  },
+		  cookieVotos: function(n) {
+		    switch(this.getCookie('voto-'+n)) {
+		      case '':
+		        document.cookie = "voto-"+n+"=false"
+		        break
+		      case 'true':
+		        this.user.push(n)
+		        break
+		      case 'false':
+		        break
+		    }
+		  },
       filterNave: function(nome) {
       	if (nome === '') {
       		ga('send', 'event', 'Nave', 'filtrar', 'unfilter')
@@ -399,11 +433,28 @@
     		return filters
     	}
 		},
+		created: function () {
+		  for (var i = 0; i < this.naves.length; i++) {
+		    for (var o = 0; o < this.naves[i].media.length; o++) {
+		      this.cookieVotos(this.naves[i].media[o].id)
+		    }
+		  }
+		},
 		attached: function () {
 			componentHandler.upgradeDom()
 
 			var socket = io.connect('http://aovivonaweb.tv:1620')
 			var self = this
+
+			this.$on('votado', function(id) {
+		    this.user.push(id)
+		    socket.emit('voto', id)
+		  })
+
+		  this.$on('des-votado', function(id) {
+		    this.user.push(id)
+		    socket.emit('des-voto', id)
+		  })
 
       this.$on('send-card', function() {
       	var w = {

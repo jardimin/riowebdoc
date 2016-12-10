@@ -32,7 +32,7 @@
     methods: {
       escolherNave: function(index) {
         $$$('.video-card').removeClass('escolhido')
-        this.webcard.nave_videos = this.naves[index].headers.video_cards
+        this.webcard.nave_videos = this.naves[index].media
         this.webcard.nave_nome = this.naves[index].headers.nome
         $$$('#'+this.naves[index].headers.id+'-nav').addClass('escolhido')
         ga('send', 'event', 'Postal', 'local', this.naves[index].headers.nome)
