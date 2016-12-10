@@ -21,7 +21,7 @@
 			]
 		},
 		media: [{
-			id: "57edabd89324758eca7de656",
+			id: "PvJRh5Os",
 			card: "",
 			nav: "Nova Brasília",
 			width: 163,
@@ -34,7 +34,7 @@
 			filter: false,
 			video: "tA6qNEEqVJ8"
 		},{
-			id: "FA0sc2mN",
+			id: "8JDQXM55",
 			card: "",
 			nav: "Nova Brasília",
 			width: 163,
@@ -47,7 +47,7 @@
 			filter: false,
 			video: "ZZsrowhDpos"
 		},{
-			id: "8JDQXM55",
+			id: "tIXdbrvt",
 			card: "",
 			nav: "Nova Brasília",
 			width: 163,
@@ -60,7 +60,7 @@
 			filter: false,
 			video: "CE4jIVzF1x8"
 		},{
-			id: "7FNhCFHQ",
+			id: "Qb4ST5US",
 			card: "",
 			nav: "Nova Brasília",
 			width: 163,
@@ -73,7 +73,7 @@
 			filter: false,
 			video: "0-p3qLpuDHA"
 		},{
-			id: "mnUn9lG5",
+			id: "JcU37Nji",
 			card: "",
 			nav: "Nova Brasília",
 			width: 163,
@@ -101,7 +101,7 @@
 			]
 		},
 		media: [{
-			id: "6zQ9sGxy",
+			id: "QYeNE19X",
 			card: "",
 			nav: "Irajá",
 			width: 163,
@@ -114,7 +114,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "VFcprFLe",
+			id: "6zQ9sGxy",
 			card: "",
 			nav: "Irajá",
 			width: 163,
@@ -127,7 +127,7 @@
 			filter: false,
 			video: "BfPwOiUwy_c"
 		},{
-			id: "ue399jDO",
+			id: "Mdu0Ayb1",
 			card: "",
 			nav: "Irajá",
 			width: 163,
@@ -140,7 +140,7 @@
 			filter: false,
 			video: "nvf3ubD14wg"
 		},{
-			id: "W4VcuZoJ",
+			id: "20yW1Ulq",
 			card: "",
 			nav: "Irajá",
 			width: 163,
@@ -153,7 +153,7 @@
 			filter: false,
 			video: "4KXPKom0H04"
 		},{
-			id: "Sv49hStC",
+			id: "YMnXu79o",
 			card: "",
 			nav: "Irajá",
 			width: 163,
@@ -181,7 +181,7 @@
 			]
 		},
 		media: [{
-			id: "bMXTI5qu",
+			id: "nAEiPTDb",
 			card: "",
 			nav: "Vila Aliança",
 			width: 163,
@@ -194,7 +194,7 @@
 			filter: false,
 			video: "CKjnz3R5GVc"
 		},{
-			id: "tfIOhDiq",
+			id: "ylh9tKOw",
 			card: "",
 			nav: "Vila Aliança",
 			width: 163,
@@ -207,7 +207,7 @@
 			filter: false,
 			video: "U4eREF3kt4E"
 		},{
-			id: "xaQs7gYd",
+			id: "FTZMj4JN",
 			card: "",
 			nav: "Vila Aliança",
 			width: 163,
@@ -220,7 +220,7 @@
 			filter: false,
 			video: "Tz8z3_FYb8I"
 		},{
-			id: "Ng5sIJiS",
+			id: "G80W2jx3",
 			card: "",
 			nav: "Vila Aliança",
 			width: 163,
@@ -233,7 +233,7 @@
 			filter: false,
 			video: "qlgafW6q9hQ"
 		},{
-			id: "EBCLvyGl",
+			id: "y5U64LKz",
 			card: "",
 			nav: "Vila Aliança",
 			width: 163,
@@ -261,7 +261,7 @@
 			]
 		},
 		media: [{
-			id: "y9GZdArK",
+			id: "qKd7VavX",
 			card: "",
 			nav: "Santa Cruz",
 			width: 163,
@@ -274,7 +274,7 @@
 			filter: false,
 			video: "IoH9bqxZgmo"
 		},{
-			id: "jyOJM82k",
+			id: "zE47M2zC",
 			card: "",
 			nav: "Santa Cruz",
 			width: 163,
@@ -287,7 +287,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "RDKiDZkd",
+			id: "cRMdMEXX",
 			card: "",
 			nav: "Santa Cruz",
 			width: 163,
@@ -300,7 +300,7 @@
 			filter: false,
 			video: "kEv84e6b3kE"
 		},{
-			id: "1uJYyz53",
+			id: "jyOJM82k",
 			card: "",
 			nav: "Santa Cruz",
 			width: 163,
@@ -313,7 +313,7 @@
 			filter: false,
 			video: "KJF94XfzUy4"
 		},{
-			id: "emQJCJMX",
+			id: "L0eXVwTJ",
 			card: "",
 			nav: "Santa Cruz",
 			width: 163,
@@ -341,7 +341,7 @@
 			]
 		},
 		media: [{
-			id: "MT8tTfLk",
+			id: "dq3W9PLm",
 			card: "",
 			nav: "Triagem",
 			width: 163,
@@ -354,7 +354,7 @@
 			filter: false,
 			video: "LFwjIJE5EJ0"
 		},{
-			id: "dq3W9PLm",
+			id: "RSl0E8ne",
 			card: "",
 			nav: "Triagem",
 			width: 163,
@@ -367,7 +367,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "YV4JwgzD",
+			id: "oZJjgtDv",
 			card: "",
 			nav: "Triagem",
 			width: 163,
@@ -380,7 +380,7 @@
 			filter: false,
 			video: "pJ_IKD564FA"
 		},{
-			id: "oZJjgtDv",
+			id: "JwBVdfA9",
 			card: "",
 			nav: "Triagem",
 			width: 163,
@@ -393,7 +393,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "JwBVdfA9",
+			id: "oR7Ti69P",
 			card: "",
 			nav: "Triagem",
 			width: 163,
@@ -421,7 +421,7 @@
 			]
 		},
 		media: [{
-			id: "dW2KpFRI",
+			id: "F95YdlzK",
 			card: "",
 			nav: "Padre Miguel",
 			width: 163,
@@ -434,7 +434,7 @@
 			filter: false,
 			video: "2STG1n9VKZE"
 		},{
-			id: "F95YdlzK",
+			id: "LRGOcTD2",
 			card: "",
 			nav: "Padre Miguel",
 			width: 163,
@@ -447,7 +447,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "LRGOcTD2",
+			id: "Sefcdo4I",
 			card: "",
 			nav: "Padre Miguel",
 			width: 163,
@@ -460,7 +460,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "Sefcdo4I",
+			id: "df3GdByA",
 			card: "",
 			nav: "Padre Miguel",
 			width: 163,
@@ -473,7 +473,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "df3GdByA",
+			id: "m0dG2xXu",
 			card: "",
 			nav: "Padre Miguel",
 			width: 163,
@@ -501,7 +501,7 @@
 			]
 		},
 		media: [{
-			id: "ygvo7j0H",
+			id: "TSQydmpg",
 			card: "",
 			nav: "Penha",
 			width: 163,
@@ -514,7 +514,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "oZJjgtDv",
+			id: "aFJz9tUi",
 			card: "",
 			nav: "Penha",
 			width: 163,
@@ -527,7 +527,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "TSQydmpg",
+			id: "ygvo7j0H",
 			card: "",
 			nav: "Penha",
 			width: 163,
@@ -540,7 +540,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "JwBVdfA9",
+			id: "lXZZCYMb",
 			card: "",
 			nav: "Penha",
 			width: 163,
@@ -553,7 +553,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "VHEaAiEx",
+			id: "pc5IIzOG",
 			card: "",
 			nav: "Penha",
 			width: 163,
@@ -594,7 +594,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "ecfgfA61",
+			id: "jkqUiVdX",
 			card: "",
 			nav: "Madureira",
 			width: 163,
@@ -607,7 +607,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "jkqUiVdX",
+			id: "ecfgfA61",
 			card: "",
 			nav: "Madureira",
 			width: 163,
@@ -620,7 +620,7 @@
 			filter: false,
 			video: "__"
 		},{
-			id: "6HerXE3f",
+			id: "J3SwAuLX",
 			card: "",
 			nav: "Madureira",
 			width: 163,
@@ -633,7 +633,7 @@
 			filter: false,
 			video: "kbvVwOv0oFY"
 		},{
-			id: "J3SwAuLX",
+			id: "EFi2kV8d",
 			card: "",
 			nav: "Madureira",
 			width: 163,
