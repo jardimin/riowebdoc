@@ -175,6 +175,7 @@
           </ul>
         </div>
         <div class="alunos_img">
+          <img src="../img/Alunos/Iraja/00.jpg">
           <img src="../img/Alunos/Iraja/01.jpg">
           <img src="../img/Alunos/Iraja/02.jpg">
           <img src="../img/Alunos/Madureira/01.jpg">
