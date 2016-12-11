@@ -330,7 +330,13 @@
     },
     methods: {
       attachVotes: function () {
-        Trello.get("/cards/"+this.media.id+"/actions", (comment) => {
+        var ok
+        if(this.media.id.split('-')[1] === 'filter') {
+          ok = this.media.id.split('-')[0]
+        } else {
+          ok = this.media.id
+        }
+        Trello.get("/cards/"+ok+"/actions", (comment) => {
           var votes = []
           for (var i = 0; i < comment.length; i++) {
             if (comment[i].data.text === 'voto') {
