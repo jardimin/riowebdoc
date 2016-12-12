@@ -81,7 +81,7 @@
       <h3>Passo 2 - {{webcard.nave_nome}}</h3>
       <p>Agora escolha os <strong class="numero" :class="{ok: videos === 0}">{{videos}}</strong> vídeos do nosso webdoc que vão compor seu postal. <br> Clique em cada um, na ordem desejada, e depois novamente na seta azul do canto superior direito.</p>
 
-      <div v-for="video in webcard.nave_videos" class="video-nav" @click="choseVideo(video)" :id="video+'-vid'" :class="{escolhido: escolhido[$index]}"> <img :src="'http://img.youtube.com/vi/'+video.video+'/2.jpg'"><span class="checkicon"><img src="img/check.png"/></span> </div>
+      <div v-for="video in webcard.nave_videos" class="video-nav" @click="choseVideo(video.video)" :id="video.video+'-vid'" :class="{escolhido: escolhido[$index]}"> <img :src="'http://img.youtube.com/vi/'+video.video+'/2.jpg'"><span class="checkicon"><img src="img/check.png"/></span> </div>
 
     </div>
   </div>

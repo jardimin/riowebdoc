@@ -847,7 +847,6 @@
 	}
 	var getNaves = function (n, naves) {
 		app.$data.naves = db
-		init()
 		// Trello.get("/lists/"+naves[n].id+"/cards", function(hip) {
 		// 	var headers = getHeaders(hip)
 		// 	headers.nome = naves[n].name
@@ -867,6 +866,9 @@
 				var card = getData(hip[i].desc)
 				card.id = hip[i].id
 				app.$data.webcards.push(card)
+				if (i === hip.length - 1) {
+					init()
+				}
 			}
 		})
 	}

@@ -1931,7 +1931,7 @@ module.exports = {
 }
 
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"mdl-grid\">\n  <div class=\"mdl-cell mdl-cell--12-col\">   \n    <h3>Passo 2 - {{webcard.nave_nome}}</h3>\n    <p>Agora escolha os <strong class=\"numero\" :class=\"{ok: videos === 0}\">{{videos}}</strong> vídeos do nosso webdoc que vão compor seu postal. <br> Clique em cada um, na ordem desejada, e depois novamente na seta azul do canto superior direito.</p>\n\n    <div v-for=\"video in webcard.nave_videos\" class=\"video-nav\" @click=\"choseVideo(video)\" :id=\"video+'-vid'\" :class=\"{escolhido: escolhido[$index]}\"> <img :src=\"'http://img.youtube.com/vi/'+video.video+'/2.jpg'\"><span class=\"checkicon\"><img src=\"img/check.png\"></span> </div>\n\n  </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"mdl-grid\">\n  <div class=\"mdl-cell mdl-cell--12-col\">   \n    <h3>Passo 2 - {{webcard.nave_nome}}</h3>\n    <p>Agora escolha os <strong class=\"numero\" :class=\"{ok: videos === 0}\">{{videos}}</strong> vídeos do nosso webdoc que vão compor seu postal. <br> Clique em cada um, na ordem desejada, e depois novamente na seta azul do canto superior direito.</p>\n\n    <div v-for=\"video in webcard.nave_videos\" class=\"video-nav\" @click=\"choseVideo(video.video)\" :id=\"video.video+'-vid'\" :class=\"{escolhido: escolhido[$index]}\"> <img :src=\"'http://img.youtube.com/vi/'+video.video+'/2.jpg'\"><span class=\"checkicon\"><img src=\"img/check.png\"></span> </div>\n\n  </div>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -3031,7 +3031,6 @@ if (module.hot) {(function () {  module.hot.accept()
 	}
 	var getNaves = function (n, naves) {
 		app.$data.naves = db
-		init()
 		// Trello.get("/lists/"+naves[n].id+"/cards", function(hip) {
 		// 	var headers = getHeaders(hip)
 		// 	headers.nome = naves[n].name
@@ -3051,6 +3050,9 @@ if (module.hot) {(function () {  module.hot.accept()
 				var card = getData(hip[i].desc)
 				card.id = hip[i].id
 				app.$data.webcards.push(card)
+				if (i === hip.length - 1) {
+					init()
+				}
 			}
 		})
 	}
@@ -3078,7 +3080,7 @@ if (module.hot) {(function () {  module.hot.accept()
 
 },{"./app.vue":1,"director":30,"underscore":91,"vue":94}],16:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("/* line 3, stdin */\n#content.card {\n  position: relative;\n  background-color: white;\n  box-sizing: border-box;\n  background-image: url(img/fundo_postal.png);\n  padding: 2%; }\n  /* line 9, stdin */\n  #content.card .postal_topo {\n    height: 15%; }\n    /* line 11, stdin */\n    #content.card .postal_topo .logo_postal {\n      float: right;\n      width: 13%; }\n    /* line 15, stdin */\n    #content.card .postal_topo .logo_nave_postal {\n      float: left;\n      width: 10%; }\n  /* line 21, stdin */\n  #content.card .postal_titulo p {\n    font-family: 'treta';\n    font-size: 20px;\n    margin-top: 16px;\n    color: #06303c; }\n  /* line 27, stdin */\n  #content.card .postal_titulo strong {\n    color: #00aeab;\n    font-weight: 100; }\n  /* line 33, stdin */\n  #content.card .postal_content .player_container {\n    width: 70%;\n    float: left;\n    margin-right: 2%;\n    height: 680px; }\n  /* line 39, stdin */\n  #content.card .postal_content .menssagem {\n    float: left;\n    width: 23%;\n    box-sizing: border-box;\n    padding: 10% 2%;\n    background-image: url(img/fundo_menssagem.png);\n    height: 680px;\n    background-size: contain; }\n    /* line 47, stdin */\n    #content.card .postal_content .menssagem p {\n      font-size: 20px;\n      text-align: right; }\n")
+var __vueify_style__ = __vueify_insert__.insert("/* line 3, stdin */\n#content.card {\n  position: relative;\n  background-color: white;\n  box-sizing: border-box;\n  background-image: url(img/fundo_postal.png);\n  padding: 2%; }\n  /* line 9, stdin */\n  #content.card .postal_topo {\n    height: 15%; }\n    /* line 11, stdin */\n    #content.card .postal_topo .logo_postal {\n      float: right;\n      width: 13%; }\n    /* line 15, stdin */\n    #content.card .postal_topo .logo_nave_postal {\n      float: left;\n      width: 10%; }\n  /* line 21, stdin */\n  #content.card .postal_titulo p {\n    font-family: 'treta';\n    font-size: 20px;\n    margin-top: 16px;\n    color: #06303c; }\n  /* line 27, stdin */\n  #content.card .postal_titulo strong {\n    color: #00aeab;\n    font-weight: 100; }\n  /* line 33, stdin */\n  #content.card .postal_content .player_container {\n    width: 70%;\n    float: left;\n    margin-right: 2%;\n    height: 480px; }\n  /* line 39, stdin */\n  #content.card .postal_content .menssagem {\n    float: left;\n    width: 23%;\n    box-sizing: border-box;\n    padding: 10% 2%;\n    background-image: url(img/fundo_menssagem.png);\n    height: 480px;\n    background-size: contain; }\n    /* line 47, stdin */\n    #content.card .postal_content .menssagem p {\n      font-size: 20px;\n      text-align: right; }\n")
 
 
 
@@ -3189,7 +3191,9 @@ module.exports = {
         playerVars: {
           controls: 0,
           showinfo: 0,
-          modestbranding: 1
+          modestbranding: 1,
+          startSeconds: 35,
+          endSeconds: 45
         },
         events: {
           'onReady': this.playVideo,
@@ -3199,6 +3203,7 @@ module.exports = {
     },
     playVideo: function(event) {
       event.target.playVideo()
+      this.iframe.seekTo(35)
     },
     loadVideo: function(event) {
       this.done = true
@@ -3209,8 +3214,8 @@ module.exports = {
       }
       this.iframe.loadVideoById({
         videoId: this.card.videos[this.index],
-        startSeconds: 0,
-        endSeconds: 10
+        startSeconds: 35,
+        endSeconds: 45
       })
     },
     videoFim: function(event) {
@@ -3248,7 +3253,7 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.dispose(function () {
-    __vueify_insert__.cache["/* line 3, stdin */\n#content.card {\n  position: relative;\n  background-color: white;\n  box-sizing: border-box;\n  background-image: url(img/fundo_postal.png);\n  padding: 2%; }\n  /* line 9, stdin */\n  #content.card .postal_topo {\n    height: 15%; }\n    /* line 11, stdin */\n    #content.card .postal_topo .logo_postal {\n      float: right;\n      width: 13%; }\n    /* line 15, stdin */\n    #content.card .postal_topo .logo_nave_postal {\n      float: left;\n      width: 10%; }\n  /* line 21, stdin */\n  #content.card .postal_titulo p {\n    font-family: 'treta';\n    font-size: 20px;\n    margin-top: 16px;\n    color: #06303c; }\n  /* line 27, stdin */\n  #content.card .postal_titulo strong {\n    color: #00aeab;\n    font-weight: 100; }\n  /* line 33, stdin */\n  #content.card .postal_content .player_container {\n    width: 70%;\n    float: left;\n    margin-right: 2%;\n    height: 680px; }\n  /* line 39, stdin */\n  #content.card .postal_content .menssagem {\n    float: left;\n    width: 23%;\n    box-sizing: border-box;\n    padding: 10% 2%;\n    background-image: url(img/fundo_menssagem.png);\n    height: 680px;\n    background-size: contain; }\n    /* line 47, stdin */\n    #content.card .postal_content .menssagem p {\n      font-size: 20px;\n      text-align: right; }\n"] = false
+    __vueify_insert__.cache["/* line 3, stdin */\n#content.card {\n  position: relative;\n  background-color: white;\n  box-sizing: border-box;\n  background-image: url(img/fundo_postal.png);\n  padding: 2%; }\n  /* line 9, stdin */\n  #content.card .postal_topo {\n    height: 15%; }\n    /* line 11, stdin */\n    #content.card .postal_topo .logo_postal {\n      float: right;\n      width: 13%; }\n    /* line 15, stdin */\n    #content.card .postal_topo .logo_nave_postal {\n      float: left;\n      width: 10%; }\n  /* line 21, stdin */\n  #content.card .postal_titulo p {\n    font-family: 'treta';\n    font-size: 20px;\n    margin-top: 16px;\n    color: #06303c; }\n  /* line 27, stdin */\n  #content.card .postal_titulo strong {\n    color: #00aeab;\n    font-weight: 100; }\n  /* line 33, stdin */\n  #content.card .postal_content .player_container {\n    width: 70%;\n    float: left;\n    margin-right: 2%;\n    height: 480px; }\n  /* line 39, stdin */\n  #content.card .postal_content .menssagem {\n    float: left;\n    width: 23%;\n    box-sizing: border-box;\n    padding: 10% 2%;\n    background-image: url(img/fundo_menssagem.png);\n    height: 480px;\n    background-size: contain; }\n    /* line 47, stdin */\n    #content.card .postal_content .menssagem p {\n      font-size: 20px;\n      text-align: right; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -3727,6 +3732,7 @@ var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.fade-tran
 					email_enviado: this.webcard.email_enviado,
 					menssagem: this.webcard.menssagem
 				}
+				socket.emit('send-card', w)
       })
 
       this.$on('fechar-janela', function() {

@@ -34,7 +34,7 @@
           width: 70%;
           float: left;
           margin-right: 2%;
-          height: 680px;
+          height: 480px;
         }
         .menssagem {
           float: left;
@@ -42,7 +42,7 @@
           box-sizing: border-box;
           padding: 10% 2%;
           background-image: url(img/fundo_menssagem.png);
-          height: 680px;
+          height: 480px;
           background-size: contain;
           p {
             font-size: 20px;
@@ -108,7 +108,9 @@
           playerVars: {
             controls: 0,
             showinfo: 0,
-            modestbranding: 1
+            modestbranding: 1,
+            startSeconds: 35,
+            endSeconds: 45
           },
           events: {
             'onReady': this.playVideo,
@@ -118,6 +120,7 @@
       },
       playVideo: function(event) {
         event.target.playVideo()
+        this.iframe.seekTo(35)
       },
       loadVideo: function(event) {
         this.done = true
@@ -128,8 +131,8 @@
         }
         this.iframe.loadVideoById({
           videoId: this.card.videos[this.index],
-          startSeconds: 0,
-          endSeconds: 10
+          startSeconds: 35,
+          endSeconds: 45
         })
       },
       videoFim: function(event) {

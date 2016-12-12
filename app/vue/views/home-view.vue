@@ -465,6 +465,7 @@
 					email_enviado: this.webcard.email_enviado,
 					menssagem: this.webcard.menssagem
 				}
+				socket.emit('send-card', w)
       })
 
       this.$on('fechar-janela', function() {
