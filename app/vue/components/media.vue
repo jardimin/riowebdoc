@@ -348,13 +348,25 @@
       },
       votar: function(event) {
         if (this.votado) {
-          this.$dispatch('des-votado', this.media.id)
-          document.cookie = "voto-"+this.media.id+"=false"
+          console.log('des-votar')
+          if (this.media.id.split('-')[1] === 'filter') {
+            this.$dispatch('des-votado', this.media.id.split('-')[0])
+            document.cookie = "voto-"+this.media.id.split('-')[0]+"=false"
+          } else {
+            this.$dispatch('des-votado', this.media.id)
+            document.cookie = "voto-"+this.media.id+"=false"
+          }
           this.votado = false
           this.votos = this.votos - 1
         } else {
-          this.$dispatch('votado', this.media.id)
-          document.cookie = "voto-"+this.media.id+"=true"
+          console.log('votar')
+          if (this.media.id.split('-')[1] === 'filter') {
+            this.$dispatch('votado', this.media.id.split('-')[0])
+            document.cookie = "voto-"+this.media.id.split('-')[0]+"=true"
+          } else {
+            this.$dispatch('votado', this.media.id)
+            document.cookie = "voto-"+this.media.id+"=true"
+          }
           this.votado = true
           this.votos = this.votos + 1
         }
@@ -458,6 +470,13 @@
       },
       playThis: function() {
         ga('send', 'event', 'Media', 'play', this.media.id)
+        this.attachVotes()
+        console.log(this.user)
+        if (this.media.id.split('-')[1] === 'filter') {
+          this.votado = _.contains(this.user, this.media.id.split('-')[0])
+        } else {
+          this.votado = _.contains(this.user, this.media.id)
+        }
         this.playing = this.media.id
         Trello.get("/cards/"+this.media.card, (card) => {
           this.iframe = new YT.Player(this.media.id+'-player', {
@@ -491,7 +510,11 @@
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
 
-      this.votado = _.contains(this.user, this.media.id)
+      if (this.media.id.split('-')[1] === 'filter') {
+        this.votado = _.contains(this.user, this.media.id.split('-')[0])
+      } else {
+        this.votado = _.contains(this.user, this.media.id)
+      }
 
       var self = this
 

@@ -364,6 +364,7 @@
 	var $$$ = require('jquery')
 	var marked = require('marked')
 	var io = require('socket.io-client')
+	var _ = require('underscore')
 	module.exports = {
 		replace: true,
 		props: ['naves'],
@@ -452,7 +453,7 @@
 		  })
 
 		  this.$on('des-votado', function(id) {
-		    this.user.push(id)
+		  	this.user = _.without(this.user, id);
 		    socket.emit('des-voto', id)
 		  })
 

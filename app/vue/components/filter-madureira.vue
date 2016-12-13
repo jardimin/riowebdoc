@@ -22,7 +22,7 @@
 <template>
 
   <div class="filter">
-    <filter-media v-for="m in medias" transition="fade" :media.sync="m" :height="height" :width="width" :playing.sync="playing"></filter-media>
+    <filter-media v-for="m in medias" transition="fade" :media.sync="m" :height="height" :width="width" :playing.sync="playing" :user="user"></filter-media>
     <div v-if="playing !== null && filter !== ''" style="width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;"></div>
   </div>  
 
@@ -34,7 +34,7 @@
   var _ = require('underscore')
 
   module.exports = {
-    props: ['height', 'width', 'naves', 'playing', 'filter'],
+    props: ['height', 'width', 'naves', 'playing', 'filter', 'user'],
     data: function(){
       return {
         medias: [],
