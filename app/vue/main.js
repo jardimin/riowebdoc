@@ -12,12 +12,10 @@
 			id: "579651e8b317db0ef8c59645",
 			nome: "Nova Brasília",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"-v8_WEcEpVk",
+				"bxUzV4Qwb0o",
+				"UB3UxEB-s20",
+				"BHIQ1E3YcSc"
 			]
 		},
 		media: [{
@@ -92,12 +90,11 @@
 			id: "57d80ac925e96401c21f7df5",
 			nome: "Irajá",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"BugmNaHpn_U",
+				"7wz2PeS_AFc",
+				"b4DCMD0cLsI",
+				"pDfi4GffeP4",
+				"GQJD-Ywgf2E"
 			]
 		},
 		media: [{
@@ -172,12 +169,11 @@
 			id: "57d80ad87c49e7f7310352f0",
 			nome: "Vila Aliança",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"HnJ6Y2hL7aA",
+				"sRGHAKVh8HQ",
+				"5bGbLwUB5FI",
+				"j58vDbKfPMI",
+				"kjeJSbWner0"
 			]
 		},
 		media: [{
@@ -252,12 +248,10 @@
 			id: "57d80ae89bbc5a6b5e728b52",
 			nome: "Santa Cruz",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"YVuNLlmD-RE",
+				"WIp6joOk4DM",
+				"5McD6H4I898",
+				"69b3BGirbOY"
 			]
 		},
 		media: [{
@@ -332,12 +326,10 @@
 			id: "57d80af0c40622fb9f879f62",
 			nome: "Triagem",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"03qf055vcOw",
+				"L9ZmrTKG5aQ",
+				"Qdvar8gaCy0",
+				"_JvKKmtJCM8"
 			]
 		},
 		media: [{
@@ -412,12 +404,11 @@
 			id: "57d80afe105fef63a6413dd0",
 			nome: "Padre Miguel",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"ktz-3UTdB4c",
+				"1rP2poz_9a0",
+				"OVJTaoM0c7A",
+				"AlB4b2zSbx8",
+				"-mDZ-3MAgtc"
 			]
 		},
 		media: [{
@@ -492,12 +483,11 @@
 			id: "57d80b0a32668283f86410a7",
 			nome: "Penha",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"FTE_hUeKcOY",
+				"_k2fkHKJwuE",
+				"oN8CxVS0bhY",
+				"Fs-BXSLXERM",
+				"JPLomGjLCn0"
 			]
 		},
 		media: [{
@@ -572,12 +562,11 @@
 			id: "57d80b1e816a10d03040029b",
 			nome: "Madureira",
 			video_cards: [
-				"ZZsrowhDpos",
-				"0vo_vsW_Uog",
-				"ugH9hGwMv4Y",
-				"nvUeo5sagkA",
-				"vrVuGiKRVDU",
-				"7fkOqXAHLKQ"
+				"NUl2NlvocWc",
+				"p6g5Mq4xsbc",
+				"PyZDpHaxR4I",
+				"Wvw7mv98aJw",
+				"Md67Dkb7y0U"
 			]
 		},
 		media: [{

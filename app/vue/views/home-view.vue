@@ -26,7 +26,7 @@
 
 	.logo_superior {
 		position: abolute;
-		margin-left: 43%;
+		margin-left: 1%;
 	}
 
 	#janela2 {
@@ -154,6 +154,7 @@
     <header class="rwd_header mdl-layout__header ">
     	<div class="header_cover">
 			<div class="mdl-layout__header-row">
+				<img src="images/rio_pref.png" alt="prefeitura Logo" style="margin-left: 37%; width: 115px;" />
 				<a class="logo_superior" target="_blank" href="http://navedoconhecimento.rio/">
 					<img src="images/logo_superior.png">
 				</a>
@@ -437,6 +438,7 @@
 		  for (var i = 0; i < this.naves.length; i++) {
 		    for (var o = 0; o < this.naves[i].media.length; o++) {
 		      this.cookieVotos(this.naves[i].media[o].id)
+		      this.cookieVotos(this.naves[i].media[o].id+'-filter')
 		    }
 		  }
 		},

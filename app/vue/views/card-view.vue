@@ -90,7 +90,7 @@
   var marked = require('marked')
   module.exports = {
     replace: true,
-    props: ['card'],
+    props: ['card', 'naves', 'user'],
     data: function(){
       return {
         height: 0,
@@ -120,7 +120,6 @@
       },
       playVideo: function(event) {
         event.target.playVideo()
-        this.iframe.seekTo(35)
       },
       loadVideo: function(event) {
         this.done = true
@@ -130,15 +129,12 @@
           this.index = this.index + 1
         }
         this.iframe.loadVideoById({
-          videoId: this.card.videos[this.index],
-          startSeconds: 35,
-          endSeconds: 45
+          videoId: this.card.videos[this.index]
         })
       },
       videoFim: function(event) {
         var self = this
         if (event.data == YT.PlayerState.PLAYING && this.done) {
-          setTimeout(self.loadVideo, 10000)
           this.done = false
         } else if (event.data == YT.PlayerState.ENDED) {
           this.loadVideo()

@@ -491,8 +491,6 @@
       this.interval = parseInt((Math.random() * 10000)+3000)
       this.sw = this.media.shadow
 
-      this.votado = _.contains(this.user, this.media.id)
-
       var self = this
 
       Trello.get("/cards/"+this.media.card+"/attachments", function(attach) {
@@ -538,6 +536,12 @@
     attached: function () {
       var self = this
       this.attachVotes()
+      console.log(this.user)
+      this.votado = _.contains(this.user, this.media.id)
+
+      if(this.votado) {
+        console.log('votado '+ this.media.id)
+      }
       componentHandler.upgradeDom()
 
       window.setInterval(function(){

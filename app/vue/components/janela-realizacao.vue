@@ -124,7 +124,7 @@
             <li>JULIANA FEREIRA SILVA</li>
             <li>LUAN SOARE DE SOUZA VIEIRA</li>
             <li>MIGUEL JORGE JACOB</li>
-            <li>PAULO CESAR ALVES DE MENDONÇA</li>
+            <li>PAULO MENDONÇA</li>
             <li>SAMARA DA SILVA</li>
           </ul>
           <h3>Triagem</h3>
