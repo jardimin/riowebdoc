@@ -137,7 +137,7 @@ var marked = require('marked')
 var _ = require('underscore')
 
 module.exports = {
-  props: ['height', 'width', 'naves', 'playing', 'filter'],
+  props: ['height', 'width', 'naves', 'playing', 'filter', 'user'],
   data: function(){
     return {
       medias: [],
@@ -208,7 +208,7 @@ module.exports = {
 }
 
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"filter\">\n  <filter-media v-for=\"m in medias\" transition=\"fade\" :media.sync=\"m\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\"></filter-media>\n  <div v-if=\"playing !== null &amp;&amp; filter !== ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n</div>  \n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"filter\">\n  <filter-media v-for=\"m in medias\" transition=\"fade\" :media.sync=\"m\" :height=\"height\" :width=\"width\" :playing.sync=\"playing\" :user=\"user\"></filter-media>\n  <div v-if=\"playing !== null &amp;&amp; filter !== ''\" style=\"width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 5; position: absolute; left: 0; top: 0;\"></div>\n</div>  \n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -1491,13 +1491,25 @@ module.exports = {
     },
     votar: function(event) {
       if (this.votado) {
-        this.$dispatch('des-votado', this.media.id)
-        document.cookie = "voto-"+this.media.id+"=false"
+        console.log('des-votar')
+        if (this.media.id.split('-')[1] === 'filter') {
+          this.$dispatch('des-votado', this.media.id.split('-')[0])
+          document.cookie = "voto-"+this.media.id.split('-')[0]+"=false"
+        } else {
+          this.$dispatch('des-votado', this.media.id)
+          document.cookie = "voto-"+this.media.id+"=false"
+        }
         this.votado = false
         this.votos = this.votos - 1
       } else {
-        this.$dispatch('votado', this.media.id)
-        document.cookie = "voto-"+this.media.id+"=true"
+        console.log('votar')
+        if (this.media.id.split('-')[1] === 'filter') {
+          this.$dispatch('votado', this.media.id.split('-')[0])
+          document.cookie = "voto-"+this.media.id.split('-')[0]+"=true"
+        } else {
+          this.$dispatch('votado', this.media.id)
+          document.cookie = "voto-"+this.media.id+"=true"
+        }
         this.votado = true
         this.votos = this.votos + 1
       }
@@ -1601,6 +1613,13 @@ module.exports = {
     },
     playThis: function() {
       ga('send', 'event', 'Media', 'play', this.media.id)
+      this.attachVotes()
+      console.log(this.user)
+      if (this.media.id.split('-')[1] === 'filter') {
+        this.votado = _.contains(this.user, this.media.id.split('-')[0])
+      } else {
+        this.votado = _.contains(this.user, this.media.id)
+      }
       this.playing = this.media.id
       Trello.get("/cards/"+this.media.card, (card) => {
         this.iframe = new YT.Player(this.media.id+'-player', {
@@ -1633,6 +1652,12 @@ module.exports = {
   created: function () {
     this.interval = parseInt((Math.random() * 10000)+3000)
     this.sw = this.media.shadow
+
+    if (this.media.id.split('-')[1] === 'filter') {
+      this.votado = _.contains(this.user, this.media.id.split('-')[0])
+    } else {
+      this.votado = _.contains(this.user, this.media.id)
+    }
 
     var self = this
 
@@ -3645,6 +3670,7 @@ var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.fade-tran
 	var $$$ = require('jquery')
 	var marked = require('marked')
 	var io = require('socket.io-client')
+	var _ = require('underscore')
 	module.exports = {
 		replace: true,
 		props: ['naves'],
@@ -3734,7 +3760,7 @@ var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\n.fade-tran
 		  })
 
 		  this.$on('des-votado', function(id) {
-		    this.user.push(id)
+		  	this.user = _.without(this.user, id);
 		    socket.emit('des-voto', id)
 		  })
 
@@ -3805,7 +3831,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-a4f029aa", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../components/janela-card.vue":3,"../components/janela-contato.vue":4,"../components/janela-equipe.vue":5,"../components/janela-projeto.vue":6,"../components/janela-realizacao.vue":7,"../components/media-cloud.vue":8,"jquery":49,"marked":50,"socket.io-client":79,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],18:[function(require,module,exports){
+},{"../components/janela-card.vue":3,"../components/janela-contato.vue":4,"../components/janela-equipe.vue":5,"../components/janela-projeto.vue":6,"../components/janela-realizacao.vue":7,"../components/media-cloud.vue":8,"jquery":49,"marked":50,"socket.io-client":79,"underscore":91,"vue":94,"vue-hot-reload-api":93,"vueify/lib/insert-css":95}],18:[function(require,module,exports){
 module.exports = after
 
 function after(count, callback, err_cb) {
