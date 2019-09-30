@@ -207,7 +207,7 @@
         	</div>
 
         	<div class="right-postal" style="color: black;">
-        			<img src="http://capacitacao.navedoconhecimento.org.br/img/logo.png" style="width: 100%; position: absolute; bottom: 0; right: -15px;">
+        			<img src="//capacitacao.navedoconhecimento.org.br/img/logo.png" style="width: 100%; position: absolute; bottom: 0; right: -15px;">
         	</div>
        	
       </div>
@@ -532,7 +532,7 @@
         this.media.video = card.desc
         if (this.media.video !== "__") {
           var playlistUrl = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + this.media.video + '&key=AIzaSyCwNv14d5bNQ4MwaodqT6z45-6A5y4kzus'
-          var videoURL= 'http://www.youtube.com/embed/'
+          var videoURL= 'https://www.youtube.com/embed/'
           $$$.getJSON(playlistUrl, function(data) {
             // console.log(data)
             $$$.each(data.items, function(i, item) {

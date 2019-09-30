@@ -155,7 +155,7 @@
     	<div class="header_cover">
 			<div class="mdl-layout__header-row">
 				<img src="images/rio_pref.png" alt="prefeitura Logo" style="margin-left: 37%; width: 115px;" />
-				<a class="logo_superior" target="_blank" href="http://navedoconhecimento.rio/">
+				<a class="logo_superior" target="_blank" href="//navedoconhecimento.rio/">
 					<img src="images/logo_superior.png">
 				</a>
 				<!-- <a href="http://github.com/viladosite/riowebdoc" class="gitLink" target="_blank"><img class="imgGit" src="images/github512.png" alt="Fork me on GitHub"> Fork me on GitHub </a> -->
@@ -242,7 +242,7 @@
 							<div class="footertitle">Realização:</div>
 							
 							<div class="footerlogos">
-							<a href="http://navedoconhecimento.rio/" target="_blank" style="margin-right: 20px;">
+							<a href="//navedoconhecimento.rio/" target="_blank" style="margin-right: 20px;">
 							<img src="images/naves.png" alt="naves Logo" class="footer_img1"/></a>
 							<a href="#" target="_blank" style="margin-right: 10px;">
 							<img src="images/rio_pref.png" alt="prefeitura Logo" class="footer_img1"/></a>
@@ -259,7 +259,7 @@
 							<div class="footertitle">Produção:</div>
 							
 							<div class="footerlogos">
-							<a href="#" target="_blank">
+							<a href="//criamedialab.com" target="_blank">
 							<img src="images/cria.png" alt="cria Logo" class="footer_img1" style="height: 60px; margin-top: 15px;" /></a>
 
 							&nbsp;&nbsp;&nbsp;&nbsp;
@@ -309,7 +309,7 @@
 							<div class="footertitle">Desenvolvimento:</div>
 							
 							<div class="footerlogos">
-							<a href="http://jardimdigital.com.br" target="_blank">
+							<a href="//jardimdigital.com.br" target="_blank">
 							<img src="images/jardim.png" alt="jardim digital Logo" class="footer_img1" style="height: 45px; margin-top: 25px; opacity: .7;" /></a>
 							</div>
 

@@ -63,7 +63,7 @@
     
       <div id="content" class="card" :style="{height: height+'px'}"> 
         <div class="postal_topo">
-          <img src="http://meuriovaleumfilme.com.br/imagens/logo_nave.png" class="logo_nave_postal">
+          <img src="//meuriovaleumfilme.com.br/imagens/logo_nave.png" class="logo_nave_postal">
           <img src="images/logo.png" class="logo_postal">
         </div>
         <div class="postal_titulo">

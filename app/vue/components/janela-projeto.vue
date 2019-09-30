@@ -61,7 +61,7 @@
           </ul>
 
 
-          <p>Leia o regulamento da premiação <a href="https://trello-attachments.s3.amazonaws.com/579651e258529dcff443a82a/5858a049c0e7de9498b2684b/aa5926a62467630197b0ed07714ffd26/Regulamento_(MRVW).pdf" target="_blank" style="color: #06303c">aqui.</a></p>
+          <p>Leia o regulamento da premiação <a href="//trello-attachments.s3.amazonaws.com/579651e258529dcff443a82a/5858a049c0e7de9498b2684b/aa5926a62467630197b0ed07714ffd26/Regulamento_(MRVW).pdf" target="_blank" style="color: #06303c">aqui.</a></p>
 
 
         </div>

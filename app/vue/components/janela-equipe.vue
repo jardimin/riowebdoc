@@ -55,7 +55,7 @@
 
         <p><b>Projeto Gráfico</b><br>Thiago Venturotti</p> 
 
-        <p><b>Desenvolvimento/programação da plataforma</b><br><a href="http://jardimdigital.com.br" style="text-decoration: none; color: black;">Jardim Digital</a></p> 
+        <p><b>Desenvolvimento/programação da plataforma</b><br><a href="//jardimdigital.com.br" style="text-decoration: none; color: black;">Jardim Digital</a></p> 
 
         </div>
 
